@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="命令行,终端,git高级命令,分支操作,冲突解决," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="看git入门，请想象自己就是开发人员，正在操作一个项目的本地与远程的文件版本更新控制。前言  之前Git操作——简单使用 远程创建一个git项目，clone到本地，即为本地仓库（即一个含有.git隐藏文件夹的项目文件夹），经过本地终端命令的操作，再push到远程库。所有的修改、删除、提交、推送等都是由这个.git的文件进行记录的，如果去掉，这个项目就是一个普通的文件夹。">
+<meta name="keywords" content="命令行,终端,git高级命令,分支操作,冲突解决">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git入门（三）：git高级命令讲解（远程库↔本地库，以及分支操作及冲突解决）">
+<meta property="og:url" content="http://yoursite.com/2018/08/08/Article9【git高级命令讲解（远程库↔本地库，以及分支操作及冲突解】/index.html">
+<meta property="og:site_name" content="miya&#39;s Blog">
+<meta property="og:description" content="看git入门，请想象自己就是开发人员，正在操作一个项目的本地与远程的文件版本更新控制。前言  之前Git操作——简单使用 远程创建一个git项目，clone到本地，即为本地仓库（即一个含有.git隐藏文件夹的项目文件夹），经过本地终端命令的操作，再push到远程库。所有的修改、删除、提交、推送等都是由这个.git的文件进行记录的，如果去掉，这个项目就是一个普通的文件夹。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/10836479-b6fec11bce15095f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/10836479-38ea2a540125a51b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/10836479-663ad5b26d2762a0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/10836479-80343987e8e502ad.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-08T12:28:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git入门（三）：git高级命令讲解（远程库↔本地库，以及分支操作及冲突解决）">
+<meta name="twitter:description" content="看git入门，请想象自己就是开发人员，正在操作一个项目的本地与远程的文件版本更新控制。前言  之前Git操作——简单使用 远程创建一个git项目，clone到本地，即为本地仓库（即一个含有.git隐藏文件夹的项目文件夹），经过本地终端命令的操作，再push到远程库。所有的修改、删除、提交、推送等都是由这个.git的文件进行记录的，如果去掉，这个项目就是一个普通的文件夹。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/10836479-b6fec11bce15095f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/08/Article9【git高级命令讲解（远程库↔本地库，以及分支操作及冲突解】/"/>
+
+
+
+
+
+  <title>git入门（三）：git高级命令讲解（远程库↔本地库，以及分支操作及冲突解决） | miya's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">miya's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/08/Article9【git高级命令讲解（远程库↔本地库，以及分支操作及冲突解】/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="miya Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="miya's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">git入门（三）：git高级命令讲解（远程库↔本地库，以及分支操作及冲突解决）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T20:21:45+08:00">
+                2018-08-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-08T20:28:51+08:00">
+                2018-08-08
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序员技能/" itemprop="url" rel="index">
+                    <span itemprop="name">程序员技能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/08/Article9【git高级命令讲解（远程库↔本地库，以及分支操作及冲突解】/" class="leancloud_visitors" data-flag-title="git入门（三）：git高级命令讲解（远程库↔本地库，以及分支操作及冲突解决）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>看git入门，请想象自己就是开发人员，正在操作一个项目的本地与远程的文件版本更新控制。</strong><br><strong>前言</strong></p>
+<blockquote>
+<p>之前Git操作——简单使用 远程创建一个git项目，clone到本地，即为本地仓库（即一个含有.git隐藏文件夹的项目文件夹），经过本地终端命令的操作，再push到远程库。所有的修改、删除、提交、推送等都是由这个.git的文件进行记录的，如果去掉，这个项目就是一个普通的文件夹。</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="一、本地新建git项目push到远程空仓库"><a href="#一、本地新建git项目push到远程空仓库" class="headerlink" title="一、本地新建git项目push到远程空仓库"></a>一、本地新建git项目push到远程空仓库</h1><blockquote>
+<p>现在Git操作——复杂使用 本地新建一个git项目，push到远程空仓库。</p>
+</blockquote>
+<h4 id="1、先在github上操作"><a href="#1、先在github上操作" class="headerlink" title="1、先在github上操作"></a>1、先在github上操作</h4><p>创建有一个空仓库blogtest_01（不包含初始化文件，即一个未建好的仓库），进入项目页面出现：<br><img src="http://upload-images.jianshu.io/upload_images/10836479-b6fec11bce15095f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>通过在本地将这个仓库建好，push到远程仓库</p>
+</blockquote>
+<p>####2、再在终端上操作<br>（1）在本地任意创建一个文件夹（此时，这个还是空文件夹，不是仓库）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir  blogtest_01</span><br></pre></td></tr></table></figure></p>
+<p>（2）看github项目主页上的提示<br><img src="http://upload-images.jianshu.io/upload_images/10836479-38ea2a540125a51b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch README.md</span><br></pre></td></tr></table></figure></p>
+<p>#####执行status查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git  status</span><br></pre></td></tr></table></figure></p>
+<p>出现报错：fatal: Not a git repository (or any of the parent directories): .git ，即没有仓库</p>
+<p>（3）空文件夹初始化一个仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure></p>
+<p>出现提示：<figure class="highlight plain"><figcaption><span>empty Git repository in</span><a href="/Users/wxq393/blogtest_01/.git/">```，即说明已经初始化一个空的仓库</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">####验证仓库查看</span><br></pre></td></tr></table></figure></p>
+<p>$ ls  -a<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">即会出现.git相关的文件夹，代表仓库已在本地建成</span><br><span class="line">#####执行status再查看</span><br></pre></td></tr></table></figure></p>
+<p>$ git  status<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（4）开始添加、暂存、提交一系列本地操作</span><br></pre></td></tr></table></figure></p>
+<p>$ git add .<br>$ git commit -am “init”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#####本地新建仓库进行推送（注意这是一个重要点）</span><br></pre></td></tr></table></figure></p>
+<p>$git  push<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**注：**会出现异常，因为本地新建的blogtest_01起初并不知道是指向远程库blogtest_01，所以需要执行一个指向地址的命令**（在github项目主页上有提示）**，即：</span><br><span class="line">![image](http://upload-images.jianshu.io/upload_images/10836479-b6197cfe6d2e5271.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br></pre></td></tr></table></figure></p>
+<p>$ git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:wxq393/blogtest_01.git<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**注：**origin其实就是远程的git地址的一个别名</span><br></pre></td></tr></table></figure></p>
+<p>$ git push origin master<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">####3、贴上我在本地终端执行命令的全过程：</span><br><span class="line">![image](http://upload-images.jianshu.io/upload_images/10836479-b1a408aa42da1dfe.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">**注：**本地仓库，只要知道仓库管理的地址，就可以推送到任意一个远程库（如coding、新浪云等管理工具）管理</span><br><span class="line"></span><br><span class="line">####4、其他命令</span><br><span class="line">**（这里以gitlab作为可改标签）**</span><br><span class="line">（1）慎用，强制推送会覆盖别人的代码</span><br></pre></td></tr></table></figure></p>
+<p>$ git push -f origin master<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（2）再添加一个远程库的标签</span><br></pre></td></tr></table></figure></p>
+<p>$ git remote add gitlab <a href="mailto:git@gitlab.com" target="_blank" rel="noopener">git@gitlab.com</a>:abc/blog.git<br>$ git remote -v<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#####推送到gitlab标签</span><br></pre></td></tr></table></figure></p>
+<p>$ git push gitlab master<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; 注：这里善用搜索引擎，查找不会的命令意义： $ git remote -v ，-v (即 –verbose 简写,取首字母)，显示对应的克隆地址。即列出详细信息，在每一个名字后面列出其远程库的url。</span><br><span class="line">![image](http://upload-images.jianshu.io/upload_images/10836479-c852de1d57ffd2bf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">（3）#删除gitlab标签</span><br></pre></td></tr></table></figure></p>
+<p>$ git remote remove gitlab<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（4）修改origin标签对应的地址（可以一个命令修改git的https或者ssh地址）</span><br></pre></td></tr></table></figure></p>
+<p>$ git remote set-url origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:jirengu/blog3.git<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（5）把gitlab 标签改名为coding</span><br></pre></td></tr></table></figure></p>
+<p>$ git remote rename gitlab coding<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#二、分支操作（git的重要操作部分）</span><br><span class="line">&gt;分支：push origin master中，master就是分支。自己画了一个git项目的分支示意图😅，应该能理解？：</span><br><span class="line">![image](http://upload-images.jianshu.io/upload_images/10836479-5d70dab1a7cb8bc9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">####1、查看所有分支</span><br></pre></td></tr></table></figure></p>
+<p>$ git branch -a<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">获取如图：</span><br><span class="line">![image](http://upload-images.jianshu.io/upload_images/10836479-66c6e2da2fc54c1c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line">- （绿色分支——本地分支）*master ：当前本地仓库主干master</span><br><span class="line">- （红色分支——远程分支）remotes/origin/master :远程库的主干</span><br><span class="line"></span><br><span class="line">####2、创建本地库dev分支</span><br></pre></td></tr></table></figure></p>
+<p>$ git branch dev<br>$ git branch -a<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">####3、切换主干和分支操作</span><br><span class="line">（1）切换到dev分支</span><br></pre></td></tr></table></figure></p>
+<p>$ git checkout dev<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**具体操作：**</span><br></pre></td></tr></table></figure></p>
+<p>$ git checkout dev<br>$ ls<br>$ open .<br>$ touch index.html<br>$ git add .<br>$ git commit -am “add file”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">**注：**index.html在dev这个分支上</span><br><span class="line"></span><br><span class="line">（2）切换到master主干</span><br></pre></td></tr></table></figure></p>
+<p>$ git checkout master<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**注：**index.html没有在master的主干上</span><br><span class="line">** 结论：**同一个项目文件夹，只要切换不同分支，就会展示不同分支的文件状态</span><br><span class="line"></span><br><span class="line">####4、推送到origin地址的dev分支上</span><br></pre></td></tr></table></figure></p>
+<p>$ git push origin dev<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">####5、那么，在github的展示：</span><br><span class="line">![image](http://upload-images.jianshu.io/upload_images/10836479-e41c154ac44fb817.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line">可以想象成两个开发人员在blogtest_01这个Git的项目上分别操作了两个分支，各自工作</span><br><span class="line"></span><br><span class="line">####6、将dev分支内容合并到主干上</span><br></pre></td></tr></table></figure></p>
+<p>$ git checkout master<br>$ git merge dev<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#####可以查看一下</span><br></pre></td></tr></table></figure></p>
+<p>$ ls<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">然后，合并（merge）后的项目便是共同协作的结果</span><br><span class="line"></span><br><span class="line">####7、推送到远程库中</span><br></pre></td></tr></table></figure></p>
+<p>$ git push origin master<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">那么，线上代码便是master，共同维护一份代码。这样一来是不是对分布式的版本控制有更深的理解了🤔</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#####【我的一些思考和解决】</span><br><span class="line">&gt;那么，我产生一个疑问：刚才的分支操作主要是针对本地库分支向远程库推送的主要操作。但是如果在远程库修改了分支文件，到本地库怎么修改操作呢？</span><br><span class="line"></span><br><span class="line">&gt;这里我主要修改主干master上的readme.md文件，如何在本地终端上如何操作？我的猜想：git pull——git checkout master——git add . /git commit ——git push？</span><br><span class="line"></span><br><span class="line">![image](http://upload-images.jianshu.io/upload_images/10836479-ed82b0de41cfa7da.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">&gt; 搞了半天，我所想的“关于含有分支的远程库，在远程库修改后，如何在本地库终端命令中进行更新、修改、提交、推送等一系列命令行的问题”，就是一个冲突问题啊！！！！</span><br><span class="line">#三、冲突</span><br><span class="line">####1、什么是冲突</span><br><span class="line">自己和你的小伙伴该同一个文件的同一个地方，在执行git pull时，更新本地合并时会出现冲突</span><br><span class="line"></span><br><span class="line">####2、操作：</span><br><span class="line">（1）之前我（开发人员A）已经在远程库的master上进行README.md文件的修改，如图：</span><br><span class="line">![image](http://upload-images.jianshu.io/upload_images/10836479-7f9ad8dc8ce9f200.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">（2）现在我（开发人员B）在本地想要在master主干上的README.md文件也进行修改，但前提我需要把远程主干分支pull下来</span><br><span class="line"></span><br><span class="line">&gt; 注：具体在我之前的《浅谈git入门（二）：git基本命令讲解》中“三.5多人协作”就有讲过。不过，这次是远程项目的指定分支被pull下来，终端命令行细节上有所不同</span><br><span class="line"></span><br><span class="line">即主要执行以下代码:</span><br></pre></td></tr></table></figure></p>
+<p>$ git branch -a （可省略）<br>$ git pull origin master<br>$ ls             （可省略）<br>$ vim  README.md<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![image](http://upload-images.jianshu.io/upload_images/10836479-9d35a2fc41032fd9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">继续执行：</span><br></pre></td></tr></table></figure></p>
+<p>$ git add .       （可省略）<br>$ git commit -am “fix master”<br>$ git push origin master<br><code>`</code></p>
+<p>（3）现在回到远程库（github），发现更新了<br><img src="http://upload-images.jianshu.io/upload_images/10836479-663ad5b26d2762a0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>（4）贴上我终端操作的全过程：<br><img src="http://upload-images.jianshu.io/upload_images/10836479-80343987e8e502ad.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/命令行/" rel="tag"># 命令行</a>
+          
+            <a href="/tags/终端/" rel="tag"># 终端</a>
+          
+            <a href="/tags/git高级命令/" rel="tag"># git高级命令</a>
+          
+            <a href="/tags/分支操作/" rel="tag"># 分支操作</a>
+          
+            <a href="/tags/冲突解决/" rel="tag"># 冲突解决</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/08/Article8【git基本命令讲解（本地库↔远程库）】/" rel="next" title="git入门（二）：git基本命令讲解（本地库↔远程库）">
+                <i class="fa fa-chevron-left"></i> git入门（二）：git基本命令讲解（本地库↔远程库）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/08/Article10【浅谈HTML表单（一）：表单提交原理】/" rel="prev" title="浅谈HTML表单（一）：表单提交原理">
+                浅谈HTML表单（一）：表单提交原理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="miya Wang" />
+            
+              <p class="site-author-name" itemprop="name">miya Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wxq393" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="wangxiaoqin.0009@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Wangxiaoqin0009" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/wxq393" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、本地新建git项目push到远程空仓库"><span class="nav-number">1.</span> <span class="nav-text">一、本地新建git项目push到远程空仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、先在github上操作"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1、先在github上操作</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">miya Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("iTNrjG6yxMxe6h93ggK9swGG-gzGzoHsz", "Mc6CRfhL7fpUJ2N1tzbzS0CO");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
