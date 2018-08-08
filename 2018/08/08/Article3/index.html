@@ -79,13 +79,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="miya&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="一、命令行1、了解一些关键名词：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈命令行（一）：命令行基本操作（包括vim在终端的基本操作）">
+<meta property="og:url" content="http://yoursite.com/2018/08/08/Article3/index.html">
 <meta property="og:site_name" content="miya&#39;s Blog">
+<meta property="og:description" content="一、命令行1、了解一些关键名词：">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/10836479-1aa5f22a76e98373.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/10836479-7a462a7922107ba8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/10836479-9e2dc1c07c63a709.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-08T11:32:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="miya&#39;s Blog">
+<meta name="twitter:title" content="浅谈命令行（一）：命令行基本操作（包括vim在终端的基本操作）">
+<meta name="twitter:description" content="一、命令行1、了解一些关键名词：">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/10836479-1aa5f22a76e98373.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -115,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/08/Article3/"/>
 
 
 
 
 
-  <title>miya's Blog</title>
+  <title>浅谈命令行（一）：命令行基本操作（包括vim在终端的基本操作） | miya's Blog</title>
   
 
 
@@ -150,8 +158,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -264,9 +271,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -296,9 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/08/Article3/" itemprop="url">浅谈命令行（一）：命令行基本操作（包括vim在终端的基本操作）</a></h1>
+          <h1 class="post-title" itemprop="name headline">浅谈命令行（一）：命令行基本操作（包括vim在终端的基本操作）</h1>
         
 
         <div class="post-meta">
@@ -371,16 +376,75 @@
       
 
       
-        
-          <h1 id="一、命令行"><a href="#一、命令行" class="headerlink" title="一、命令行"></a>一、命令行</h1><h3 id="1、了解一些关键名词："><a href="#1、了解一些关键名词：" class="headerlink" title="1、了解一些关键名词："></a>1、了解一些关键名词：</h3>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/08/Article3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="一、命令行"><a href="#一、命令行" class="headerlink" title="一、命令行"></a>一、命令行</h1><h3 id="1、了解一些关键名词："><a href="#1、了解一些关键名词：" class="headerlink" title="1、了解一些关键名词："></a>1、了解一些关键名词：</h3><a id="more"></a>
+<ul>
+<li>图形界面</li>
+<li>命令行：在终端窗口下输入一些命令就可以满足一些操作需求</li>
+<li>终端：mac下打开终端（terminal），win下打开gitbash</li>
+<li>shell：执行当前脚本的一个载体，统称shell。如输入命令ls，即展示当前文件下的所有文件（ls本质上是字符串），通过shell底层地接受字符串的操作输入，在底层做一些文件检索，最终展示出ls发出的请求的文件</li>
+<li>bash：本质上是一个软件。</li>
+</ul>
+<h3 id="2、安装使用"><a href="#2、安装使用" class="headerlink" title="2、安装使用"></a>2、安装使用</h3><ul>
+<li>win安装git，打开gitbash</li>
+<li>linux：打开终端</li>
+<li>mac：打开终端、iterm</li>
+</ul>
+<hr>
+<h1 id="二、基本命令"><a href="#二、基本命令" class="headerlink" title="二、基本命令"></a>二、基本命令</h1><h3 id="1、查看当前完整的路径：pwd"><a href="#1、查看当前完整的路径：pwd" class="headerlink" title="1、查看当前完整的路径：pwd"></a>1、查看当前完整的路径：pwd</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~ $ pwd</span><br></pre></td></tr></table></figure>
+<p><strong>结论：</strong> 就是看看此时我在哪个文件夹下</p>
+<h3 id="2、查看当前目录下文件：ls"><a href="#2、查看当前目录下文件：ls" class="headerlink" title="2、查看当前目录下文件：ls"></a>2、查看当前目录下文件：ls</h3><ul>
+<li><p>不包括隐藏文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  ls</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看当前目录下所有文件（包括隐藏文件）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  ls -a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看当前目录下所有文件（包括隐藏文件）的详细信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  ls -al</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>注：</strong>书籍推荐《鸟叔的linux教程》</p>
+<h3 id="3、切换目录：cd"><a href="#3、切换目录：cd" class="headerlink" title="3、切换目录：cd"></a>3、切换目录：cd</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  cd 文件夹名</span><br></pre></td></tr></table></figure>
+<p>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$  cd  /c/project</span><br><span class="line">$  cd code</span><br><span class="line">$  cd ../css</span><br><span class="line">$  cd ~/desktop</span><br></pre></td></tr></table></figure></p>
+<p>再比如cd 打开桌面的集中方式：<br><img src="http://upload-images.jianshu.io/upload_images/10836479-1aa5f22a76e98373.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>以我的电脑desktop上的code文件夹为例子解释：<br><img src="http://upload-images.jianshu.io/upload_images/10836479-7a462a7922107ba8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>两点和一点的区别：</p>
+<ul>
+<li><p>返回上一级文件夹: ..（即返回 ~ 家目录）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  cd ..</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当前文件夹: . （即desktop这个文件夹）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  cd  ./code</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>结论：</strong> 即切换到当前目录下的code文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  cd code</span><br></pre></td></tr></table></figure>
+<h3 id="4、文件路径"><a href="#4、文件路径" class="headerlink" title="4、文件路径"></a>4、文件路径</h3><p>（1）根路径：/ （即整个系统最根本的路径）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  cd code</span><br></pre></td></tr></table></figure></p>
+<p><strong>根目录&gt;家目录</strong><br>如错误示范：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  cd /code</span><br></pre></td></tr></table></figure></p>
+<p>即根目录下不会有code这个文件夹<br><img src="http://upload-images.jianshu.io/upload_images/10836479-9e2dc1c07c63a709.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><strong>注：</strong></p>
+<ul>
+<li>如果要操作根路径里的其他文件夹，需要管理员权限</li>
+<li>根路径不是C盘，根路径就是根路径</li>
+</ul>
+<p>（2）家目录：~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~</span><br></pre></td></tr></table></figure></p>
+<p>家目录，即当前的用户下的路径 ：如<figure class="highlight plain"><figcaption><span>/wxq393```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果是:</span><br></pre></td></tr></table></figure></p>
+<p>~ /desktop $<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">即是</span><br></pre></td></tr></table></figure></p>
+<p>/Users/wxq393/desktop $<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![image](http://upload-images.jianshu.io/upload_images/10836479-73e13ee114d3c986.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">（3）当前目录：.</span><br></pre></td></tr></table></figure></p>
+<p>$ cd code<br>$ cd ./code<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（4）上级目录：..</span><br></pre></td></tr></table></figure></p>
+<p>$ cd ..<br>$ cd ../code<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 5、创建文件 : touch</span><br></pre></td></tr></table></figure></p>
+<p>$ touch readme.md<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">###  6、删除文件 : rm</span><br></pre></td></tr></table></figure></p>
+<p>$ rm readme.md<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">强制删除文件夹，不提示</span><br></pre></td></tr></table></figure></p>
+<p>$ rm -rf  helloworld<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">或许</span><br></pre></td></tr></table></figure></p>
+<p>$ rm -r  helloworld<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">演示：</span><br><span class="line">![image](http://upload-images.jianshu.io/upload_images/10836479-6275f019c3c522ba.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">### 7、重命名文件 : mv</span><br></pre></td></tr></table></figure></p>
+<p>$ mv readme.md  README.md<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 8、创建文件夹 : mkdir</span><br></pre></td></tr></table></figure></p>
+<p>$ mkdir projects<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* * *</span><br><span class="line"></span><br><span class="line"># 三、终端中的编辑器vim的使用</span><br><span class="line">终端命令行中先创建</span><br></pre></td></tr></table></figure></p>
+<p>$ touch a.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-    **第一步： **</span><br></pre></td></tr></table></figure></p>
+<p>$ vim  a.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">初始进入编辑器命令模式</span><br><span class="line">-    **第二步： **</span><br><span class="line">键盘上：i</span><br><span class="line">进入编辑模式INSERT</span><br><span class="line">-   **第三步： **</span><br><span class="line">键盘左上角：esc</span><br><span class="line">INSERT消失，进入命令模式</span><br><span class="line">-   **第四步： **</span><br></pre></td></tr></table></figure></p>
+<p>：wq<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">保存退出</span><br><span class="line">或者</span><br></pre></td></tr></table></figure></p>
+<p>：q！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">不保存强制退出</span><br><span class="line">-  **第五步：**</span><br></pre></td></tr></table></figure></p>
+<p>$ cat  a.html<br><code>`</code><br>查看文件结果</p>
+
       
     </div>
     
@@ -397,181 +461,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/07/Article2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="miya Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="miya's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/07/Article2/" itemprop="url">从URL输入到页面展现</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-07T23:58:51+08:00">
-                2018-08-07
-              </time>
+              <a href="/2018/08/07/Article2/" rel="next" title="从URL输入到页面展现">
+                <i class="fa fa-chevron-left"></i> 从URL输入到页面展现
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-08T19:26:29+08:00">
-                2018-08-08
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算机基础知识/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机基础知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/07/Article2/" class="leancloud_visitors" data-flag-title="从URL输入到页面展现">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h3 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h3><p>输入一个url地址——对url中的域名进行解析——服务器处理——网站处理——浏览器处理</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/07/Article2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -581,326 +492,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/Article1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="miya Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="miya's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/27/Article1/" itemprop="url">Markdown，一款不用排版写文工具</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-27T12:17:31+08:00">
-                2018-05-27
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-08T19:27:19+08:00">
-                2018-08-08
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程序员技能/" itemprop="url" rel="index">
-                    <span itemprop="name">程序员技能</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/05/27/Article1/" class="leancloud_visitors" data-flag-title="Markdown，一款不用排版写文工具">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一、Markdown"><a href="#一、Markdown" class="headerlink" title="一、Markdown"></a>一、Markdown</h1><h3 id="1、定义："><a href="#1、定义：" class="headerlink" title="1、定义："></a>1、定义：</h3><p>一个简单的标记语言，通过一些转换库可以将markdown和html进行互相转换<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/27/Article1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="miya Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="miya's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/27/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-27T12:05:09+08:00">
-                2018-05-27
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-08T00:46:18+08:00">
-                2018-08-08
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/05/27/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/27/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -908,6 +504,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -928,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1021,6 +630,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、命令行"><span class="nav-number">1.</span> <span class="nav-text">一、命令行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、了解一些关键名词："><span class="nav-number">1.0.1.</span> <span class="nav-text">1、了解一些关键名词：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、安装使用"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、安装使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、基本命令"><span class="nav-number">2.</span> <span class="nav-text">二、基本命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、查看当前完整的路径：pwd"><span class="nav-number">2.0.1.</span> <span class="nav-text">1、查看当前完整的路径：pwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、查看当前目录下文件：ls"><span class="nav-number">2.0.2.</span> <span class="nav-text">2、查看当前目录下文件：ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、切换目录：cd"><span class="nav-number">2.0.3.</span> <span class="nav-text">3、切换目录：cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、文件路径"><span class="nav-number">2.0.4.</span> <span class="nav-text">4、文件路径</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1154,6 +779,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
