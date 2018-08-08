@@ -82,7 +82,7 @@
 <meta name="description" content="😂先憋说话。。。。。。。你以为我要说什么？！！！先实践，后理论 新建项目操作——克隆（下载）远程仓库已有项目到本地来操作">
 <meta name="keywords" content="命令行,终端,git操作,github">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈git入门（一）git初尝试">
+<meta property="og:title" content="git入门（一）git初尝试">
 <meta property="og:url" content="http://yoursite.com/2018/08/08/Article7【git入门（一）git初尝试】/index.html">
 <meta property="og:site_name" content="miya&#39;s Blog">
 <meta property="og:description" content="😂先憋说话。。。。。。。你以为我要说什么？！！！先实践，后理论 新建项目操作——克隆（下载）远程仓库已有项目到本地来操作">
@@ -105,9 +105,9 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/10836479-f05551851cd15f97..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/10836479-ea2e0aa654c2928b..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/10836479-ccda9efe9683df09..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-08T14:15:08.000Z">
+<meta property="og:updated_time" content="2018-08-08T14:55:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅谈git入门（一）git初尝试">
+<meta name="twitter:title" content="git入门（一）git初尝试">
 <meta name="twitter:description" content="😂先憋说话。。。。。。。你以为我要说什么？！！！先实践，后理论 新建项目操作——克隆（下载）远程仓库已有项目到本地来操作">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/10836479-6f2f35818e92ef36..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
@@ -145,7 +145,7 @@
 
 
 
-  <title>浅谈git入门（一）git初尝试 | miya's Blog</title>
+  <title>git入门（一）git初尝试 | miya's Blog</title>
   
 
 
@@ -319,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浅谈git入门（一）git初尝试</h1>
+          <h1 class="post-title" itemprop="name headline">git入门（一）git初尝试</h1>
         
 
         <div class="post-meta">
@@ -347,7 +347,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-08T22:15:08+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-08T22:55:12+08:00">
                 2018-08-08
               </time>
             
@@ -383,7 +383,7 @@
 
           
           
-             <span id="/2018/08/08/Article7【git入门（一）git初尝试】/" class="leancloud_visitors" data-flag-title="浅谈git入门（一）git初尝试">
+             <span id="/2018/08/08/Article7【git入门（一）git初尝试】/" class="leancloud_visitors" data-flag-title="git入门（一）git初尝试">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -425,21 +425,25 @@
 <p><strong>（2）clone or download</strong><br>use https VS use ss</p>
 <ul>
 <li>use https：每一次操作都需要用户名和密码，较为麻烦</li>
-<li>use ssh：一般选它作为项目（仓库）的地址，它是一个git协议<br><img src="http://upload-images.jianshu.io/upload_images/10836479-1881bee04dc924e6..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></li>
+<li>use ssh：一般选它作为项目（仓库）的地址，它是一个git协议</li>
 </ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/10836479-1881bee04dc924e6..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <blockquote>
-<p>这里，用我的ssh地址作为项目（仓库）的地址：<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:wxq393/blogtest.git<br>作为例子进行演示。</p>
+<p>这里，用我的ssh地址作为项目（仓库）的地址：<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:wxq393/blogtest.git  作为例子进行演示。</p>
 </blockquote>
 <h3 id="4、克隆已有项目"><a href="#4、克隆已有项目" class="headerlink" title="4、克隆已有项目"></a>4、克隆已有项目</h3><p><strong>（1）此时打开终端，将use ssh协议下的拷贝下来的项目地址使用命令行进行操作</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  git clone  git@github.com:wxq393/blogtest.git</span><br></pre></td></tr></table></figure></p>
 <p><strong>（2）提示错误</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetal：could not read remote repository</span><br></pre></td></tr></table></figure></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/10836479-172789f8529f664c..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <p><strong>（3）设置公钥</strong></p>
 <blockquote>
-<p>插播：设置公钥的终端命令行要写什么？从哪里找？<br>通常可以从github主页的头像——setting——（左侧选项中）SSH and GPG keys中[generating SSH keys]蓝色链接中（图1）去寻找：<br><img src="http://upload-images.jianshu.io/upload_images/10836479-d0af10b5037156ef..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image1"><br>点击之后，选择Generating a new SSH key，即有命令行操作的提示（图3）：<br><img src="http://upload-images.jianshu.io/upload_images/10836479-54f1a1f5bfd35a94..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image2"><br><img src="http://upload-images.jianshu.io/upload_images/10836479-73b1280b539bc6b8..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image3"></p>
+<p>插播：设置公钥的终端命令行要写什么？从哪里找？</p>
 </blockquote>
+<p>通常可以从github主页的头像——setting——（左侧选项中）SSH and GPG keys中[generating SSH keys]蓝色链接中（图1）去寻找：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/10836479-d0af10b5037156ef..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image1"><br>点击之后，选择Generating a new SSH key，即有命令行操作的提示（图3）：<br><img src="http://upload-images.jianshu.io/upload_images/10836479-54f1a1f5bfd35a94..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image2"><br><img src="http://upload-images.jianshu.io/upload_images/10836479-73b1280b539bc6b8..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image3"></p>
 <blockquote>
-<p>这里继续以我的实例讲解：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  ssh-keygen -t rsa -b 4096 -C &quot;wangxiaoqin.0009@163.com&quot;</span><br></pre></td></tr></table></figure></p>
+<p>这里继续以我的实例讲解：</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  ssh-keygen -t rsa -b 4096 -C &quot;wangxiaoqin.0009@163.com&quot;</span><br></pre></td></tr></table></figure>
 <p><img src="http://upload-images.jianshu.io/upload_images/10836479-1df2f419e9db7bab..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <p><strong>（4）出现公钥</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat  ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/10836479-3f70d72e7459c476..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
