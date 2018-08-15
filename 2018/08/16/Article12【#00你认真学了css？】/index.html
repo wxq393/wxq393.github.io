@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS,CSS选择器,CSS应用方式," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言以前刚接触css的时候，总觉得一个元素对应着它相应的属性，并且与对应的html文件结合，大概就能出现你想要的漂亮页面把。但在CSS身上，“事与愿违”简直就是新手对它的代名词。">
+<meta name="keywords" content="CSS,CSS选择器,CSS应用方式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="miya&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2018/08/16/Article12【#00你认真学了css？】/index.html">
+<meta property="og:site_name" content="miya&#39;s Blog">
+<meta property="og:description" content="前言以前刚接触css的时候，总觉得一个元素对应着它相应的属性，并且与对应的html文件结合，大概就能出现你想要的漂亮页面把。但在CSS身上，“事与愿违”简直就是新手对它的代名词。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/1653787feb7f697a?w=600&h=296&f=jpeg&s=19871">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/1653787feb9336e5?w=438&h=350&f=jpeg&s=19806">
+<meta property="og:image" content="http://yoursite.com/2018/08/16/a.png">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/1653790a215714d8?w=600&h=259&f=jpeg&s=19895">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/1653790a25a876fc?w=600&h=284&f=jpeg&s=27017">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/1653790a4899bed8?w=600&h=329&f=jpeg&s=20806">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165379d14ae8981b?w=600&h=275&f=jpeg&s=27501">
+<meta property="og:updated_time" content="2018-08-15T17:47:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="miya&#39;s Blog">
+<meta name="twitter:description" content="前言以前刚接触css的时候，总觉得一个元素对应着它相应的属性，并且与对应的html文件结合，大概就能出现你想要的漂亮页面把。但在CSS身上，“事与愿违”简直就是新手对它的代名词。">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/8/14/1653787feb7f697a?w=600&h=296&f=jpeg&s=19871">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/16/Article12【#00你认真学了css？】/"/>
+
+
+
+
+
+  <title> | miya's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <!-- Github-start -->
+    <a href="https://github.com/wxq393" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <!-- Github-end -->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">miya's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/Article12【#00你认真学了css？】/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="miya Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="miya's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T01:44:01+08:00">
+                2018-08-16
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-16T01:47:08+08:00">
+                2018-08-16
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/16/Article12【#00你认真学了css？】/" class="leancloud_visitors" data-flag-title="">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>以前刚接触css的时候，总觉得一个元素对应着它相应的属性，并且与对应的html文件结合，大概就能出现你想要的漂亮页面把。但在CSS身上，“事与愿违”简直就是新手对它的代名词。</p>
+<a id="more"></a>
+<p>在css的世界里，不管是前端老手，还是资质尚浅的前端新手，都一定会犯“只知其一不知其二”这样的错误。以此，CSS也常被戏称为“不是科学，是艺术”。</p>
+<p>要知道，“只知其一不知其二”这种错误真的是致命的，因为你永远不知道你明明检查了几万遍的正确的元素属性，到底是哪里出错了。所以在学习CSS之前，请先看一下方应杭老师回答的这篇，你就会对接下来学习CSS语法有更多的心理准备。</p>
+<p>CSS那么难学竟然是因为它“不正交”：</p>
+<p><a href="http://upload-images.jianshu.io/upload_images/10836479-a09d8290a52eaf04.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">为什么 CSS 这么难学？</a> </p>
+<hr>
+<p>这里先搞清楚几个基本概念：<br>标签、元素、属性，有很多人会搞不清出哪个是指着哪个，一图释所有：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/1653787feb7f697a?w=600&amp;h=296&amp;f=jpeg&amp;s=19871" alt="image"></p>
+<h1 id="一、CSS介绍"><a href="#一、CSS介绍" class="headerlink" title="一、CSS介绍"></a>一、CSS介绍</h1><h3 id="1、什么是css？"><a href="#1、什么是css？" class="headerlink" title="1、什么是css？"></a>1、什么是css？</h3><p>CSS（Cascading Style sheets），是用来为网页添加样式的代码</p>
+<h3 id="2、盒模型："><a href="#2、盒模型：" class="headerlink" title="2、盒模型："></a>2、盒模型：</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/14/1653787feb9336e5?w=438&amp;h=350&amp;f=jpeg&amp;s=19806" alt="image"><br>（1）内边距（<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（2）边框（```border```）：紧接着内边距的实体线段</span><br><span class="line"></span><br><span class="line">（3）外边距（```margin```）：围绕元素外部的空间</span><br><span class="line"></span><br><span class="line">（4）宽度（```width```）：这个涉及了IE盒模型和标准盒模型</span><br><span class="line"></span><br><span class="line">（5）高度（```height```）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 二、应用</span><br><span class="line">### 1、简单示例：</span><br></pre></td></tr></table></figure></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en"></html></p>
+<p><head><br>    <meta charset="UTF-8"><br>    <title>css</title><br></head></p>
+<p><body><br>    <h1>hello css!</h1><br>    <p>css 很6666</p><br></body><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>/<em>style.css</em>/<br>h1{<br>    padding:10px;<br>    background-color: orange;<br>    border:1px solid black;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 2、CSS的工作原理</span><br><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653787feb8f2bbd?w=592&amp;h=228&amp;f=jpeg&amp;s=11560)</span><br><span class="line"></span><br><span class="line">**三阶段：**</span><br><span class="line">&gt; 浏览器输入url ——浏览器向服务器发送请求 —— 服务器将相关数据处理返返至浏览器 —— 浏览器拿到并加载页面 —— 解析html的字符串，词法分析解析成树状结构 —— create Dom tree</span><br><span class="line">&gt; 解析html时，加载css，文件被下载——解析css文件对其分析—— attach style to Dom nodes，加入 create Dom tree</span><br><span class="line">&gt; 两树状结构对应起 来—— 新的dom树（节点相关的元素、参数）—— 渲染、绘制页面</span><br><span class="line"></span><br><span class="line">？：白屏、加载顺序、加载时机</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 3、css应用方式</span><br><span class="line">（1）外部样式表（推荐）</span><br><span class="line">A、链接方式：通过```&lt;link&gt;```引入css</span><br><span class="line">如：</span><br></pre></td></tr></table></figure></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en"></html></p>
+<p><head><br>    <meta charset="UTF-8"><br>    <title>css</title><br>    <link rel="stylesheet" href="style.css"><br></head></p>
+<p><body><br>    <h1>hello css!</h1><br>    <p>css 很6666</p><br></body><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B、导入方式：通过```@import```引入样式，放入css中，不要忘记分号</span><br><span class="line">可选择以下几种方式：如</span><br></pre></td></tr></table></figure></p>
+<p>@import ‘style2.css’;<br>@import “style2.css”;<br>@import url(“style2.css”);<br>@import url(‘style2.css’);<br>@import url(style2.css);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>/<em>加入条件限制，如媒体查询属性 </em>/<br>@import url(‘landscape.css’) screen and (orientation:landscape);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（2）内部样式（内嵌方式）</span><br><span class="line">即将CSS放在页面的```&lt;style&gt;```元素中</span><br><span class="line">如：</span><br></pre></td></tr></table></figure></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en"></html></p>
+<p><head><br>    <meta charset="UTF-8"><br>    <title>css</title><br>    <link rel="stylesheet" href="style.css"><br>    <style><br>        @import “style2.css”;<br>        p{<br>            font-size: 50px;<br>        }<br>    </style><br></head></p>
+<p><body><br>    <h1>hello css!</h1><br>    <p>你好</p><br></body><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**题外话：**</span><br><span class="line">-  注意文件路径</span><br><span class="line">-  右键——检查——查看源代码——点击显示错误链接：</span><br></pre></td></tr></table></figure></p>
+<p>failed to load resource：net：ERR_FILE_NOT_FOUND<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">即提示有可能是以下错误可能：</span><br><span class="line">-  文件不存在</span><br><span class="line">-  文件路径写错了</span><br><span class="line"></span><br><span class="line">（3）内联样式（行内方式）（不推荐）</span><br><span class="line">即直接在html的标记中使用style属性，将css元素属性的代码直接写在其中</span><br><span class="line">如：</span><br></pre></td></tr></table></figure></p>
+<p></p><p style="background:orange; font-size:24pax;">css很棒</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（4）属性样式（废弃）</span><br><span class="line">如：</span><br></pre></td></tr></table></figure><p></p>
+<p><img src="a.png" width="100" height="200"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 三、css选择器</span><br><span class="line">### 1、选择器类型</span><br><span class="line">A、基础选择器</span><br><span class="line">（1）```* ```：通用元素选择器，匹配页面任何元素（比较少用）</span><br><span class="line"></span><br><span class="line">（2）```#id```：id选择器，匹配特定id的元素</span><br><span class="line"></span><br><span class="line">（3）```.class```：类选择器，匹配class包含（不是等于）特定类的元素</span><br><span class="line"></span><br><span class="line">（4）```element```：标签选择器</span><br><span class="line"></span><br><span class="line">B、组合选择器</span><br><span class="line">（1）```E,F</span><br></pre></td></tr></table></figure></p>
+<p>多元选择器，相当于并列选择器。用 , 分隔，同时匹配元素E或者元素F</p>
+<p>（2）<figure class="highlight plain"><figcaption><span>F ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">后代选择器。用空格分隔，匹配E元素所有的后代（不只是子元素，子元素向下递归），元素F</span><br><span class="line"></span><br><span class="line">（3）```E&gt;F``` </span><br><span class="line">子元素选择器。用 &gt; 分隔，匹配E元素的所有直接子元素（再嵌套的子元素就没有用）</span><br><span class="line"></span><br><span class="line">（4）```E+F</span><br></pre></td></tr></table></figure></p>
+<p>直接相邻选择器。匹配E元素之后的相邻的同级元素F</p>
+<p>（5）<figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">普通相邻选择器（弟弟选择器），匹配E元素之后的同级元素F （无论直接相邻与否）</span><br><span class="line"></span><br><span class="line">（6）```.class1.class2```  （既、又）id和class选择器和选择器连写的时候中间没有分隔符， . 和 #本身充当分隔符的元素</span><br><span class="line"></span><br><span class="line">（7）```element#id``` </span><br><span class="line">id和class选择器和选择器连写的时候中间没有分隔符， . 和 #本身充当分隔符的元素</span><br><span class="line"></span><br><span class="line">C、属性选择器</span><br><span class="line"></span><br><span class="line">D、伪类选择器</span><br><span class="line"></span><br><span class="line">E、伪元素选择器</span><br><span class="line"></span><br><span class="line">**关于这两类详情请看：**</span><br><span class="line">[miya Wang：#07你认真学了css？（基本样式7：伪类和伪元素](https://zhuanlan.zhihu.com/p/36502282/edit) </span><br><span class="line"></span><br><span class="line">### 2、基础选择器</span><br><span class="line">（1）```*``` ：</span><br><span class="line">通用元素选择器，匹配页面任何元素（比较少用）</span><br><span class="line"></span><br><span class="line">（2）```#id```：</span><br><span class="line">id选择器，匹配特定id的元素</span><br><span class="line"></span><br><span class="line">（3）```.class```：</span><br><span class="line">类选择器，匹配class包含（不是等于）特定类的元素</span><br><span class="line"></span><br><span class="line">（4）```element```：</span><br><span class="line">标签选择器</span><br><span class="line"></span><br><span class="line">**演示图：**</span><br><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653790a21476588?w=600&amp;h=245&amp;f=jpeg&amp;s=23886)</span><br><span class="line"></span><br><span class="line">### 3、组合选择器</span><br><span class="line">（1）```E,F``` </span><br><span class="line">多元选择器，相当于并列选择器。用```,```分隔，同时匹配元素```E```或者元素```F</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/14/1653790a215714d8?w=600&amp;h=259&amp;f=jpeg&amp;s=19895" alt="image"></p>
+<p>（2）<figure class="highlight plain"><figcaption><span>F ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">后代选择器。选择它所有的后代子元素。用空格分隔，匹配E元素所有的后代（不只是子元素，子元素向下递归），元素F</span><br><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653790a222fbe25?w=600&amp;h=252&amp;f=jpeg&amp;s=21958)</span><br><span class="line"></span><br><span class="line">（3）```E&gt;F</span><br></pre></td></tr></table></figure></p>
+<p>子元素选择器。（普遍）选择它第一子元素，对再嵌套的子元素没用。用<figure class="highlight plain"><figcaption><span>```分隔，匹配E元素的所有直接子元素</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653790a2581423c?w=600&amp;h=283&amp;f=jpeg&amp;s=27121)</span><br><span class="line"></span><br><span class="line">（4）```E+F</span><br></pre></td></tr></table></figure></p>
+<p>直接相邻选择器。匹配E元素之后的相邻同级所有元素F<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/1653790a25a876fc?w=600&amp;h=284&amp;f=jpeg&amp;s=27017" alt="image"></p>
+<p>（5）<figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">普通相邻选择器（弟弟选择器），匹配E元素之后的同级元素F （无论直接相邻与否）</span><br><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653790a25b62ca8?w=600&amp;h=299&amp;f=jpeg&amp;s=29559)</span><br><span class="line"></span><br><span class="line">（6）```.class1.class2```  既、又，直接靠在一起，同时拥有这两个类选择器特性的一个元素。id和class选择器和选择器连写的时候中间没有分隔符，```.```和```#```本身充当分隔符的元素</span><br><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653790a43a35ff5?w=600&amp;h=313&amp;f=jpeg&amp;s=33006)</span><br><span class="line"></span><br><span class="line">（7）```element#id``` </span><br><span class="line">id和class选择器和选择器连写的时候中间没有分隔符，``` . ```和 ```#```本身充当分隔符的元素</span><br><span class="line"></span><br><span class="line">### 4、属性选择器</span><br><span class="line">（1）```E[attr]</span><br></pre></td></tr></table></figure></p>
+<p>匹配所有具有属性attr的元素，如<figure class="highlight plain"><figcaption><span>就能取到所有有id属性的```div```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（2）```E[attr=value]``` :匹配属性attr值为value的元素，如```div[id=test]```，匹配```id=test```的```div</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/14/1653790a4899bed8?w=600&amp;h=329&amp;f=jpeg&amp;s=20806" alt="image"></p>
+<h3 id="5、伪类选择器"><a href="#5、伪类选择器" class="headerlink" title="5、伪类选择器"></a>5、伪类选择器</h3><p>（1）定义：代表一个元素的另一种状态</p>
+<p>（2）类型：</p>
+<p>A、第一类：</p>
+<ul>
+<li><figure class="highlight plain"><figcaption><span>first-child ```匹配元素E的第一个子元素</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-  ```E：link``` 匹配所有未被点击的链接</span><br><span class="line">-  ```E: visited``` 匹配所有已被点击的链接</span><br><span class="line">-  ```E：active``` 匹配鼠标已经其上按下，还没被释放的E元素</span><br><span class="line">-  ```E：hover``` 匹配鼠标悬停器上的E元素</span><br><span class="line">-  ```E：focus``` 匹配获得当前焦点的E元素</span><br><span class="line">-  ```E：lang(c)```匹配lang属性等于c的E元素</span><br><span class="line">-  ```E：enabled``` 匹配表单中可用的元素</span><br><span class="line">-  ```E：disabled``` 匹配表单中禁用的元素</span><br><span class="line">-  ```E：checke``` 匹配表单中被选中的radio或checkbox元素</span><br><span class="line">-  ```E： selection``` 匹配用户当前选中的元素</span><br><span class="line"></span><br><span class="line">例子1：</span><br><span class="line">如设置```E：hover```时，鼠标悬停元素时字体颜色就会变成蓝色。</span><br><span class="line">选择器权重会使得</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>a:hover{<br>  color:blue;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">大于</span><br></pre></td></tr></table></figure></p>
+<p>a{<br>  color：red;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">的权重</span><br><span class="line"></span><br><span class="line">所以样式产生了覆盖，如图：</span><br><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653790a491e6077?w=600&amp;h=366&amp;f=jpeg&amp;s=29028)</span><br><span class="line"></span><br><span class="line">例子2:</span><br><span class="line">```a```链接上常用的css属性选择器：</span><br><span class="line">- ```E：link``` 匹配所有未被点击的链接</span><br><span class="line">- ```E: visited``` 匹配所有已被点击的链接</span><br><span class="line">- ```E：hover``` 匹配鼠标悬停器上的E元素</span><br><span class="line">- ```E：active``` 匹配鼠标已经其上按下，还没被释放的E元素</span><br><span class="line"></span><br><span class="line">由于css元素按顺序填写，依次展现元素属性，这里涉及到：a这个元素下的伪类选择器权重，从而造成样式覆盖，如图演示：</span><br><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653790a4a15f819?w=600&amp;h=672&amp;f=jpeg&amp;s=51479)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**例子3：**</span><br><span class="line">(1) ```E：enabled``` 匹配表单中可用的元素</span><br><span class="line">(2) ```E：disabled``` 匹配表单中禁用的元素</span><br><span class="line">如输入框被禁用，如何设置css里的元素属性，如图：</span><br><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653790a4da0d994?w=600&amp;h=201&amp;f=jpeg&amp;s=15383)</span><br><span class="line"></span><br><span class="line">B、第二类：</span><br><span class="line"></span><br><span class="line">(1) ```E：root``` 匹配文档的根元素，对于html文档，实际上就是html元素</span><br><span class="line"></span><br><span class="line">(2) ```E：nth-child（n）``` 匹配其父元素的第n个子元素，第一个编号为1</span><br><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653790a663e17a8?w=600&amp;h=220&amp;f=jpeg&amp;s=19420)</span><br><span class="line"></span><br><span class="line">注： ```E:nth-of-type(n)```与```:nth-child（）```作用类似，但仅匹配使用同种标签的元素</span><br><span class="line">**如图当n=1时**</span><br><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653790a6ab936ec?w=600&amp;h=193&amp;f=jpeg&amp;s=18421)</span><br><span class="line"></span><br><span class="line">**如图当n=？**（1除外的任意数）</span><br><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653790a6fe91353?w=600&amp;h=332&amp;f=jpeg&amp;s=38863)</span><br><span class="line"></span><br><span class="line">n的取值</span><br></pre></td></tr></table></figure></p>
+<p>1，2，3，4，5<br>2n+1，2n，4n-1<br>odd，even：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**如何运用：**</span><br><span class="line">做一个表格上，分别可以做两色相间的表格效果，那么就可以运用```odd```，```even</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* nth-child(odd) 与 :nth-child(even) 分别匹配序号为奇数与偶数的元素 */</span><br><span class="line"></span><br><span class="line">.h-table tr:nth-child(even)&#123; </span><br><span class="line">background-color: #f1f1f1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例子：<br><a href="https://github.com/wxq393/project_work/blob/master/test2_table/table.cssgithub.co" target="_blank" rel="noopener"></a></p>
+<h3 id="6、伪元素选择器"><a href="#6、伪元素选择器" class="headerlink" title="6、伪元素选择器"></a>6、伪元素选择器</h3><p>（1）<figure class="highlight plain"><figcaption><span>匹配E元素内容的第一行</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（2）```E::first-letter``` 匹配E元素内容的第一个字母</span><br><span class="line"></span><br><span class="line">（3）```E::before``` 在E元素之前插入生成的内容</span><br><span class="line"></span><br><span class="line">（4）```E::after``` 在E元素之后插入生成的内容</span><br><span class="line"></span><br><span class="line">**举例如图：**</span><br><span class="line">![image](https://user-gold-cdn.xitu.io/2018/8/14/1653790a72e4d4aa?w=600&amp;h=266&amp;f=jpeg&amp;s=33688)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 7、选择器的优先级</span><br><span class="line">（1）定义</span><br><span class="line">如果多条规则作用于同一个元素上，且定义的相同属性的不同值。</span><br><span class="line"></span><br><span class="line">（2）代码如下：</span><br></pre></td></tr></table></figure></p>
+<p>  <style></p>
+<pre><code>#test{color:#666;}
+p {color:#333;}
+</code></pre><p>  </style></p>
+<p></p><p id="text">Text</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">（3）CSS优先级</span><br><span class="line">从高到低分别是：</span><br><span class="line"></span><br><span class="line">A、在属性后面使用 ：```！important``` 即会覆盖页面内任何位置定义的元素样式</span><br><span class="line"></span><br><span class="line">B、作为style属性写在元素标签上的内联样式</span><br><span class="line"></span><br><span class="line">C、id选择器</span><br><span class="line"></span><br><span class="line">D、类选择器</span><br><span class="line"></span><br><span class="line">E、伪类选择器</span><br><span class="line"></span><br><span class="line">F、属性选择器</span><br><span class="line"></span><br><span class="line">G、标签选择器</span><br><span class="line"></span><br><span class="line">H、通配符选择器</span><br><span class="line"></span><br><span class="line">I、浏览器自定义</span><br><span class="line"></span><br><span class="line">（4）复杂场景(按顺序）</span><br><span class="line">&gt;a、行内样式```&lt;div style=&quot;XXX&quot;&gt;&lt;div&gt;</span><br></pre></td></tr></table></figure><p></p>
+<p>b、ID选择器<br>c、类、属性选择器、伪类选择器<br>d、标签选择器、伪元素</p>
+<p><strong>注：</strong>选择器的优先级是如何计算的？<br>A、按顺序来计算的：假设：</p>
+<blockquote>
+<p>a等级：行内样式<figure class="highlight plain"><figcaption><span>style</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">b等级：ID选择器 c等级：类、属性选择器、伪类选择器</span><br><span class="line"></span><br><span class="line">d等级：标签选择器、伪元素</span><br><span class="line"></span><br><span class="line">即a-d等级权值依次为5、4、3、2，按照a-d等级的属性顺序依次得分，若取到相应等级的权值，最高的则为最优先级别。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">B、参考：当不同类别的多个选择器混合使用个怎么计算优先级？有一个简单的算法，设</span><br><span class="line"></span><br><span class="line">&gt; ```a.```内联样式表的权值为1000 </span><br><span class="line"></span><br><span class="line">b.```ID```选择器的权值为100 </span><br><span class="line"></span><br><span class="line">c.```class```类选择器的权值为10 </span><br><span class="line"></span><br><span class="line">d.```HTML```标签选择器的权值为1</span><br><span class="line"></span><br><span class="line">（5）样式覆盖</span><br><span class="line">后面的样式会覆盖到前面的样式</span><br><span class="line"></span><br><span class="line">（6）选择器使用经验</span><br><span class="line">-  遵守css书写规范</span><br><span class="line">-  使用合适的命名空间</span><br><span class="line">-  合理地复用class</span><br><span class="line">-  </span><br><span class="line">* * *</span><br><span class="line"></span><br><span class="line">习题练习：</span><br><span class="line"></span><br><span class="line">## 1、CSS 加载方式有几种？</span><br><span class="line">答：</span><br><span class="line">（1）外部样式表（链接+导入）（推荐）</span><br><span class="line">-   通过```&lt;link&gt;```引入css</span><br><span class="line">-   通过```@import```导入样式，放入css中，不要忘记分号。在html或者css文件中都可以导入```@import</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>（2）内部样式（内嵌方式），即将CSS放在页面的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（3）内联样式（行内方式）（不推荐），即直接在html的标记中使用```style```属性，将css元素属性的代码直接写在其中</span><br><span class="line"></span><br><span class="line">（4）属性样式（废弃）</span><br><span class="line"></span><br><span class="line">## 2、```@charset```有什么作用？</span><br><span class="line">在外部样式表文件内使用，指定该样式表使用的字符编码。该规则后面的分号是必需的，如果省略了此分号，会生成错误信息。如在外部css文件中写：</span><br></pre></td></tr></table></figure></p>
+<p>@charset “utf-8”;</p>
+<ul>
+<li>{sRules}<br>.class{sRules}<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 3、```@import```有什么作用？如何使用？</span><br><span class="line">答：作用：通过@import引入样式或者css文件，可以减少文件的容量，加快文件加载速度</span><br><span class="line">用法：</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>@import ‘style2.css’;<br>@import “style2.css”;<br>@import url(“style2.css”);<br>@import url(‘style2.css’);<br>@import url(style2.css);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 4、id 选择器和 class 选择器的使用场景分别是什么？</span><br><span class="line">答：</span><br><span class="line">（1）id选择器，用于匹配特定id的元素，具有独一无二不可代替性</span><br><span class="line"></span><br><span class="line">（2）class选择器，用于匹配class包含（不是等于）特定类的元素，描述一组元素的样式，你可以多次使用class赋值，来命名元素名</span><br><span class="line"></span><br><span class="line">## 5、CSS选择器常见的有几种？</span><br><span class="line">答：基础选择器、组合选择器、属性选择器、伪类选择器、伪元素选择器</span><br><span class="line"></span><br><span class="line">## 6、伪类选择器有哪些？伪元素有哪些？</span><br><span class="line">答：（1）伪类选择器：</span><br><span class="line">- ```E: first-child ```匹配元素E的第一个子元素</span><br><span class="line">- ```E：link``` 匹配所有未被点击的链接</span><br><span class="line">- ```E: visited``` 匹配所有已被点击的链接</span><br><span class="line">- ```E：active``` 匹配鼠标已经其上按下，还没被释放的E元素</span><br><span class="line">- ```E：hover``` 匹配鼠标悬停器上的E元素</span><br><span class="line">- ```E：focus ```匹配获得当前焦点的E元素</span><br><span class="line">- ```E：lang(c)``` 匹配lang属性等于c的E元素</span><br><span class="line">- ```E：enabled`` 匹配表单中可用的元素</span><br><span class="line">- ```E：disabled``` 匹配表单中禁用的元素</span><br><span class="line">- ```E： checked``` 匹配表单中被选中的radio或checkbox元素</span><br><span class="line">- ```E： selection``` 匹配用户当前选中的元素</span><br><span class="line">- ```E：root``` 匹配文档的根元素，对于html文档，实际上就是html元素</span><br><span class="line">- ```E：nth-child（n）``` 匹配其父元素的第n个子元素，第一个编号为1</span><br><span class="line">- ```E:nth-of-type(n)```与```：nth-child（）```作用类似，但仅匹配使用同种标签的元素</span><br><span class="line"></span><br><span class="line">（2）伪元素：</span><br><span class="line">- ```E::first-line ```匹配E元素内容的第一行</span><br><span class="line">- ```E::first-letter``` 匹配E元素内容的第一个字母</span><br><span class="line">- ```E::before``` 在E元素之前插入生成的内容</span><br><span class="line">- ```E::after``` 在E元素之后插入生成的内容</span><br><span class="line"></span><br><span class="line">## 7、以下选择器分别是什么意思?</span><br><span class="line">（1）</span><br></pre></td></tr></table></figure></p>
+<p>#header{<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答：id选择器，匹配id为header的元素</span><br><span class="line"></span><br><span class="line">（2）</span><br></pre></td></tr></table></figure></p>
+<p>.header{<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答：类选择器，匹配class为header元素</span><br><span class="line"></span><br><span class="line">（3）</span><br></pre></td></tr></table></figure></p>
+<p>.header  .logo{<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答：后代选择器，匹配class为header的元素logo</span><br><span class="line"></span><br><span class="line">（4）</span><br></pre></td></tr></table></figure></p>
+<p>.header.mobile{<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答：即又关系的并列元素，同时匹配这两个类选择器特性的一个元素</span><br><span class="line"></span><br><span class="line">（5）</span><br></pre></td></tr></table></figure></p>
+<p>.header p, .header h3{<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答：多元选择器，同时匹配.header p 和 .header h3两个元素</span><br><span class="line"></span><br><span class="line">（6）</span><br></pre></td></tr></table></figure></p>
+<p>#header a:hover{<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答：在id为header元素下匹配a元素鼠标悬停属性</span><br><span class="line"></span><br><span class="line">（7）</span><br></pre></td></tr></table></figure></p>
+<p>#header .logo~p{<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答：在id为header元素下匹配logo元素之后的同级所有元素p （无论直接相邻与否）</span><br><span class="line"></span><br><span class="line">（8）</span><br></pre></td></tr></table></figure></p>
+<p>#header .logo+p{<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：在class为```header```元素下匹配logo元素之后的相邻同级元素```p</span><br></pre></td></tr></table></figure></p>
+<p>（9）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#header .logo p&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>答：在id为header元素下匹配class为logo的后代元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（10）</span><br></pre></td></tr></table></figure></p>
+<p>#header .logo&gt;p{<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：在id为header元素下匹配class为logo元素的所有直接子元素，即第一子元素```p</span><br></pre></td></tr></table></figure></p>
+<p>（11）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#header p.logo&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>答：在id为header元素下同时匹配p元素和class为logo元素这类既又关系（并列）的元素的特性</p>
+<p>（12）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#header .logo.p&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>答：在id为header元素下同时匹配class为logo和p的元素</p>
+<p>（13）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#header input[checked]&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>答：在id为header元素下匹配checked值的input的元素</p>
+<p>8、运行如下代码，并对结果做出解释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line"> .box:first-child &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line">.box:first-of-type &#123;</span><br><span class="line">  background: blue;</span><br><span class="line">&#125;</span><br><span class="line">.box :first-child &#123;</span><br><span class="line">  font-size: 30px;</span><br><span class="line">&#125;</span><br><span class="line">.box :first-of-type &#123;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">&#125;</span><br><span class="line"> &lt;/style&gt;</span><br><span class="line">  &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;div.box&lt;/div&gt;</span><br><span class="line">    &lt;p class=&quot;box&quot;&gt;p.box&lt;/p&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;div.box&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;item&quot;&gt;div.item&lt;/div&gt;</span><br><span class="line">      &lt;p class=&quot;item&quot;&gt;p.item&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;p class=&quot;box&quot;&gt;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（1）效果图展示：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165379d14ae8981b?w=600&amp;h=275&amp;f=jpeg&amp;s=27501" alt="image"></p>
+<p>（2）对其结果作出解释：<br>运行1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box:first-child &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>选择同级第一个元素,并且这个元素class是 box,显示该标签元素的内容颜色为红色</p>
+<p>运行2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box:first-of-type &#123;</span><br><span class="line">  background: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>选择同级第一个标签元素,并且这个元素是这个同级中的第一个标签，显示背景色为蓝色</p>
+<p>运行3：（<figure class="highlight plain"><figcaption><span>: ``` :```.box```和```: ```之间要有空格）</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">.box :first-child &#123;</span><br><span class="line">  font-size: 30px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>表示<figure class="highlight plain"><figcaption><span>里面（父元素）的第一个元素，显示字体大小为30px的结果</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">运行4：</span><br></pre></td></tr></table></figure></p>
+<p>.box :first-of-type {<br>  font-weight: bold;<br>}<br><code>选择</code>.box<code>`</code>里（父元素）第一个同类型的元素，字体粗细为粗体</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+      <div>
+        
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+      </div>
+
+    
+
+    
+
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/CSS选择器/" rel="tag"># CSS选择器</a>
+          
+            <a href="/tags/CSS应用方式/" rel="tag"># CSS应用方式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/16/Article11【浅谈HTML表单（二）：表单元素】/" rel="next" title="浅谈HTML表单（二）：表单元素">
+                <i class="fa fa-chevron-left"></i> 浅谈HTML表单（二）：表单元素
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/16/Article13【#01你认真学了css？（基本样式1）】/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="miya Wang" />
+            
+              <p class="site-author-name" itemprop="name">miya Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wxq393" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="wangxiaoqin.0009@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Wangxiaoqinmiya" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/wxq393" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://javascript.ruanyifeng.com/" title="JavaScript 标准参考教程（alpha）" target="_blank">JavaScript 标准参考教程（alpha）</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="web前端导航" target="_blank">web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.mozilla.org/zh-CN/" title="MDN" target="_blank">MDN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一、CSS介绍"><span class="nav-number">2.</span> <span class="nav-text">一、CSS介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、什么是css？"><span class="nav-number">2.0.1.</span> <span class="nav-text">1、什么是css？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、盒模型："><span class="nav-number">2.0.2.</span> <span class="nav-text">2、盒模型：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">hello css!</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">hello css!</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">hello css!</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5、伪类选择器"><span class="nav-number">5.0.1.</span> <span class="nav-text">5、伪类选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、伪元素选择器"><span class="nav-number">5.0.2.</span> <span class="nav-text">6、伪元素选择器</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">miya Wang</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">14.2k</span>
+  
+</div>
+
+<div class="powered-by">
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_pv">
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共14.2k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("iTNrjG6yxMxe6h93ggK9swGG-gzGzoHsz", "Mc6CRfhL7fpUJ2N1tzbzS0CO");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
