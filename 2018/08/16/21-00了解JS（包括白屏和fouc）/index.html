@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,JS历史,白屏和fouc,异步加载," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言：开始学javascript了，其实觉得CSS还有很多没学透，也没学完，:-( o(TωT)o ╭(╯^╰)╮哭唧唧啊~所以CSS学好并不简单呐，需要大量地试错练习啊！！！过后，我还是会继续配合大量实际项目去更新CSS知识。学习js，我是听着老师的课，再结合阮一峰js教程一起看，同样是适合前端新手使用的js手册，通俗易懂。">
+<meta name="keywords" content="JavaScript,JS历史,白屏和fouc,异步加载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hello，JS：00了解JS（包括白屏和fouc）">
+<meta property="og:url" content="http://yoursite.com/2018/08/16/21-00了解JS（包括白屏和fouc）/index.html">
+<meta property="og:site_name" content="miya&#39;s Blog">
+<meta property="og:description" content="前言：开始学javascript了，其实觉得CSS还有很多没学透，也没学完，:-( o(TωT)o ╭(╯^╰)╮哭唧唧啊~所以CSS学好并不简单呐，需要大量地试错练习啊！！！过后，我还是会继续配合大量实际项目去更新CSS知识。学习js，我是听着老师的课，再结合阮一峰js教程一起看，同样是适合前端新手使用的js手册，通俗易懂。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-16T14:58:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hello，JS：00了解JS（包括白屏和fouc）">
+<meta name="twitter:description" content="前言：开始学javascript了，其实觉得CSS还有很多没学透，也没学完，:-( o(TωT)o ╭(╯^╰)╮哭唧唧啊~所以CSS学好并不简单呐，需要大量地试错练习啊！！！过后，我还是会继续配合大量实际项目去更新CSS知识。学习js，我是听着老师的课，再结合阮一峰js教程一起看，同样是适合前端新手使用的js手册，通俗易懂。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/16/21-00了解JS（包括白屏和fouc）/"/>
+
+
+
+
+
+  <title>hello，JS：00了解JS（包括白屏和fouc） | miya's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <!-- Github-start -->
+    <a href="https://github.com/wxq393" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <!-- Github-end -->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">miya's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/21-00了解JS（包括白屏和fouc）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="miya Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="miya's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">hello，JS：00了解JS（包括白屏和fouc）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T22:09:32+08:00">
+                2018-08-16
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-16T22:58:46+08:00">
+                2018-08-16
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/16/21-00了解JS（包括白屏和fouc）/" class="leancloud_visitors" data-flag-title="hello，JS：00了解JS（包括白屏和fouc）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,679
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h4><p>开始学javascript了，其实觉得CSS还有很多没学透，也没学完，:-( o(TωT)o ╭(╯^╰)╮哭唧唧啊~所以CSS学好并不简单呐，需要大量地试错练习啊！！！过后，我还是会继续配合大量实际项目去更新CSS知识。学习js，我是听着老师的课，再结合阮一峰js教程一起看，同样是适合前端新手使用的js手册，通俗易懂。<br><a id="more"></a></p>
+<h1 id="一、网页的构成"><a href="#一、网页的构成" class="headerlink" title="一、网页的构成"></a>一、网页的构成</h1><ul>
+<li>网页 = Html+CSS+JavaScript</li>
+<li>Html: 网页元素内容</li>
+<li>CSS: 控制网页样式</li>
+<li>JavaScript：操作网页内容，实现功能或者效果</li>
+<li>浏览器端（web应用）、服务端（nodejs）。。。</li>
+</ul>
+<h1 id="二、JavaScirpt-发展历史"><a href="#二、JavaScirpt-发展历史" class="headerlink" title="二、JavaScirpt 发展历史"></a>二、JavaScirpt 发展历史</h1><blockquote>
+<p>参考：阮一峰js标准教程</p>
+</blockquote>
+<ul>
+<li>1995年5月，Brendan Eich只用了10天，就设计完成了这种语言的第一版。</li>
+<li>1996年8月，微软模仿JavaScript开发了一种相近的语言，取名为JScript（JavaScript是Netscape网景公司的注册商标，微软不能用），首先内置于IE 3.0。</li>
+<li>1996年11月，Netscape公司决定将JavaScript提交给国际标准化组织ECMA（European Computer Manufacturers Association），希望JavaScript能够成为国际标准，以此抵抗微软。</li>
+<li>1997年7月，ECMA组织发布262号标准文件（ECMA-262）的第一版，规定了浏览器脚本语言的标准，并将这种语言称为ECMAScript。这个版本就是ECMAScript 1.0版。<br>基本上，JavaScript这个名字的原意是“很像Java的脚本语言”。在JavaScript语言中，函数是一种独立的数据类型，以及采用基于原型对象（prototype）的继承链。这是它与Java语法最大的两点区别。JavaScript语法要比Java自由得多。</li>
+<li>1999年12月，ECMAScript 3.0版发布，成为JavaScript的通行标准，得到了广泛支持。</li>
+<li>2008年7月，由于对于下一个版本应该包括哪些功能，各方分歧太大，争论过于激进，ECMA开会决定，中止ECMAScript 4.0的开发（即废除了这个版本），将其中涉及现有功能改善的一小部分，发布为ECMAScript 3.1，会后不久，ECMAScript 3.1就改名为ECMAScript 5。</li>
+<li>2009年12月，ECMAScript 5.0版正式发布。<br>Harmony项目则一分为二，一些较为可行的设想定名为JavaScript.next继续开发，后来演变成ECMAScript 6；</li>
+<li>2006年，jQuery函数库诞生，作者为John Resig。jQuery为操作网页DOM结构提供了非常强大易用的接口，成为了使用最广泛的函数库，并且让JavaScript语言的应用难度大大降低，推动了这种语言的流行。</li>
+<li>2009年，Node.js项目诞生，创始人为Ryan Dahl，它标志着JavaScript可以用于服务器端编程，从此网站的前端和后端可以使用同一种语言开发。并且，Node.js可以承受很大的并发流量，使得开发某些互联网大规模的实时应用变得容易。</li>
+<li>2012年，微软发布TypeScript语言。该语言被设计成JavaScript的超集，这意味着所有JavaScipt程序，都可以不经修改地在TypeScript中运行。同时，TypeScript添加了很多新的语法特性，主要目的是为了开发大型程序，然后还可以被编译成JavaScript运行。</li>
+<li>2013年5月，Facebook发布UI框架库React，引入了新的JSX语法，使得UI层可以用组件开发。</li>
+<li>2015年4月，Angular框架宣布，2.0版将基于微软公司的TypeScript语言开发，这等于为JavaScript语言引入了强类型。</li>
+</ul>
+<h1 id="三、JS引入使用"><a href="#三、JS引入使用" class="headerlink" title="三、JS引入使用"></a>三、JS引入使用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">   &lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">   &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">   &lt;title&gt;标题&lt;/title&gt;</span><br><span class="line">    /*这里引入css代码*/</span><br><span class="line">   &lt;link href=&quot;index.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">   &lt;style&gt;</span><br><span class="line">       body&#123;</span><br><span class="line">           background: red;</span><br><span class="line">       &#125;</span><br><span class="line">   &lt;/style&gt;</span><br><span class="line">   &lt;/head&gt;</span><br><span class="line">   &lt;body&gt;</span><br><span class="line">       &lt;p&gt;</span><br><span class="line">       &lt;/p&gt;</span><br><span class="line"></span><br><span class="line">       /*一般来说，这里引入js代码*/</span><br><span class="line">       &lt;script src=&quot;index.js&quot;&gt;/*空*/&lt;/script&gt;</span><br><span class="line">        或</span><br><span class="line">       &lt;script&gt;</span><br><span class="line">           alert(1);</span><br><span class="line">       &lt;/script&gt;</span><br><span class="line">   &lt;/body&gt;</span><br><span class="line">   &lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="四、浏览器渲染机制"><a href="#四、浏览器渲染机制" class="headerlink" title="*四、浏览器渲染机制"></a>*四、浏览器渲染机制</h1><p>你所看到的浏览器网页，浏览器是经历了什么你才能看到？</p>
+<ul>
+<li>解析 HTML 标签, 构建 DOM 树<br> ⏬</li>
+<li>解析 CSS 标签, 构建 CSSOM 树<br> ⏬</li>
+<li>把 DOM 和 CSSOM 组合成 渲染树 (render tree)<br> ⏬</li>
+<li>在渲染树的基础上进行布局, 计算每个节点的几何结构<br> ⏬<ul>
+<li>把每个节点绘制到屏幕上 (painting)</li>
+</ul>
+</li>
+</ul>
+<p>当发一个请求到服务器之后，服务器会把页面上的html发给浏览器，浏览器收到之后则会解析该html标签，解析的过程中遇到了类似需要加载的样式，如link，则会再次发送请求到服务器。这样一来，如此循环，标签属性的请求不断被发出到服务器，资源不断被获取<br>资源获取之后，如何被用户看见？</p>
+<p>首先，先对html标签进行解析。解析成一个dom树（即类似于树状结构，dom，即文档、模型）同时，也对css样式进行解析，同时也解析成cssom树，将css样式（默认+添加）汇聚一起形成css树——dom树元素和css树元素结合起来获得一个对象，该对象所拥有的元素和具体位置都有其相互关系，对应节点和对应数据形成一个渲染树——执行layout（布局）计算它的位置和样式——绘制——排列形成页面</p>
+<h1 id="五、浏览器引起的Repaint-和-Reflow问题"><a href="#五、浏览器引起的Repaint-和-Reflow问题" class="headerlink" title="五、浏览器引起的Repaint 和 Reflow问题"></a>五、浏览器引起的Repaint 和 Reflow问题</h1><h3 id="1、Repaint问题："><a href="#1、Repaint问题：" class="headerlink" title="1、Repaint问题："></a>1、Repaint问题：</h3><p>重新绘制。将css样式改变的话，其他元素并未改变，只需要重新绘制某一处就行。</p>
+<h3 id="2、Reflow问题："><a href="#2、Reflow问题：" class="headerlink" title="2、Reflow问题："></a>2、Reflow问题：</h3><p>重新回流，重新计算。即自身位置发生变化，给其他元素带来了影响，要重新进行计算。</p>
+<p>从一个外网中截取出来的关于Repaint 和 Reflow分辨片段：</p>
+<blockquote>
+<p>Anything that changes input information used to construct the rendering tree can cause a repaint or a reflow, for example:<br>Adding, removing, updating DOM nodes<br>Hiding a DOM node with display: none (reflow and repaint) or visibility: hidden(repaint only, because no geometry changes)<br>Moving, animating a DOM node on the page<br>Adding a stylesheet, tweaking style properties<br>User action such as resizing the window, changing the font size, or (oh, OMG, no!) scrollin</p>
+</blockquote>
+<p>Let’s see a few examples:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var bstyle = document.body.style; // cache</span><br><span class="line"></span><br><span class="line">bstyle.padding = &quot;20px&quot;; // reflow, repaint</span><br><span class="line"></span><br><span class="line">bstyle.border = &quot;10px solid red&quot;; // another reflow and a repaint</span><br><span class="line"></span><br><span class="line">bstyle.color = &quot;blue&quot;; // repaint only, no dimensions changed</span><br><span class="line"></span><br><span class="line">bstyle.backgroundColor = &quot;#fad&quot;; // repaint</span><br><span class="line"></span><br><span class="line">bstyle.fontSize = &quot;2em&quot;; // reflow, repaint</span><br><span class="line"></span><br><span class="line">/* new DOM element - reflow, repaint */</span><br><span class="line">document.body.appendChild(document.createTextNode(&apos;dude!&apos;));</span><br></pre></td></tr></table></figure>
+<h1 id="六、白屏和FOUC"><a href="#六、白屏和FOUC" class="headerlink" title="六、白屏和FOUC"></a>六、白屏和FOUC</h1><h3 id="1、即指影响浏览器页面加载顺序的两种场景"><a href="#1、即指影响浏览器页面加载顺序的两种场景" class="headerlink" title="1、即指影响浏览器页面加载顺序的两种场景"></a>1、即指影响浏览器页面加载顺序的两种场景</h3><ul>
+<li>白屏：<br>特指一种场景，打开页面是一片白色，突然页面出现，样式正确。那么一片白色的时间，则称之为白屏。</li>
+<li>FOUC (Flash of UnstyledContent)：<br>无样式内容闪烁，网速情况差，打开页面时仍有样式，之后样式时有时无，甚至一开始并无出现样式，突然样式恢复。（常出现在firefox浏览器）<br>此类现象，在不同浏览器进行的资源加载和页面渲染时，所采用的不同的处理方式，并不是bug。</li>
+</ul>
+<h3 id="2、写一个server，验证白屏和fouc效果"><a href="#2、写一个server，验证白屏和fouc效果" class="headerlink" title="2、写一个server，验证白屏和fouc效果"></a>2、写一个server，验证白屏和fouc效果</h3><p>在index.html中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//index.html</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;fouc &amp; 白屏&lt;/title&gt;</span><br><span class="line"></span><br><span class="line"> &lt;!--在下面模拟一个延时装置--&gt;  </span><br><span class="line">     &lt;link rel=&quot;stylesheet&quot; href=&quot;b.css?t=10&quot;&gt; //设置这个工具，当请求该文件时，服务器会延迟请求10s再去加载这个资源，以此可以模拟一个网速特别慢的情况</span><br><span class="line">     &lt;link rel=&quot;stylesheet&quot; href=&quot;a.css?t=3&quot;&gt; </span><br><span class="line">  </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;p&gt;hello&lt;/p&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;p&gt;饥人谷&lt;/p&gt;</span><br><span class="line">&lt;!--   &lt;script src=&quot;A.js?t=5&quot;&gt;&lt;/script&gt; </span><br><span class="line">  --&gt;</span><br><span class="line">  &lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/8/15/1653c442f35af77c?w=211&amp;h=200&amp;f=png&amp;s=8004&quot; alt=&quot;&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--   &lt;link rel=&quot;stylesheet&quot; href=&quot;c.css?t=6&quot;&gt;  --&gt;</span><br><span class="line"> </span><br><span class="line">&lt;!--   &lt;script src=&quot;http://a.jrg.com:8080/B.js?t=4&quot; &gt;&lt;/script&gt;  </span><br><span class="line">  &lt;script src=&quot;http://b.jrg.com:8080/A.js?t=8&quot; &gt;&lt;/script&gt;   --&gt;</span><br><span class="line">  </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（1）关于白屏，<br>需要注意的是，浏览器对于样式和js的处理，即CSS和JS放置顺序。推荐：将样式放在 <code>head</code>里面,将JS放在<code>body</code>内部下方。如上面代码所示，html页面里引入了两个css：<code>a.css</code>和<code>b.css</code>。<code>b.css</code>引用<code>了c.ss</code>（<code>@import&quot;./c.css?t=5&quot;;</code>）<code>b.css</code>中加入了一个10s的延时文件（<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;b.css?t=10&quot;&gt;</code>），加载这个10s的css样式文件，浏览器是如何完成加载工作，有两种方式：<br><strong>第1种：</strong> html解析完成，此时10s延时的css文件先不管，先展示<code>body</code>里所展示的内容，等css文件全加载后再去计算样式，再去重新渲染一次；<br><strong>第2种：</strong> 即使html的dom树已经解析、渲染都完成，对未加载完成的样式都必须等待，即css样式要全部加载、获取，img资源加载完成，此时底部JS立刻执行，才一次性展示出页面。例子中展示这种方法，即为白屏很久的原因。</p>
+<p>（2）不同浏览器的不同处理机制所出现的场景不同<br>A、<strong>白屏场景（常出现在chrome）：</strong><br>打开一个国外网站，使用国外服务器，嵌在css的字体使用的是谷歌字体，运行特别慢，等了好久突然出现页面样式效果。这是因为页面需要等待css样式加载所有完成，甚至出现404加载失败，最后才展示出页面。那么那段加载时间，等待了几秒左右的白色一片的页面，就是<strong>白屏</strong><br>B、<strong>Fouc场景（常出现在Firefox）：</strong><br>一开始的时候，先让你看见样式，如字的小号样式，样式加载完后看到所规定字号的大字。对用户来说，同样的样式，突然从小变大，则这个场景就是Fouc（无样式内容闪烁）。<br><strong>总结：</strong> 不管是css样式，还是js文件，只要加长延时，都会造成白屏</p>
+<p>（3）CSS 和 JS 最佳放置顺序</p>
+<ul>
+<li>使用 link 标签将样式表放在顶部</li>
+<li>将JS放在底部<br>（3.1）场景：假设JS文件页面顶部：</li>
+<li>JS脚本会阻塞后面内容的呈现</li>
+<li>JS脚本会阻塞其后组件（如图片）的下载</li>
+<li>JS加载时间过长，css需等待，则会出现一段时间白屏</li>
+<li>场景说明：引入一个JS文件在顶部，设置一个延时时间。</li>
+<li>加载顺序：css—js—img—全部获取到展现页面效果<br>此时，img和css加载时会并发加载，即如一个域名下同时加载两个文件（并发是有限度的），加载在顶部的js时，会禁用并发img和css，并阻止其他内容下载和渲染。</li>
+</ul>
+<p>js并不影响css加载，但是会影响css样式的一个计算。当js加载时，css已经获取到（不过此时页面还是一片空白），直到js获取立即执行后，图片立刻出现，页面才展示效果。所以js文件放入页面顶部<code>head</code>里，也会导致白屏现象出现</p>
+<p>（3.2）JS加载特点总结<br>A、优先加载js文件，加载后js立刻去执行，展示页面（CSS样式则是全部加载完，然后一次性展示出页面）<br><strong>注：</strong></p>
+<ul>
+<li>css放前面，优先加载；</li>
+<li>若放后面，其他资源则会阻碍css加载，那么时机就太晚。</li>
+</ul>
+<p>B、由于渲染线程和js脚本线程是互斥的，白屏是渲染进程被阻塞的原因，当碰到<code>script</code>标签的时候，会先执行js脚本，然后再渲染。</p>
+<ul>
+<li>（放顶部时）JS加载时机过晚导致一系列问题，脚本会阻塞后面内容的呈现、脚本会阻塞其后组件的下载（主要指img资源下载）、白屏等。<ul>
+<li>（放底部）则可以先让其他先加载完成，JS立刻执行的特点可以“扫尾”最后的页面效果</li>
+</ul>
+</li>
+</ul>
+<p>C、JS脚本操作页面上的html+css元素，（放顶部时）JS先执行，元素都未加载到（即不存在），未出现在文档流中【加载，这里指资源加载和资源是否出现在文档流中】，所以也不能操作相应JS功能，此时后台将会报错。<br>D、（放顶部时）其他JS若作为一种框架语言，则能提前形成一个初步的框架有效构成页面结构。</p>
+<h1 id="七、JS脚本的异步加载"><a href="#七、JS脚本的异步加载" class="headerlink" title="七、JS脚本的异步加载"></a>七、JS脚本的异步加载</h1><h3 id="1、一个问题？"><a href="#1、一个问题？" class="headerlink" title="1、一个问题？"></a>1、一个问题？</h3><p>即一个放在<code>head</code>的js文件，如下：<br><code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code><br>原本放在顶部的这个js文件，会提前加载，如何使它在顶部仍然稍后加载呢？</p>
+<h3 id="2、解决方法：async和defer"><a href="#2、解决方法：async和defer" class="headerlink" title="2、解决方法：async和defer"></a>2、解决方法：<code>async</code>和<code>defer</code></h3><p>（1）作用：<br>没有 <code>defer</code> 或<code>async</code>，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该<code>script</code>标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行。也就是说，使用<code>defer</code>或<code>async</code>后能够改变这种加载、执行的时机。常应用在引用了广告和统计的页面中，不会影响、堵塞，更不会影响到到页面其他元素</p>
+<p>（2）<code>async</code><br>HTML5里为<code>script</code>标签里新增了<code>async</code>属性，用于异步加载脚本：不保证顺序（独立的个体）<br><code>&lt;script async src=&quot;script.js&quot;&gt;&lt;/script&gt;</code>或<code>&lt;script type=&quot;text/javascript&quot; src=&quot;alert.js&quot; async=&quot;async&quot;&gt;&lt;/script&gt;</code><br>浏览器解析到HTML里的该行script标签，发现指定为<code>async</code>，会异步下载解析执行脚本（即加载后续文档元素的过程将和<code>script.js</code>的加载并行进行）。</p>
+<p>页面的DOM结构里假设<code>&lt;script&gt;</code>在img之前，如果你的浏览器支持<code>async</code>的话，就会异步加载脚本。此时DOM里已经有img了，所以脚本里能顺利取到img的<code>src</code>并弹框。</p>
+<p>（3）<code>defer</code><br><code>script</code>标签里可以设置<code>defer</code>，表示延迟加载脚本：脚本先不执行，延迟到文档解析和显示后执行，有顺序<br><code>&lt;script defer src=&quot;script.js&quot;&gt;&lt;/script&gt;</code>或<code>&lt;script type=&quot;text/javascript&quot; src=&quot;alert.js&quot; defer=&quot;defer&quot;&gt;&lt;/script&gt;</code><br>浏览器解析到HTML里该行<code>script</code>标签，发现指定为<code>defer</code>，会暂缓下载解析执行脚本，等到页面文档解析并加载执行完毕后，才会加载该脚本（更精确地说，是在DOM树构建完成后，在<code>DOMContentLoaded</code>事件触发前，加载<code>`</code>defer`的脚本）。</p>
+<p>页面的DOM结构里假设<code>script</code>在img图片之前，如果你的浏览器支持defer的话，就会延迟到页面加载完后才下载脚本。此时DOM里已经有img元素了，所以脚本里能顺利取到img的src并弹框。</p>
+<p><strong>总结：</strong> JS实质采用一种可以更自由地选择加载时机和任何位置，让处于顶部的js文件能够像在底部时，在页面必要元素加载完成时进行“异步”加载。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+      <div>
+        
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+      </div>
+
+    
+
+    
+
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/JS历史/" rel="tag"># JS历史</a>
+          
+            <a href="/tags/白屏和fouc/" rel="tag"># 白屏和fouc</a>
+          
+            <a href="/tags/异步加载/" rel="tag"># 异步加载</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/16/20-07你认真学了css？伪类和伪元素/" rel="next" title="07你认真学了css？伪类和伪元素">
+                <i class="fa fa-chevron-left"></i> 07你认真学了css？伪类和伪元素
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/16/22-01数据类型、运算符、运算符优先级/" rel="prev" title="hello，JS：01数据类型、运算符、运算符优先级">
+                hello，JS：01数据类型、运算符、运算符优先级 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="miya Wang" />
+            
+              <p class="site-author-name" itemprop="name">miya Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wxq393" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="wangxiaoqin.0009@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Wangxiaoqinmiya" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/wxq393" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://javascript.ruanyifeng.com/" title="JavaScript 标准参考教程（alpha）" target="_blank">JavaScript 标准参考教程（alpha）</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="web前端导航" target="_blank">web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.mozilla.org/zh-CN/" title="MDN" target="_blank">MDN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一、网页的构成"><span class="nav-number"></span> <span class="nav-text">一、网页的构成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、JavaScirpt-发展历史"><span class="nav-number"></span> <span class="nav-text">二、JavaScirpt 发展历史</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、JS引入使用"><span class="nav-number"></span> <span class="nav-text">三、JS引入使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、浏览器渲染机制"><span class="nav-number"></span> <span class="nav-text">*四、浏览器渲染机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、浏览器引起的Repaint-和-Reflow问题"><span class="nav-number"></span> <span class="nav-text">五、浏览器引起的Repaint 和 Reflow问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、Repaint问题："><span class="nav-number"></span> <span class="nav-text">1、Repaint问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、Reflow问题："><span class="nav-number"></span> <span class="nav-text">2、Reflow问题：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、白屏和FOUC"><span class="nav-number"></span> <span class="nav-text">六、白屏和FOUC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、即指影响浏览器页面加载顺序的两种场景"><span class="nav-number"></span> <span class="nav-text">1、即指影响浏览器页面加载顺序的两种场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、写一个server，验证白屏和fouc效果"><span class="nav-number"></span> <span class="nav-text">2、写一个server，验证白屏和fouc效果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、JS脚本的异步加载"><span class="nav-number"></span> <span class="nav-text">七、JS脚本的异步加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、一个问题？"><span class="nav-number"></span> <span class="nav-text">1、一个问题？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、解决方法：async和defer"><span class="nav-number"></span> <span class="nav-text">2、解决方法：async和defer</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">miya Wang</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">40.3k</span>
+  
+</div>
+
+<div class="powered-by">
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_pv">
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共40.3k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("iTNrjG6yxMxe6h93ggK9swGG-gzGzoHsz", "Mc6CRfhL7fpUJ2N1tzbzS0CO");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

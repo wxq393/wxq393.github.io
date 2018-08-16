@@ -108,7 +108,7 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a80621b1ae?w=600&h=216&f=jpeg&s=23166">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a80bd51451?w=600&h=549&f=jpeg&s=49602">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a816c54c47?w=600&h=285&f=jpeg&s=27177">
-<meta property="og:updated_time" content="2018-08-16T13:06:55.000Z">
+<meta property="og:updated_time" content="2018-08-16T15:13:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="04你认真学了css？BFC+边距合并">
 <meta name="twitter:description" content="一、BFC1、定义：先给一个官方的定义：（可能会看不懂我也不懂）  Formatting context(格式化上下文)是W3CCSS2.1规范中的一个概念。每个渲染区域用formattingContext表示，它是页面中的一块渲染区域，并且有一套渲染规则。它决定了其子元素将如何定位，以及和其他元素的关系和相互作用">
@@ -386,7 +386,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-16T21:06:55+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-16T23:13:52+08:00">
                 2018-08-16
               </time>
             
@@ -510,69 +510,36 @@
 <p>具有 BFC 特性的元素可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且BFC具有普通容器所没有的一些特性。通俗一点来讲，可以把 BFC理解为一个封闭的大箱子，箱子内部的元素无论如何翻江倒海，都不会影响到外部。</p>
 </blockquote>
 <p><strong>总结：BFC没有定义，只有功能或特性</strong></p>
-<h3 id="2、BFC会在哪里产生（官方的）"><a href="#2、BFC会在哪里产生（官方的）" class="headerlink" title="2、BFC会在哪里产生（官方的）"></a>2、BFC会在哪里产生（官方的）</h3><p>只要元素满足下面任一条件即可触发 BFC 特性</p>
-<p>（1）body根元素</p>
-<p>html里的根元素产生相应的“块级格式化上下文”这类的规则，如某些规则：块级容器可以充满父容器，父容器可以被子元素撑开，外边距产生合并，渲染顺序是从上到下（同一个块级格式化上下文中相邻块级盒之间的竖直margin会合并）</p>
-<p>（2）浮动元素：float除了<code>none</code>以外的值；</p>
-<p>如<code>float:left;</code>该元素属性本身也产生了相应的块级格式化上下文。该元素产生的BFC与所在的根元素的BFC互不影响，此元素的作用域，则为该元素服务，与根元素产生一个隐形的边界</p>
-<p>（3）绝对定位元素：<code>position</code>为<code>absolute</code>或<code>fixed</code>；</p>
-<p>（4）<code>display</code>为<code>inline-block</code>（非块盒的块容器）, <code>flex</code>, 或<code>inline-flex</code>；</p>
-<p>（5）<code>overflow</code>除了<code>visible</code>以外的值（<code>hidden</code>、<code>auto</code>、<code>scroll</code>）</p>
-<h3 id="3、应用"><a href="#3、应用" class="headerlink" title="3、应用"></a>3、应用</h3><p>这里的例子截取自该文章：</p>
-<p><a href="https://zhuanlan.zhihu.com/p/25321647" target="_blank" rel="noopener">10 分钟理解 BFC 原理</a></p>
-<p>（1）功能1：</p>
-<p>让两个相邻的元素界限分明（同一个 BFC 下外边距会发生重叠或合并）</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a78f4a6730?w=600&amp;h=302&amp;f=gif&amp;s=114336" alt=""></p>
-<p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">div&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;&lt;/div&gt;    </span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>从效果上看，因为两个 div 元素都处于同一个 BFC 容器下 (这里指 body 元素) 所以第一个 div的下边距和第二个div的上边距发生了重叠，所以两个盒子之间距离只有100px，而不是 200px。</p>
-<p>如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a78ad30623?w=600&amp;h=323&amp;f=jpeg&amp;s=2393" alt="image"></p>
-<p>首先这不是 CSS 的bug，我们可以理解为一种规范。如果想要避免外边距的重叠，可以将其放在不同的 BFC 容器中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;p&gt;&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;p&gt;&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.container &#123;</span><br><span class="line">    overflow: hidden;   ✔️</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这时候，两个盒子边距就变成了 200px ，</p>
-<p>如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a78aef2162?w=600&amp;h=474&amp;f=jpeg&amp;s=2838" alt="image"></p>
-<p>（2）功能2：</p>
-<p>子元素被父元素包裹起来（BFC可以包含浮动的元素）（可代替<code>clearfix</code>来清除浮动）</p>
+<h3 id="2、BFC会在哪里产生（官方的）"><a href="#2、BFC会在哪里产生（官方的）" class="headerlink" title="2、BFC会在哪里产生（官方的）"></a>2、BFC会在哪里产生（官方的）</h3><p>只要元素满足下面任一条件即可触发 BFC 特性<br>（1）body根元素<br>html里的根元素产生相应的“块级格式化上下文”这类的规则，如某些规则：块级容器可以充满父容器，父容器可以被子元素撑开，外边距产生合并，渲染顺序是从上到下（同一个块级格式化上下文中相邻块级盒之间的竖直margin会合并）<br>（2）浮动元素：float除了<code>none</code>以外的值；<br>如<code>float:left;</code>该元素属性本身也产生了相应的块级格式化上下文。该元素产生的BFC与所在的根元素的BFC互不影响，此元素的作用域，则为该元素服务，与根元素产生一个隐形的边界<br>（3）绝对定位元素：<code>position</code>为<code>absolute</code>或<code>fixed</code>；<br>（4）<code>display</code>为<code>inline-block</code>（非块盒的块容器）, <code>flex</code>, 或<code>inline-flex</code>；<br>（5）<code>overflow</code>除了<code>visible</code>以外的值（<code>hidden</code>、<code>auto</code>、<code>scroll</code>）</p>
+<h3 id="3、应用"><a href="#3、应用" class="headerlink" title="3、应用"></a>3、应用</h3><p>这里的例子截取自该文章：<a href="https://zhuanlan.zhihu.com/p/25321647" target="_blank" rel="noopener">10 分钟理解 BFC 原理</a><br>（1）<strong>功能1</strong><br>让两个相邻的元素界限分明（同一个 BFC 下外边距会发生重叠或合并）<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a78f4a6730?w=600&amp;h=302&amp;f=gif&amp;s=114336" alt=""><br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">div&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;&lt;/div&gt;    </span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>从效果上看，因为两个 div 元素都处于同一个 BFC 容器下 (这里指 body 元素) 所以第一个 div的下边距和第二个div的上边距发生了重叠，所以两个盒子之间距离只有100px，而不是 200px。<br>如图：<img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a78ad30623?w=600&amp;h=323&amp;f=jpeg&amp;s=2393" alt="image"><br>首先这不是 CSS 的bug，我们可以理解为一种规范。如果想要避免外边距的重叠，可以将其放在不同的 BFC 容器中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;p&gt;&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;p&gt;&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.container &#123;</span><br><span class="line">    overflow: hidden;   ✔️</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这时候，两个盒子边距就变成了 200px ，<br>如图：<img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a78aef2162?w=600&amp;h=474&amp;f=jpeg&amp;s=2838" alt="image"></p>
+<p>（2）<strong>功能2</strong><br>子元素被父元素包裹起来（BFC可以包含浮动的元素）（可代替<code>clearfix</code>来清除浮动）</p>
 <ul>
-<li><code>display:flow-root;</code>让当前元素触发BFC（正交，考虑浏览器兼容）</li>
-<li><code>overflow:hidden;</code>将溢出隐藏浮动的元素会脱离普通文档流，</li>
+<li><code>display:flow-root;</code>  让当前元素触发BFC（正交，考虑浏览器兼容）</li>
+<li><code>overflow:hidden;</code>      将溢出隐藏浮动的元素会脱离普通文档流，<br>来看下下面一个例子，代码如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">   .father&#123;</span><br><span class="line">    border: 1px solid #000;</span><br><span class="line">    &#125;</span><br><span class="line">   .son&#123;</span><br><span class="line">     width: 100px;</span><br><span class="line">     height: 100px;</span><br><span class="line">     background: #eee;</span><br><span class="line">     float: left;</span><br><span class="line">     &#125;</span><br><span class="line">&lt;/style&gt; </span><br><span class="line"></span><br><span class="line">     &lt;div class=father&gt;</span><br><span class="line">        &lt;div class=son&gt;&lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>来看下下面一个例子，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">   .father&#123;</span><br><span class="line">    border: 1px solid #000;</span><br><span class="line">    &#125;</span><br><span class="line">   .son&#123;</span><br><span class="line">     width: 100px;</span><br><span class="line">     height: 100px;</span><br><span class="line">     background: #eee;</span><br><span class="line">     float: left;</span><br><span class="line">     &#125;</span><br><span class="line">&lt;/style&gt; </span><br><span class="line"></span><br><span class="line">     &lt;div class=father&gt;</span><br><span class="line">        &lt;div class=son&gt;&lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a78b0a1d29?w=492&amp;h=244&amp;f=jpeg&amp;s=1537" alt="image"></p>
 <p>由于父元素（father）内子元素（son）进行浮动，脱离了“父亲”的文档流，所以容器只剩下 2px 的边距高度。此时可以触发容器的 BFC，那么“father”就可以包裹住“son”出去的浮动元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">   .father&#123;</span><br><span class="line">    border: 1px solid #000;</span><br><span class="line">    overflow:hidden;         ✔️</span><br><span class="line">    &#125;</span><br><span class="line">   .son&#123;</span><br><span class="line">     width: 100px;</span><br><span class="line">     height: 100px;</span><br><span class="line">     background: #eee;</span><br><span class="line">     float: left;         ✔️</span><br><span class="line">     &#125;</span><br><span class="line">&lt;/style&gt; </span><br><span class="line"></span><br><span class="line">  &lt;div class=father&gt;</span><br><span class="line">     &lt;div class=son&gt;&lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a78f21f49e?w=600&amp;h=213&amp;f=jpeg&amp;s=2464" alt="image"></p>
-<p>（3）功能3：</p>
-<p>BFC 可以阻止元素被浮动元素覆盖</p>
-<p>先来看一个文字环绕效果，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.box1&#123;</span><br><span class="line">  height: 100px;</span><br><span class="line">  width: 100px;</span><br><span class="line">  float: left;    </span><br><span class="line">  background: lightblue;</span><br><span class="line">&#125;</span><br><span class="line">.box2&#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 200px;</span><br><span class="line">  background: #eee;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=box1&gt;我是一个左浮动的元素&lt;/div&gt;</span><br><span class="line">&lt;div class=box2&gt;我是一个没有设置浮动, 也没有触发 BFC 元素, width: 200px; height:200px; background: #eee;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（3）<strong>功能3</strong><br>BFC 可以阻止元素被浮动元素覆盖。先来看一个文字环绕效果，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.box1&#123;</span><br><span class="line">  height: 100px;</span><br><span class="line">  width: 100px;</span><br><span class="line">  float: left;    </span><br><span class="line">  background: lightblue;</span><br><span class="line">&#125;</span><br><span class="line">.box2&#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 200px;</span><br><span class="line">  background: #eee;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=box1&gt;我是一个左浮动的元素&lt;/div&gt;</span><br><span class="line">&lt;div class=box2&gt;我是一个没有设置浮动, 也没有触发 BFC 元素, width: 200px; height:200px; background: #eee;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a78f430c20?w=432&amp;h=440&amp;f=jpeg&amp;s=25067" alt="image"></p>
 <p>此时，浮动元素浮在第二个元素上，第二个元素有部分区域被浮动元素所覆盖(但文本信息不会被浮动元素所覆盖) 。如果想避免元素被覆盖，可触第二个元素的 BFC 特性，在第二个元素中加入<code>overflow:hidden；</code>或者<code>display:flow-root;</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.box1&#123;</span><br><span class="line">  height: 100px;</span><br><span class="line">  width: 100px;</span><br><span class="line">  float: left;                          ✔️</span><br><span class="line">  background: lightblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box2&#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 200px;</span><br><span class="line">  background: #eee;</span><br><span class="line">  overflow:hidden;               ✔️</span><br><span class="line"> /*或  display: flow-root; */  ✔️</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=box1&gt;</span><br><span class="line">我是一个左浮动的元素</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=box2&gt;</span><br><span class="line">我是一个没有设置浮动, 也没有触发 BFC 元素, width: 200px; height:200px; background: #eee;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>就会变成：<br><a href="http://js.jirengu.com/viguj/2/edit" target="_blank" rel="noopener">BFC 浮动处理</a></p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7afbe2bc4?w=600&amp;h=418&amp;f=jpeg&amp;s=20803" alt="image"></p>
-<p>用来实现两列自适应布局：即左边宽度固定，如果想右边的内容自适应宽度，可以去掉上面右边内容的宽度（如果右边定宽，窄页面时，则会自动换到下一行排列）</p>
-<h1 id="二、边距合并"><a href="#二、边距合并" class="headerlink" title="二、边距合并"></a>二、边距合并</h1><h3 id="1、讲例子"><a href="#1、讲例子" class="headerlink" title="1、讲例子"></a>1、讲例子</h3><p><strong>案例1：</strong><br>当实际中希望<code>#header</code>和<code>h1</code>之间产生一点缝隙（或间距），即使将h1设置 <code>margin:50px;</code> ，作为块级元素的<code>h1</code>，<code>margin</code>左右生效，而上下则是<code>#header+h1</code>整体向下移动50px<br><strong>这便是，外边距合并</strong></p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7afdae03b?w=600&amp;h=163&amp;f=jpeg&amp;s=14191" alt="image"></p>
+<p>就会变成：<a href="http://js.jirengu.com/viguj/2/edit" target="_blank" rel="noopener">BFC 浮动处理</a><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7afbe2bc4?w=600&amp;h=418&amp;f=jpeg&amp;s=20803" alt="image"><br>用来实现两列自适应布局：即左边宽度固定，如果想右边的内容自适应宽度，可以去掉上面右边内容的宽度（如果右边定宽，窄页面时，则会自动换到下一行排列）</p>
+<h1 id="二、边距合并"><a href="#二、边距合并" class="headerlink" title="二、边距合并"></a>二、边距合并</h1><h3 id="1、讲例子"><a href="#1、讲例子" class="headerlink" title="1、讲例子"></a>1、讲例子</h3><p><strong>案例1：</strong><br>当实际中希望<code>#header</code>和<code>h1</code>之间产生一点缝隙（或间距），即使将h1设置 <code>margin:50px;</code> ，作为块级元素的<code>h1</code>，<code>margin</code>左右生效，而上下则是<code>#header+h1</code>整体向下移动50px<br><strong>这便是，外边距合并</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7afdae03b?w=600&amp;h=163&amp;f=jpeg&amp;s=14191" alt="image"></p>
 <p><strong>案例2：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7b9113e67?w=600&amp;h=208&amp;f=jpeg&amp;s=16846" alt="image"><br>看案例似乎是<code>&lt;h1&gt;</code>和<code>&lt;p&gt;</code>标签所设置的外边距各30px，两者之间的间距理论来讲应该是60px，但事实上这是两个相邻元素的外边距产生合并，下边距<code>&lt;margiin-bottom&gt;</code>和上边距<code>&lt;margin-top&gt;</code>合并之后取较大值，这里为30px<br><strong>这也是，外边距合并</strong></p>
-<h3 id="2、合并场景"><a href="#2、合并场景" class="headerlink" title="2、合并场景"></a>2、合并场景</h3><p>（1）相邻元素合并</p>
-<p>同案例2</p>
-<p>（2）父子合并</p>
-<p><code>h1</code>和<code>header</code>，或者再嵌套元素或者与其的祖先元素嵌套，均能产生外边距合并，这些都能称之为<strong>“父子合并”</strong> ,如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7b50f285a?w=600&amp;h=163&amp;f=jpeg&amp;s=10844" alt="image"></p>
-<p>（3）自己合并</p>
-<p>如图，块级元素合并，无默认样式即靠在一起；含有p标签（含内容）的块级元素，则有默认上下<code>margin</code>，所以<code>detail</code>和<code>footer</code>则会产生缝隙（或间距）<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7b20ddb00?w=600&amp;h=261&amp;f=jpeg&amp;s=27939" alt="image"><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7b98f6e19?w=600&amp;h=235&amp;f=jpeg&amp;s=24624" alt="image"></p>
+<h3 id="2、合并场景"><a href="#2、合并场景" class="headerlink" title="2、合并场景"></a>2、合并场景</h3><p>（1）相邻元素合并<br>同案例2<br>（2）父子合并<br><code>h1</code>和<code>header</code>，或者再嵌套元素或者与其的祖先元素嵌套，均能产生外边距合并，这些都能称之为<strong>“父子合并”</strong> ,如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7b50f285a?w=600&amp;h=163&amp;f=jpeg&amp;s=10844" alt="image"><br>（3）自己合并<br>如图，块级元素合并，无默认样式即靠在一起；含有p标签（含内容）的块级元素，则有默认上下<code>margin</code>，所以<code>detail</code>和<code>footer</code>则会产生缝隙（或间距）<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7b20ddb00?w=600&amp;h=261&amp;f=jpeg&amp;s=27939" alt="image"><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7b98f6e19?w=600&amp;h=235&amp;f=jpeg&amp;s=24624" alt="image"></p>
 <p><code>.footer</code>元素为空内容，设置 <code>margin:30px;</code> ，即说明上边距和下边距合并后的外边距总值是60px，不过<code>.footer</code>元素为空内容，所以页面效果仍然呈现30px，说明css元素中外边距合并的另一种情况：</p>
-<p><strong>自己和自己合并：</strong> 如图<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7d8b276d5?w=600&amp;h=266&amp;f=jpeg&amp;s=26586" alt="image"></p>
+<p><strong>自己和自己合并：</strong> 如图：<img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7d8b276d5?w=600&amp;h=266&amp;f=jpeg&amp;s=26586" alt="image"></p>
 <h1 id="三、取消合并（如何去解决外边距合并？）"><a href="#三、取消合并（如何去解决外边距合并？）" class="headerlink" title="三、取消合并（如何去解决外边距合并？）"></a>三、取消合并（如何去解决外边距合并？）</h1><h3 id="1、边框、padding"><a href="#1、边框、padding" class="headerlink" title="1、边框、padding"></a>1、边框、padding</h3><blockquote>
-<p>存在于父子合并<br>为何<code>#header</code>和<code>h1</code>能够产生合并？即<code>#header</code>没有<code>border</code>和<code>padding</code>（即一个可与外界隔离的边界线），导致<code>h1</code>自带的一个<code>margin</code>，冲出该边界，与<code>#header</code>合并</p>
+<p>存在于父子合并</p>
 </blockquote>
+<p>为何<code>#header</code>和<code>h1</code>能够产生合并？即<code>#header</code>没有<code>border</code>和<code>padding</code>（即一个可与外界隔离的边界线），导致<code>h1</code>自带的一个<code>margin</code>，冲出该边界，与<code>#header</code>合并</p>
 <p>尝试在<code>#header</code>里添加边框（图1）或者加<code>padding</code>（内边距）（图2），让<code>#header</code>和<code>h1</code>的<code>margin-top</code>，内外分开，即能做到不让外边距合并，如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7de422ee6?w=600&amp;h=218&amp;f=jpeg&amp;s=23300" alt="图1"><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7e0525aa5?w=600&amp;h=230&amp;f=jpeg&amp;s=23440" alt="图2"></p>
-<h3 id="2、BFC"><a href="#2、BFC" class="headerlink" title="2、BFC"></a>2、BFC</h3><p>如何让一个元素生成bfc？bfc可认为是拥有一片独立的空间，和其他的空间（或其他的文档流）区别开。注：添加bfc元素属性，可以取消合并有可能产生副作用</p>
-<p>（1）父子元素不产生合并</p>
-<p>A、添加：<code>overflow:hidden；</code><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7e39f4d89?w=600&amp;h=252&amp;f=jpeg&amp;s=24931" alt="image"></p>
-<p>B、添加 ：<code>float:left;</code><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7eaa6bcf4?w=600&amp;h=356&amp;f=jpeg&amp;s=42673" alt="image"></p>
-<p>C、添加： <code>display:inline-block;</code><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7eab9beef?w=600&amp;h=381&amp;f=jpeg&amp;s=45614" alt="image"></p>
-<p>D、添加： <code>position:absolute;</code><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a80621b1ae?w=600&amp;h=216&amp;f=jpeg&amp;s=23166" alt="image"></p>
-<p>（2）相邻元素不产生合并</p>
-<p>A、添加：浮动元素<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a80bd51451?w=600&amp;h=549&amp;f=jpeg&amp;s=49602" alt="image"></p>
-<p>B、添加：<code>overflow:hidden；</code><br>生成BFC，相当于生成了一个边界，即边框作为一个边界，有了边界之后，<code>#header+h1</code>父子元素便不能冲破该边界，自然与<code>#detail</code>元素的不产生合并.<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a816c54c47?w=600&amp;h=285&amp;f=jpeg&amp;s=27177" alt="image"></p>
-<p><strong>【重点】：</strong><br>而相邻元素之间的<code>margin</code>，可以认为不是该父子元素边界内，同样会产生合并。</p>
-<p>通常处理相邻元素之间的间距合并问题（除浮动外，浮动时不会被合并），即不考虑合并问题，直接设置为：<code>margin-top:___px;</code></p>
+<h3 id="2、BFC"><a href="#2、BFC" class="headerlink" title="2、BFC"></a>2、BFC</h3><p>如何让一个元素生成bfc？bfc可认为是拥有一片独立的空间，和其他的空间（或其他的文档流）区别开。注：添加bfc元素属性，可以取消合并有可能产生副作用<br>（1）父子元素不产生合并<br>A、添加：<code>overflow:hidden；</code><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7e39f4d89?w=600&amp;h=252&amp;f=jpeg&amp;s=24931" alt="image"><br>B、添加 ：<code>float:left;</code><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7eaa6bcf4?w=600&amp;h=356&amp;f=jpeg&amp;s=42673" alt="image"><br>C、添加： <code>display:inline-block;</code><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a7eab9beef?w=600&amp;h=381&amp;f=jpeg&amp;s=45614" alt="image"><br>D、添加： <code>position:absolute;</code><br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a80621b1ae?w=600&amp;h=216&amp;f=jpeg&amp;s=23166" alt="image"></p>
+<p>（2）相邻元素不产生合并<br>A、添加：浮动元素<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a80bd51451?w=600&amp;h=549&amp;f=jpeg&amp;s=49602" alt="image"><br>B、添加：<code>overflow:hidden；</code><br>生成BFC，相当于生成了一个边界，即边框作为一个边界，有了边界之后，<code>#header+h1</code>父子元素便不能冲破该边界，自然与<code>#detail</code>元素的不产生合并.<br><img src="https://user-gold-cdn.xitu.io/2018/8/15/1653b7a816c54c47?w=600&amp;h=285&amp;f=jpeg&amp;s=27177" alt="image"></p>
+<p><strong>【重点】：</strong> 而相邻元素之间的<code>margin</code>，可以认为不是该父子元素边界内，同样会产生合并。通常处理相邻元素之间的间距合并问题（除浮动外，浮动时不会被合并），即不考虑合并问题，直接设置为：<code>margin-top:___px;</code></p>
 
       
     </div>
@@ -629,6 +596,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/16/17-05你认真学了css？元素居中/" rel="prev" title="05你认真学了css？元素居中">
+                05你认真学了css？元素居中 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -709,7 +680,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -720,7 +691,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -731,7 +702,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -862,7 +833,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">25.5k</span>
+    <span title="Site words total count">40.3k</span>
   
 </div>
 
@@ -889,7 +860,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共25.5k字</span>
+  <span class="post-count">博客全站共40.3k字</span>
 </div>
 
         
