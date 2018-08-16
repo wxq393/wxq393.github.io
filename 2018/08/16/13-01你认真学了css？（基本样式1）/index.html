@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS,行内元素,块级元素,宽高,边距,文本、颜色、单位," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、块级元素、行内元素 块级（block-level）；行内（内联inline-level） 块级可以包含块级和行内；行内只能包含文本和行内 块级占据一整行空间；行内占据自身宽度空间， 宽高设置、内外边距的差异">
+<meta name="keywords" content="CSS,行内元素,块级元素,宽高,边距,文本、颜色、单位">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01你认真学了css？（基本样式1）">
+<meta property="og:url" content="http://yoursite.com/2018/08/16/13-01你认真学了css？（基本样式1）/index.html">
+<meta property="og:site_name" content="miya&#39;s Blog">
+<meta property="og:description" content="一、块级元素、行内元素 块级（block-level）；行内（内联inline-level） 块级可以包含块级和行内；行内只能包含文本和行内 块级占据一整行空间；行内占据自身宽度空间， 宽高设置、内外边距的差异">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c226241cdb?w=600&h=372&f=jpeg&s=35277">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2263b8523?w=600&h=669&f=jpeg&s=44322">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2264d84bf?w=600&h=200&f=jpeg&s=15369">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c22630695d?w=600&h=175&f=jpeg&s=17485">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c22652b574?w=600&h=196&f=jpeg&s=21835">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2265efef4?w=600&h=153&f=jpeg&s=17802">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2534bae45?w=600&h=170&f=jpeg&s=18873">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c25378d1f6?w=600&h=262&f=jpeg&s=24174">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2704e716a?w=600&h=259&f=jpeg&s=28141">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c27244f5b7?w=600&h=499&f=jpeg&s=45358">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c272549c39?w=600&h=272&f=jpeg&s=29489">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c274e2f2e7?w=422&h=316&f=jpeg&s=13600">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c27512d51e?w=600&h=320&f=jpeg&s=32739">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c27c1bb79d?w=600&h=128&f=jpeg&s=14398">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c29d43fc3e?w=600&h=335&f=jpeg&s=37123">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2a5891725?w=600&h=330&f=jpeg&s=39544">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2aa2b32d0?w=600&h=552&f=jpeg&s=37019">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c296785663?w=600&h=340&f=jpeg&s=26699">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2aadf4d8d?w=600&h=346&f=jpeg&s=43440">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2af361340?w=600&h=227&f=jpeg&s=25981">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2b94491dc?w=600&h=310&f=jpeg&s=20729">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2bd020af8?w=600&h=337&f=jpeg&s=27638">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2cc909acc?w=600&h=322&f=jpeg&s=34056">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2cd1490a2?w=600&h=322&f=jpeg&s=28682">
+<meta property="og:updated_time" content="2018-08-16T11:47:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="01你认真学了css？（基本样式1）">
+<meta name="twitter:description" content="一、块级元素、行内元素 块级（block-level）；行内（内联inline-level） 块级可以包含块级和行内；行内只能包含文本和行内 块级占据一整行空间；行内占据自身宽度空间， 宽高设置、内外边距的差异">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c226241cdb?w=600&h=372&f=jpeg&s=35277">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/16/13-01你认真学了css？（基本样式1）/"/>
+
+
+
+
+
+  <title>01你认真学了css？（基本样式1） | miya's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <!-- Github-start -->
+    <a href="https://github.com/wxq393" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <!-- Github-end -->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">miya's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/13-01你认真学了css？（基本样式1）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="miya Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="miya's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">01你认真学了css？（基本样式1）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T01:49:01+08:00">
+                2018-08-16
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-16T19:47:59+08:00">
+                2018-08-16
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/16/13-01你认真学了css？（基本样式1）/" class="leancloud_visitors" data-flag-title="01你认真学了css？（基本样式1）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,807
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、块级元素、行内元素"><a href="#一、块级元素、行内元素" class="headerlink" title="一、块级元素、行内元素"></a>一、块级元素、行内元素</h1><ul>
+<li>块级（<code>block-level</code>）；行内（内联<code>inline-level</code>）</li>
+<li>块级可以包含块级和行内；行内只能包含文本和行内</li>
+<li>块级占据一整行空间；行内占据自身宽度空间，</li>
+<li>宽高设置、内外边距的差异</li>
+</ul>
+<a id="more"></a>
+<h3 id="1、block-level"><a href="#1、block-level" class="headerlink" title="1、block-level"></a>1、<code>block-level</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div h1 h2 h3 h4 h5 h6 p hr（线）</span><br><span class="line">form ul dl ol pre table</span><br><span class="line">li dd dt tr td th</span><br></pre></td></tr></table></figure>
+<h3 id="2、inline-level"><a href="#2、inline-level" class="headerlink" title="2、inline-level"></a>2、<code>inline-level</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">em strong span a br img</span><br><span class="line">button input label select textarea</span><br><span class="line">code script</span><br></pre></td></tr></table></figure>
+<p>如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c226241cdb?w=600&amp;h=372&amp;f=jpeg&amp;s=35277" alt="image"></p>
+<h1 id="二、宽高-width、height"><a href="#二、宽高-width、height" class="headerlink" title="二、宽高-width、height"></a>二、宽高-<code>width</code>、<code>height</code></h1><p>只对块级元素设置生效，对行内元素设置无效<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2263b8523?w=600&amp;h=669&amp;f=jpeg&amp;s=44322" alt="image"></p>
+<h1 id="三、边框-border"><a href="#三、边框-border" class="headerlink" title="三、边框-border"></a>三、边框-<code>border</code></h1><h3 id="1、涉及边框的几个元素"><a href="#1、涉及边框的几个元素" class="headerlink" title="1、涉及边框的几个元素"></a>1、涉及边框的几个元素</h3><p>粗细、颜色、类型（实线、虚线、点线）<br><code>border-width</code>、<code>border-color</code>、<code>border-style</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*简写：*/</span><br><span class="line">p,span&#123;</span><br><span class="line">border:2px blue solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如图：<br><strong>第一个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2264d84bf?w=600&amp;h=200&amp;f=jpeg&amp;s=15369" alt="image"></p>
+<p><strong>第二个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c22630695d?w=600&amp;h=175&amp;f=jpeg&amp;s=17485" alt="image"></p>
+<p><strong>第三个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c22652b574?w=600&amp;h=196&amp;f=jpeg&amp;s=21835" alt="image"></p>
+<p><strong>第四个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2265efef4?w=600&amp;h=153&amp;f=jpeg&amp;s=17802" alt="image"></p>
+<p><strong>第五个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2534bae45?w=600&amp;h=170&amp;f=jpeg&amp;s=18873" alt="image"></p>
+<h3 id="2、如何使用边框做三角形？"><a href="#2、如何使用边框做三角形？" class="headerlink" title="2、如何使用边框做三角形？"></a>2、如何使用边框做三角形？</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c25378d1f6?w=600&amp;h=262&amp;f=jpeg&amp;s=24174" alt="image"></p>
+<p><strong>第一个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2704e716a?w=600&amp;h=259&amp;f=jpeg&amp;s=28141" alt="image"></p>
+<p><strong>第二个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c27244f5b7?w=600&amp;h=499&amp;f=jpeg&amp;s=45358" alt="image"></p>
+<p><strong>第三个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c272549c39?w=600&amp;h=272&amp;f=jpeg&amp;s=29489" alt="image"></p>
+<h1 id="四、边距"><a href="#四、边距" class="headerlink" title="四、边距"></a>四、边距</h1><h3 id="1、盒模型"><a href="#1、盒模型" class="headerlink" title="1、盒模型"></a>1、盒模型</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c274e2f2e7?w=422&amp;h=316&amp;f=jpeg&amp;s=13600" alt="image"></p>
+<h3 id="2、padding-内边距"><a href="#2、padding-内边距" class="headerlink" title="2、padding-内边距"></a>2、<code>padding</code>-内边距</h3><p>代表内边距，有四个方向的值，可以合写，值可以是数值、百分比（相对于父容器，不是自身）</p>
+<blockquote>
+<p>padding-top padding-right padding-bottom padding-left<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c27512d51e?w=600&amp;h=320&amp;f=jpeg&amp;s=32739" alt="image"></p>
+</blockquote>
+<h3 id="3、margin-外边距"><a href="#3、margin-外边距" class="headerlink" title="3、margin-外边距"></a>3、<code>margin</code>-外边距</h3><p>代表外边距，有四个方向的值，可以合写，值可以是数值、百分比（相对于父容器，不是自身），还可以是负值<br>外边距合并问题<br>在行内元素中，使用<code>margin</code>和<code>padding</code>左右生效，上下不生效，如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c27c1bb79d?w=600&amp;h=128&amp;f=jpeg&amp;s=14398" alt="image"></p>
+<blockquote>
+<p><code>margin-top</code>、<code>margin-right</code>、<code>margin-bottom</code>、<code>margin-left</code></p>
+</blockquote>
+<h3 id="3-1-margin-0-auto-块级元素居中"><a href="#3-1-margin-0-auto-块级元素居中" class="headerlink" title="3.1 margin:0 auto 块级元素居中"></a>3.1 <code>margin:0 auto</code> 块级元素居中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">/* margin: 0 auto; 实际上是下面两个起了作用 */</span><br><span class="line">margin-left:auto;</span><br><span class="line">margin-right:auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于块级元素设置<code>margin:0  auto</code>（即：<code>margin:0  auto 0  auto;</code>）可以达到居中目的<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c29d43fc3e?w=600&amp;h=335&amp;f=jpeg&amp;s=37123" alt="image"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2a5891725?w=600&amp;h=330&amp;f=jpeg&amp;s=39544" alt="image"></p>
+<h3 id="4、-去除元素默认样式的margin-和padding"><a href="#4、-去除元素默认样式的margin-和padding" class="headerlink" title="4、* 去除元素默认样式的margin 和padding"></a>4、* 去除元素默认样式的<code>margin</code> 和<code>padding</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">margin:0;</span><br><span class="line">padding:0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于页面元素在浏览器会有自身的默认样式：如图:<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2aa2b32d0?w=600&amp;h=552&amp;f=jpeg&amp;s=37019" alt="image"></p>
+<p>用于清除浏览器的固定样式，重新设置宽高,如图可加：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c296785663?w=600&amp;h=340&amp;f=jpeg&amp;s=26699" alt="image"><br>注：默认样式1em=16px</p>
+<h1 id="五、display"><a href="#五、display" class="headerlink" title="五、display"></a>五、<code>display</code></h1><h3 id="1、块级和行内的display："><a href="#1、块级和行内的display：" class="headerlink" title="1、块级和行内的display："></a>1、块级和行内的<code>display</code>：</h3><ul>
+<li>块级：<code>block</code>,<code>list-item</code>,<code>table</code></li>
+<li>行内：<code>inline</code>，<code>inline-table</code>，<code>inline-block</code><br>注：一个元素在默认情况下是一个<code>display：inline</code></li>
+</ul>
+<p>| display |<br>| Value:   | inline | block | list-item | inline-block | table | inline-t|able | table-row | table-cell | none | inherit |<br>| Initial:   | inline |<br>| Applies to:  | all elements |<br>| Inherited:  |  no |</p>
+<p><strong>注</strong>：<br><code>display：inline-block</code>的布局，有相关资料可以了解一下：<a href="https://www.cnblogs.com/Ry-yuan/p/6848197.html" target="_blank" rel="noopener">CSS之使用display:inline-block来布局</a></p>
+<h3 id="2、CSS继承和不继承"><a href="#2、CSS继承和不继承" class="headerlink" title="2、CSS继承和不继承"></a>2、CSS继承和不继承</h3><p><strong>继承：</strong><br>每一个元素都是文档树的一部分，每个元素都有其对应的父级元素，每一个父级元素的CSS属性值都可以被应用到它的子元素中。可继承属性一般为：<code>font-size</code>、<code>font-family</code>、<code>color</code></p>
+<p>反之，CSS不继承通常为页面的细节元素，如<code>border</code>、<code>padding</code>、<code>margin</code>、<code>background-color</code> 、<code>width</code>、<code>height</code>等</p>
+<h1 id="六、font"><a href="#六、font" class="headerlink" title="六、font"></a>六、<code>font</code></h1><ul>
+<li><code>font-size</code>：字体大小<br>如：12px（较小）、14px（正常）、16px（浏览器默认）、20px（标题大小）、22、28、60px（大标题大小）</li>
+<li><code>font-family</code>：字体，有宋体、微软雅黑、Arial等</li>
+<li><code>font-weight</code>：文字粗度，常用的就是默认值regular和粗体bold</li>
+<li><code>line-height</code>：行高，即文字大小，可以用百分比、倍数或者固定尺寸。</li>
+<li><code>font-size*line-height</code>:  垂直高度（行+文字占据的垂直空间）<br><strong>注：</strong> 以上属性为可继承给子元素</li>
+</ul>
+<h3 id="1、如何使用："><a href="#1、如何使用：" class="headerlink" title="1、如何使用："></a>1、如何使用：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">font: 12px/1.5 tahoma,arial,&apos;Hiragino Sans GB&apos;,&apos;\5b8b\4f53&apos;,sans-serif;</span><br><span class="line">&#125;</span><br><span class="line">/*或者*/</span><br><span class="line">p &#123;</span><br><span class="line">line-height: 1.5;</span><br><span class="line">font-size: 14px;</span><br><span class="line">font-family: &apos;Helvetica Neue&apos;,Helvetica,Arial,sans-serif;</span><br><span class="line">font-weight: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2、font-family"><a href="#2、font-family" class="headerlink" title="2、font-family"></a>2、<code>font-family</code></h3><p>（1）字体原理</p>
+<blockquote>
+<p>使用浏览器打开页面时，浏览器会读取HTML文件进行解析渲染。当读到文字时会转换成对应的unicode码（可以认为是世界上任意一种文字的特定编号）。再根据HTML 里设置的<code>font-family</code>（如果没设置则使用浏览器默认设置）去查找电脑里（如果有自定义字体<code>@font-face</code>，则加载对应字体文件）对应字体的字体文件。找到文件后根据unicode码去查找绘制外形，找到后绘制到页面上。</p>
+</blockquote>
+<p>（2）了解<br>这里有一篇老师写的关于字体方面的实现原理，以前学过一点设计看了，以后如何配合设计师进行字体需求上还是蛮受用的，可以看看：<br><a href="https://zhuanlan.zhihu.com/p/22724856" target="_blank" rel="noopener">若愚：「每日一题」聊一聊字体图标的实现原理</a></p>
+<p>（3）<code>font-family</code>写法</p>
+<blockquote>
+<p>在 CSS 中设置字体时，直接写字体中文或英文名称浏览器都能识别，直接写中文的情况下编码（GB2312、UTF-8等）不匹配时会产生乱码。保险的方式是将字体名称用Unicode来表示</p>
+</blockquote>
+<p>| 宋体 | SimSun | \5B8B\4F53 |（Unicode码）<br>| 黑体 | SimHei | \9ED1\4F53|<br>| 微软雅黑 | Microsoft YaHei | \5FAE\8F6F\96C5\9ED1|<br>？可打开控制台 <code>escape(&#39;微软雅黑&#39;)</code>，将 <code>%u</code>替换成<code>\</code></p>
+<h3 id="3、chrome最小字体"><a href="#3、chrome最小字体" class="headerlink" title="3、chrome最小字体"></a>3、chrome最小字体</h3><p>chrome 默认字体大小16px, 最小字体 12px<br>若需要小于12px的字体，可参考以下解决方案：<a href="https://github.com/islittle/Web-Developer/blob/master/css-notes/compatible-with-less-than-12px-fontsize.md" target="_blank" rel="noopener">islittle/Web-Developer</a></p>
+<h1 id="七、文本"><a href="#七、文本" class="headerlink" title="七、文本"></a>七、文本</h1><h3 id="1、类型"><a href="#1、类型" class="headerlink" title="1、类型"></a>1、类型</h3><ul>
+<li><code>text-align</code>：文本对其方式。<code>left</code>、<code>center</code>、<code>right</code>、<code>justify</code>（≈两端对齐）</li>
+<li><code>text-indent</code>：文案第一行缩进距离</li>
+<li><code>text-decoration</code>：<code>none</code>（去掉下划线）、<code>underline</code>、<code>line-through</code>（删除线）、<code>overline</code>（顶部线）</li>
+<li><code>color</code>：文字颜色</li>
+<li><code>text-transform</code>：改变文字大小写。<code>none</code>（不改写）、<code>uppercase</code>（小写展示大写）、<code>lowercase</code>（大写展示小写）、<code>capitalize</code>（单词的首字母变大写展示）</li>
+<li><code>word-spacing</code>：可以改变字（单词）之间的标准间隔（对于中文，每字就是一单词）</li>
+<li><code>letter-spacing</code>：字母间隔修改的是字符或字母之间的间隔<br>演示如图所示：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2aadf4d8d?w=600&amp;h=346&amp;f=jpeg&amp;s=43440" alt="image"></li>
+</ul>
+<h3 id="2、几种情况："><a href="#2、几种情况：" class="headerlink" title="2、几种情况："></a>2、几种情况：</h3><p>（1）行内元素居中，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.box&#123;</span><br><span class="line">text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;box&quot;&gt;</span><br><span class="line">&lt;img src=&quot;http://7xpvnv.com2.z0.glb.qiniucdn.com/6673909a-098c-4202-8b80-f4aad64e0262.png&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（2）<code>display：inline-block</code>元素居中，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;text-align: center;&quot;&gt;</span><br><span class="line">&lt;img  style=&quot;margin: 0 auto&quot; src=&quot;XXX.png&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（3）单行文本溢出，关键代码如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.card &gt; h3&#123;</span><br><span class="line">white-space: nowrap;</span><br><span class="line">overflow: hidden;</span><br><span class="line">text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>如图：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2af361340?w=600&amp;h=227&amp;f=jpeg&amp;s=25981" alt="image"></p>
+<h1 id="八、颜色"><a href="#八、颜色" class="headerlink" title="八、颜色"></a>八、颜色</h1><h3 id="1、单词："><a href="#1、单词：" class="headerlink" title="1、单词："></a>1、单词：</h3><p><code>red</code>、<code>blue</code>、<code>pink</code>、<code>yellow</code>、<code>white</code>、<code>black</code></p>
+<h3 id="2、十六进制："><a href="#2、十六进制：" class="headerlink" title="2、十六进制："></a>2、十六进制：</h3><ul>
+<li><code>#ff0000</code> 红色</li>
+<li><code>#0000ff</code>蓝色</li>
+<li><code>#008000</code> 绿色</li>
+<li><code>#000000</code>（黑色）= <code>#000</code></li>
+<li><code>#ffffff</code>（白色）=  <code>#fff</code></li>
+<li><code>#eeeeee</code>（淡灰色）=<code>#eee</code></li>
+<li><code>#cccccc</code>（灰色）=<code>#ccc</code></li>
+<li><code>#666666</code>（深灰色）=<code>#666</code></li>
+<li><code>#333333</code>（深黑色）=<code>#333</code></li>
+<li><code>#f00</code>（红色）</li>
+<li><code>#0f0</code>（绿色）</li>
+<li><code>#00f</code>（蓝色）</li>
+<li><code>rgb</code>:  <code>rgb(255,255,255)</code>，<code>rgb(0,255,0)</code></li>
+<li><code>rgba</code>:  <code>rgba(0,0,0,0.5)</code>（css3中涉及）</li>
+</ul>
+<h1 id="九、单位"><a href="#九、单位" class="headerlink" title="九、单位"></a>九、单位</h1><h3 id="1、px：固定单位"><a href="#1、px：固定单位" class="headerlink" title="1、px：固定单位"></a>1、<code>px</code>：固定单位</h3><h3 id="2、em：相对长度单位，相对于当前元素的字体大小。如图："><a href="#2、em：相对长度单位，相对于当前元素的字体大小。如图：" class="headerlink" title="2、em：相对长度单位，相对于当前元素的字体大小。如图："></a>2、<code>em</code>：相对长度单位，相对于当前元素的字体大小。如图：</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2b94491dc?w=600&amp;h=310&amp;f=jpeg&amp;s=20729" alt="image"></p>
+<h3 id="3、rem：相对单位，相对于根元素（html）字体大小，即1rem-html设置的font-size，移动端较常用。"><a href="#3、rem：相对单位，相对于根元素（html）字体大小，即1rem-html设置的font-size，移动端较常用。" class="headerlink" title="3、rem：相对单位，相对于根元素（html）字体大小，即1rem = html设置的font-size，移动端较常用。"></a>3、<code>rem</code>：相对单位，相对于根元素（html）字体大小，即<code>1rem = html</code>设置的<code>font-size</code>，移动端较常用。</h3><p>关于<code>rem</code>的好处我查了资料这个我比较理解，分享出来：<br><a href="https://www.zhihu.com/question/21504656/answer/18438819" target="_blank" rel="noopener">css3的字体大小单位[rem]到底好在哪？</a></p>
+<h3 id="4、vw-vh：相对单位，1vw为屏幕宽度的1-兼容性较差"><a href="#4、vw-vh：相对单位，1vw为屏幕宽度的1-兼容性较差" class="headerlink" title="4、vw  vh：相对单位，1vw为屏幕宽度的1% 兼容性较差"></a>4、<code>vw  vh</code>：相对单位，<code>1vw</code>为屏幕宽度的1% 兼容性较差</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2bd020af8?w=600&amp;h=337&amp;f=jpeg&amp;s=27638" alt="image"></p>
+<h3 id="5、百分比：（涉及宽高？文字大小？line-height、position）"><a href="#5、百分比：（涉及宽高？文字大小？line-height、position）" class="headerlink" title="5、百分比：（涉及宽高？文字大小？line-height、position）"></a>5、百分比：（涉及宽高？文字大小？<code>line-height</code>、<code>position</code>）</h3><h1 id="十、其他"><a href="#十、其他" class="headerlink" title="十、其他"></a>十、其他</h1><h3 id="1、a链接设置颜色"><a href="#1、a链接设置颜色" class="headerlink" title="1、a链接设置颜色"></a>1、<code>a</code>链接设置颜色</h3><p>注：</p>
+<ul>
+<li>当鼠标放置<code>a</code>链接，本身就会出现“手”指针的形状效果</li>
+<li><code>a</code>有默认颜色和样式，会覆盖继承的样式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a&#123;</span><br><span class="line">color：red；</span><br><span class="line">text-decoration: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2cc909acc?w=600&amp;h=322&amp;f=jpeg&amp;s=34056" alt="image"></p>
+<h3 id="2、列表去掉点"><a href="#2、列表去掉点" class="headerlink" title="2、列表去掉点"></a>2、列表去掉点</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* 设定列表样式为：无 ,即没有顺序数字、圆点出现*/</span><br><span class="line"></span><br><span class="line">ul&#123;</span><br><span class="line">list-style: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>/<em>也可这样</em>/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li&#123;</span><br><span class="line">list-style: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2cd1490a2?w=600&amp;h=322&amp;f=jpeg&amp;s=28682" alt="image"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+      <div>
+        
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+      </div>
+
+    
+
+    
+
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/行内元素/" rel="tag"># 行内元素</a>
+          
+            <a href="/tags/块级元素/" rel="tag"># 块级元素</a>
+          
+            <a href="/tags/宽高/" rel="tag"># 宽高</a>
+          
+            <a href="/tags/边距/" rel="tag"># 边距</a>
+          
+            <a href="/tags/文本、颜色、单位/" rel="tag"># 文本、颜色、单位</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/16/12-00你认真学了css？/" rel="next" title="00你认真学了CSS？">
+                <i class="fa fa-chevron-left"></i> 00你认真学了CSS？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/16/14-02你认真学了css？（基本样式2）/" rel="prev" title="02你认真学了css？（基本样式2）">
+                02你认真学了css？（基本样式2） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="miya Wang" />
+            
+              <p class="site-author-name" itemprop="name">miya Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wxq393" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="wangxiaoqin.0009@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Wangxiaoqinmiya" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/wxq393" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://javascript.ruanyifeng.com/" title="JavaScript 标准参考教程（alpha）" target="_blank">JavaScript 标准参考教程（alpha）</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="web前端导航" target="_blank">web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.mozilla.org/zh-CN/" title="MDN" target="_blank">MDN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、块级元素、行内元素"><span class="nav-number">1.</span> <span class="nav-text">一、块级元素、行内元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、block-level"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、block-level</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、inline-level"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、inline-level</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、宽高-width、height"><span class="nav-number">2.</span> <span class="nav-text">二、宽高-width、height</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、边框-border"><span class="nav-number">3.</span> <span class="nav-text">三、边框-border</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、涉及边框的几个元素"><span class="nav-number">3.0.1.</span> <span class="nav-text">1、涉及边框的几个元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、如何使用边框做三角形？"><span class="nav-number">3.0.2.</span> <span class="nav-text">2、如何使用边框做三角形？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、边距"><span class="nav-number">4.</span> <span class="nav-text">四、边距</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、盒模型"><span class="nav-number">4.0.1.</span> <span class="nav-text">1、盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、padding-内边距"><span class="nav-number">4.0.2.</span> <span class="nav-text">2、padding-内边距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、margin-外边距"><span class="nav-number">4.0.3.</span> <span class="nav-text">3、margin-外边距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-margin-0-auto-块级元素居中"><span class="nav-number">4.0.4.</span> <span class="nav-text">3.1 margin:0 auto 块级元素居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、-去除元素默认样式的margin-和padding"><span class="nav-number">4.0.5.</span> <span class="nav-text">4、* 去除元素默认样式的margin 和padding</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、display"><span class="nav-number">5.</span> <span class="nav-text">五、display</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、块级和行内的display："><span class="nav-number">5.0.1.</span> <span class="nav-text">1、块级和行内的display：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、CSS继承和不继承"><span class="nav-number">5.0.2.</span> <span class="nav-text">2、CSS继承和不继承</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、font"><span class="nav-number">6.</span> <span class="nav-text">六、font</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、如何使用："><span class="nav-number">6.0.1.</span> <span class="nav-text">1、如何使用：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、font-family"><span class="nav-number">6.0.2.</span> <span class="nav-text">2、font-family</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、chrome最小字体"><span class="nav-number">6.0.3.</span> <span class="nav-text">3、chrome最小字体</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、文本"><span class="nav-number">7.</span> <span class="nav-text">七、文本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、类型"><span class="nav-number">7.0.1.</span> <span class="nav-text">1、类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、几种情况："><span class="nav-number">7.0.2.</span> <span class="nav-text">2、几种情况：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、颜色"><span class="nav-number">8.</span> <span class="nav-text">八、颜色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、单词："><span class="nav-number">8.0.1.</span> <span class="nav-text">1、单词：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、十六进制："><span class="nav-number">8.0.2.</span> <span class="nav-text">2、十六进制：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、单位"><span class="nav-number">9.</span> <span class="nav-text">九、单位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、px：固定单位"><span class="nav-number">9.0.1.</span> <span class="nav-text">1、px：固定单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、em：相对长度单位，相对于当前元素的字体大小。如图："><span class="nav-number">9.0.2.</span> <span class="nav-text">2、em：相对长度单位，相对于当前元素的字体大小。如图：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、rem：相对单位，相对于根元素（html）字体大小，即1rem-html设置的font-size，移动端较常用。"><span class="nav-number">9.0.3.</span> <span class="nav-text">3、rem：相对单位，相对于根元素（html）字体大小，即1rem = html设置的font-size，移动端较常用。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、vw-vh：相对单位，1vw为屏幕宽度的1-兼容性较差"><span class="nav-number">9.0.4.</span> <span class="nav-text">4、vw  vh：相对单位，1vw为屏幕宽度的1% 兼容性较差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、百分比：（涉及宽高？文字大小？line-height、position）"><span class="nav-number">9.0.5.</span> <span class="nav-text">5、百分比：（涉及宽高？文字大小？line-height、position）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十、其他"><span class="nav-number">10.</span> <span class="nav-text">十、其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、a链接设置颜色"><span class="nav-number">10.0.1.</span> <span class="nav-text">1、a链接设置颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、列表去掉点"><span class="nav-number">10.0.2.</span> <span class="nav-text">2、列表去掉点</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">miya Wang</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">25.5k</span>
+  
+</div>
+
+<div class="powered-by">
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_pv">
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共25.5k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("iTNrjG6yxMxe6h93ggK9swGG-gzGzoHsz", "Mc6CRfhL7fpUJ2N1tzbzS0CO");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
