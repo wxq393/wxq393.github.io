@@ -111,7 +111,7 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2bd020af8?w=600&h=337&f=jpeg&s=27638">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2cc909acc?w=600&h=322&f=jpeg&s=34056">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165380c2cd1490a2?w=600&h=322&f=jpeg&s=28682">
-<meta property="og:updated_time" content="2018-08-16T11:47:59.000Z">
+<meta property="og:updated_time" content="2018-08-16T16:01:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01你认真学了css？（基本样式1）">
 <meta name="twitter:description" content="一、块级元素、行内元素 块级（block-level）；行内（内联inline-level） 块级可以包含块级和行内；行内只能包含文本和行内 块级占据一整行空间；行内占据自身宽度空间， 宽高设置、内外边距的差异">
@@ -389,8 +389,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-16T19:47:59+08:00">
-                2018-08-16
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-17T00:01:36+08:00">
+                2018-08-17
               </time>
             
           </span>
@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,807
+                  1,793
                 </span>
               
 
@@ -507,42 +507,67 @@
 <a id="more"></a>
 <h3 id="1、block-level"><a href="#1、block-level" class="headerlink" title="1、block-level"></a>1、<code>block-level</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div h1 h2 h3 h4 h5 h6 p hr（线）</span><br><span class="line">form ul dl ol pre table</span><br><span class="line">li dd dt tr td th</span><br></pre></td></tr></table></figure>
 <h3 id="2、inline-level"><a href="#2、inline-level" class="headerlink" title="2、inline-level"></a>2、<code>inline-level</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">em strong span a br img</span><br><span class="line">button input label select textarea</span><br><span class="line">code script</span><br></pre></td></tr></table></figure>
-<p>如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c226241cdb?w=600&amp;h=372&amp;f=jpeg&amp;s=35277" alt="image"></p>
+<p>如图：<img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c226241cdb?w=600&amp;h=372&amp;f=jpeg&amp;s=35277" alt="image"></p>
 <h1 id="二、宽高-width、height"><a href="#二、宽高-width、height" class="headerlink" title="二、宽高-width、height"></a>二、宽高-<code>width</code>、<code>height</code></h1><p>只对块级元素设置生效，对行内元素设置无效<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2263b8523?w=600&amp;h=669&amp;f=jpeg&amp;s=44322" alt="image"></p>
-<h1 id="三、边框-border"><a href="#三、边框-border" class="headerlink" title="三、边框-border"></a>三、边框-<code>border</code></h1><h3 id="1、涉及边框的几个元素"><a href="#1、涉及边框的几个元素" class="headerlink" title="1、涉及边框的几个元素"></a>1、涉及边框的几个元素</h3><p>粗细、颜色、类型（实线、虚线、点线）<br><code>border-width</code>、<code>border-color</code>、<code>border-style</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*简写：*/</span><br><span class="line">p,span&#123;</span><br><span class="line">border:2px blue solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如图：<br><strong>第一个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2264d84bf?w=600&amp;h=200&amp;f=jpeg&amp;s=15369" alt="image"></p>
-<p><strong>第二个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c22630695d?w=600&amp;h=175&amp;f=jpeg&amp;s=17485" alt="image"></p>
-<p><strong>第三个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c22652b574?w=600&amp;h=196&amp;f=jpeg&amp;s=21835" alt="image"></p>
-<p><strong>第四个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2265efef4?w=600&amp;h=153&amp;f=jpeg&amp;s=17802" alt="image"></p>
-<p><strong>第五个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2534bae45?w=600&amp;h=170&amp;f=jpeg&amp;s=18873" alt="image"></p>
-<h3 id="2、如何使用边框做三角形？"><a href="#2、如何使用边框做三角形？" class="headerlink" title="2、如何使用边框做三角形？"></a>2、如何使用边框做三角形？</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c25378d1f6?w=600&amp;h=262&amp;f=jpeg&amp;s=24174" alt="image"></p>
-<p><strong>第一个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2704e716a?w=600&amp;h=259&amp;f=jpeg&amp;s=28141" alt="image"></p>
-<p><strong>第二个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c27244f5b7?w=600&amp;h=499&amp;f=jpeg&amp;s=45358" alt="image"></p>
-<p><strong>第三个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c272549c39?w=600&amp;h=272&amp;f=jpeg&amp;s=29489" alt="image"></p>
+<h1 id="三、边框-border"><a href="#三、边框-border" class="headerlink" title="三、边框-border"></a>三、边框-<code>border</code></h1><h3 id="1、涉及边框的几个元素"><a href="#1、涉及边框的几个元素" class="headerlink" title="1、涉及边框的几个元素"></a>1、涉及边框的几个元素</h3><p>粗细、颜色、类型（实线、虚线、点线）<br><code>border-width</code>、<code>border-color</code>、<code>border-style</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*简写：*/</span><br><span class="line">p,span&#123;</span><br><span class="line">border:2px blue solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如图：<br><strong>第一个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2264d84bf?w=600&amp;h=200&amp;f=jpeg&amp;s=15369" alt="image"><br><strong>第二个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c22630695d?w=600&amp;h=175&amp;f=jpeg&amp;s=17485" alt="image"><br><strong>第三个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c22652b574?w=600&amp;h=196&amp;f=jpeg&amp;s=21835" alt="image"><br><strong>第四个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2265efef4?w=600&amp;h=153&amp;f=jpeg&amp;s=17802" alt="image"><br><strong>第五个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2534bae45?w=600&amp;h=170&amp;f=jpeg&amp;s=18873" alt="image"></p>
+<h3 id="2、如何使用边框做三角形？"><a href="#2、如何使用边框做三角形？" class="headerlink" title="2、如何使用边框做三角形？"></a>2、如何使用边框做三角形？</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c25378d1f6?w=600&amp;h=262&amp;f=jpeg&amp;s=24174" alt="image"><br><strong>第一个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2704e716a?w=600&amp;h=259&amp;f=jpeg&amp;s=28141" alt="image"><br><strong>第二个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c27244f5b7?w=600&amp;h=499&amp;f=jpeg&amp;s=45358" alt="image"><br><strong>第三个：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c272549c39?w=600&amp;h=272&amp;f=jpeg&amp;s=29489" alt="image"></p>
 <h1 id="四、边距"><a href="#四、边距" class="headerlink" title="四、边距"></a>四、边距</h1><h3 id="1、盒模型"><a href="#1、盒模型" class="headerlink" title="1、盒模型"></a>1、盒模型</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c274e2f2e7?w=422&amp;h=316&amp;f=jpeg&amp;s=13600" alt="image"></p>
 <h3 id="2、padding-内边距"><a href="#2、padding-内边距" class="headerlink" title="2、padding-内边距"></a>2、<code>padding</code>-内边距</h3><p>代表内边距，有四个方向的值，可以合写，值可以是数值、百分比（相对于父容器，不是自身）</p>
 <blockquote>
-<p>padding-top padding-right padding-bottom padding-left<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c27512d51e?w=600&amp;h=320&amp;f=jpeg&amp;s=32739" alt="image"></p>
+<p>padding-top padding-right padding-bottom padding-left</p>
 </blockquote>
-<h3 id="3、margin-外边距"><a href="#3、margin-外边距" class="headerlink" title="3、margin-外边距"></a>3、<code>margin</code>-外边距</h3><p>代表外边距，有四个方向的值，可以合写，值可以是数值、百分比（相对于父容器，不是自身），还可以是负值<br>外边距合并问题<br>在行内元素中，使用<code>margin</code>和<code>padding</code>左右生效，上下不生效，如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c27c1bb79d?w=600&amp;h=128&amp;f=jpeg&amp;s=14398" alt="image"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c27512d51e?w=600&amp;h=320&amp;f=jpeg&amp;s=32739" alt="image"></p>
+<h3 id="3、margin-外边距"><a href="#3、margin-外边距" class="headerlink" title="3、margin-外边距"></a>3、<code>margin</code>-外边距</h3><p>代表外边距，有四个方向的值，可以合写，值可以是数值、百分比（相对于父容器，不是自身），还可以是负值</p>
+<p>外边距合并问题<br>在行内元素中，使用<code>margin</code>和<code>padding</code>左右生效，上下不生效，如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c27c1bb79d?w=600&amp;h=128&amp;f=jpeg&amp;s=14398" alt="image"></p>
 <blockquote>
 <p><code>margin-top</code>、<code>margin-right</code>、<code>margin-bottom</code>、<code>margin-left</code></p>
 </blockquote>
 <h3 id="3-1-margin-0-auto-块级元素居中"><a href="#3-1-margin-0-auto-块级元素居中" class="headerlink" title="3.1 margin:0 auto 块级元素居中"></a>3.1 <code>margin:0 auto</code> 块级元素居中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">/* margin: 0 auto; 实际上是下面两个起了作用 */</span><br><span class="line">margin-left:auto;</span><br><span class="line">margin-right:auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对于块级元素设置<code>margin:0  auto</code>（即：<code>margin:0  auto 0  auto;</code>）可以达到居中目的<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c29d43fc3e?w=600&amp;h=335&amp;f=jpeg&amp;s=37123" alt="image"></p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2a5891725?w=600&amp;h=330&amp;f=jpeg&amp;s=39544" alt="image"></p>
+<p>对于块级元素设置<code>margin:0  auto</code>（即：<code>margin:0  auto 0  auto;</code>）可以达到居中目的<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c29d43fc3e?w=600&amp;h=335&amp;f=jpeg&amp;s=37123" alt="image"><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2a5891725?w=600&amp;h=330&amp;f=jpeg&amp;s=39544" alt="image"></p>
 <h3 id="4、-去除元素默认样式的margin-和padding"><a href="#4、-去除元素默认样式的margin-和padding" class="headerlink" title="4、* 去除元素默认样式的margin 和padding"></a>4、* 去除元素默认样式的<code>margin</code> 和<code>padding</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">margin:0;</span><br><span class="line">padding:0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>由于页面元素在浏览器会有自身的默认样式：如图:<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2aa2b32d0?w=600&amp;h=552&amp;f=jpeg&amp;s=37019" alt="image"></p>
-<p>用于清除浏览器的固定样式，重新设置宽高,如图可加：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c296785663?w=600&amp;h=340&amp;f=jpeg&amp;s=26699" alt="image"><br>注：默认样式1em=16px</p>
+<p>由于页面元素在浏览器会有自身的默认样式：如图:<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2aa2b32d0?w=600&amp;h=552&amp;f=jpeg&amp;s=37019" alt="image"><br>用于清除浏览器的固定样式，重新设置宽高,如图可加：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c296785663?w=600&amp;h=340&amp;f=jpeg&amp;s=26699" alt="image"><br><strong>注：</strong> 默认样式1em=16px</p>
 <h1 id="五、display"><a href="#五、display" class="headerlink" title="五、display"></a>五、<code>display</code></h1><h3 id="1、块级和行内的display："><a href="#1、块级和行内的display：" class="headerlink" title="1、块级和行内的display："></a>1、块级和行内的<code>display</code>：</h3><ul>
 <li>块级：<code>block</code>,<code>list-item</code>,<code>table</code></li>
-<li>行内：<code>inline</code>，<code>inline-table</code>，<code>inline-block</code><br>注：一个元素在默认情况下是一个<code>display：inline</code></li>
+<li>行内：<code>inline</code>，<code>inline-table</code>，<code>inline-block</code><br><strong>注：</strong> 一个元素在默认情况下是一个<code>display：inline</code></li>
 </ul>
-<p>| display |<br>| Value:   | inline | block | list-item | inline-block | table | inline-t|able | table-row | table-cell | none | inherit |<br>| Initial:   | inline |<br>| Applies to:  | all elements |<br>| Inherited:  |  no |</p>
-<p><strong>注</strong>：<br><code>display：inline-block</code>的布局，有相关资料可以了解一下：<a href="https://www.cnblogs.com/Ry-yuan/p/6848197.html" target="_blank" rel="noopener">CSS之使用display:inline-block来布局</a></p>
-<h3 id="2、CSS继承和不继承"><a href="#2、CSS继承和不继承" class="headerlink" title="2、CSS继承和不继承"></a>2、CSS继承和不继承</h3><p><strong>继承：</strong><br>每一个元素都是文档树的一部分，每个元素都有其对应的父级元素，每一个父级元素的CSS属性值都可以被应用到它的子元素中。可继承属性一般为：<code>font-size</code>、<code>font-family</code>、<code>color</code></p>
-<p>反之，CSS不继承通常为页面的细节元素，如<code>border</code>、<code>padding</code>、<code>margin</code>、<code>background-color</code> 、<code>width</code>、<code>height</code>等</p>
+<table>
+<thead>
+<tr>
+<th>display</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value:</td>
+<td>inline</td>
+<td>block</td>
+<td>list-item</td>
+<td>inline-block</td>
+<td>table</td>
+<td>inline-t</td>
+<td>able</td>
+<td>table-row</td>
+<td>table-cell</td>
+<td>none</td>
+<td>inherit</td>
+</tr>
+<tr>
+<td>Initial:</td>
+<td>inline</td>
+</tr>
+<tr>
+<td>Applies to:</td>
+<td>all elements</td>
+</tr>
+<tr>
+<td>Inherited:</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注</strong>：<code>display：inline-block</code>的布局，有相关资料可以了解一下：<a href="https://www.cnblogs.com/Ry-yuan/p/6848197.html" target="_blank" rel="noopener">CSS之使用display:inline-block来布局</a></p>
+<h3 id="2、CSS继承和不继承"><a href="#2、CSS继承和不继承" class="headerlink" title="2、CSS继承和不继承"></a>2、CSS继承和不继承</h3><p><strong>继承：</strong> 每一个元素都是文档树的一部分，每个元素都有其对应的父级元素，每一个父级元素的CSS属性值都可以被应用到它的子元素中。可继承属性一般为：<code>font-size</code>、<code>font-family</code>、<code>color</code> 。反之，CSS不继承通常为页面的细节元素，如<code>border</code>、<code>padding</code>、<code>margin</code>、<code>background-color</code> 、<code>width</code>、<code>height</code>等</p>
 <h1 id="六、font"><a href="#六、font" class="headerlink" title="六、font"></a>六、<code>font</code></h1><ul>
 <li><code>font-size</code>：字体大小<br>如：12px（较小）、14px（正常）、16px（浏览器默认）、20px（标题大小）、22、28、60px（大标题大小）</li>
 <li><code>font-family</code>：字体，有宋体、微软雅黑、Arial等</li>
@@ -555,12 +580,34 @@
 <blockquote>
 <p>使用浏览器打开页面时，浏览器会读取HTML文件进行解析渲染。当读到文字时会转换成对应的unicode码（可以认为是世界上任意一种文字的特定编号）。再根据HTML 里设置的<code>font-family</code>（如果没设置则使用浏览器默认设置）去查找电脑里（如果有自定义字体<code>@font-face</code>，则加载对应字体文件）对应字体的字体文件。找到文件后根据unicode码去查找绘制外形，找到后绘制到页面上。</p>
 </blockquote>
-<p>（2）了解<br>这里有一篇老师写的关于字体方面的实现原理，以前学过一点设计看了，以后如何配合设计师进行字体需求上还是蛮受用的，可以看看：<br><a href="https://zhuanlan.zhihu.com/p/22724856" target="_blank" rel="noopener">若愚：「每日一题」聊一聊字体图标的实现原理</a></p>
+<p>（2）了解<br>这里有一篇老师写的关于字体方面的实现原理，以前学过一点设计看了，以后如何配合设计师进行字体需求上还是蛮受用的，可以看看：<a href="https://zhuanlan.zhihu.com/p/22724856" target="_blank" rel="noopener">若愚：「每日一题」聊一聊字体图标的实现原理</a></p>
 <p>（3）<code>font-family</code>写法</p>
 <blockquote>
 <p>在 CSS 中设置字体时，直接写字体中文或英文名称浏览器都能识别，直接写中文的情况下编码（GB2312、UTF-8等）不匹配时会产生乱码。保险的方式是将字体名称用Unicode来表示</p>
 </blockquote>
-<p>| 宋体 | SimSun | \5B8B\4F53 |（Unicode码）<br>| 黑体 | SimHei | \9ED1\4F53|<br>| 微软雅黑 | Microsoft YaHei | \5FAE\8F6F\96C5\9ED1|<br>？可打开控制台 <code>escape(&#39;微软雅黑&#39;)</code>，将 <code>%u</code>替换成<code>\</code></p>
+<table>
+<thead>
+<tr>
+<th>宋体</th>
+<th>SimSun</th>
+<th>\5B8B\4F53</th>
+<th>（Unicode码）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>黑体</td>
+<td>SimHei</td>
+<td>\9ED1\4F53</td>
+</tr>
+<tr>
+<td>微软雅黑</td>
+<td>Microsoft YaHei</td>
+<td>\5FAE\8F6F\96C5\9ED1</td>
+</tr>
+</tbody>
+</table>
+<p>？可打开控制台 <code>escape(&#39;微软雅黑&#39;)</code>，将 <code>%u</code>替换成<code>\</code></p>
 <h3 id="3、chrome最小字体"><a href="#3、chrome最小字体" class="headerlink" title="3、chrome最小字体"></a>3、chrome最小字体</h3><p>chrome 默认字体大小16px, 最小字体 12px<br>若需要小于12px的字体，可参考以下解决方案：<a href="https://github.com/islittle/Web-Developer/blob/master/css-notes/compatible-with-less-than-12px-fontsize.md" target="_blank" rel="noopener">islittle/Web-Developer</a></p>
 <h1 id="七、文本"><a href="#七、文本" class="headerlink" title="七、文本"></a>七、文本</h1><h3 id="1、类型"><a href="#1、类型" class="headerlink" title="1、类型"></a>1、类型</h3><ul>
 <li><code>text-align</code>：文本对其方式。<code>left</code>、<code>center</code>、<code>right</code>、<code>justify</code>（≈两端对齐）</li>
@@ -569,12 +616,12 @@
 <li><code>color</code>：文字颜色</li>
 <li><code>text-transform</code>：改变文字大小写。<code>none</code>（不改写）、<code>uppercase</code>（小写展示大写）、<code>lowercase</code>（大写展示小写）、<code>capitalize</code>（单词的首字母变大写展示）</li>
 <li><code>word-spacing</code>：可以改变字（单词）之间的标准间隔（对于中文，每字就是一单词）</li>
-<li><code>letter-spacing</code>：字母间隔修改的是字符或字母之间的间隔<br>演示如图所示：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2aadf4d8d?w=600&amp;h=346&amp;f=jpeg&amp;s=43440" alt="image"></li>
+<li><code>letter-spacing</code>：字母间隔修改的是字符或字母之间的间隔<br>演示如图所示：<img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2aadf4d8d?w=600&amp;h=346&amp;f=jpeg&amp;s=43440" alt="image"></li>
 </ul>
 <h3 id="2、几种情况："><a href="#2、几种情况：" class="headerlink" title="2、几种情况："></a>2、几种情况：</h3><p>（1）行内元素居中，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.box&#123;</span><br><span class="line">text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;box&quot;&gt;</span><br><span class="line">&lt;img src=&quot;http://7xpvnv.com2.z0.glb.qiniucdn.com/6673909a-098c-4202-8b80-f4aad64e0262.png&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <p>（2）<code>display：inline-block</code>元素居中，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;text-align: center;&quot;&gt;</span><br><span class="line">&lt;img  style=&quot;margin: 0 auto&quot; src=&quot;XXX.png&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <p>（3）单行文本溢出，关键代码如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.card &gt; h3&#123;</span><br><span class="line">white-space: nowrap;</span><br><span class="line">overflow: hidden;</span><br><span class="line">text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>如图：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2af361340?w=600&amp;h=227&amp;f=jpeg&amp;s=25981" alt="image"></p>
+<p><strong>如图：</strong> <img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2af361340?w=600&amp;h=227&amp;f=jpeg&amp;s=25981" alt="image"></p>
 <h1 id="八、颜色"><a href="#八、颜色" class="headerlink" title="八、颜色"></a>八、颜色</h1><h3 id="1、单词："><a href="#1、单词：" class="headerlink" title="1、单词："></a>1、单词：</h3><p><code>red</code>、<code>blue</code>、<code>pink</code>、<code>yellow</code>、<code>white</code>、<code>black</code></p>
 <h3 id="2、十六进制："><a href="#2、十六进制：" class="headerlink" title="2、十六进制："></a>2、十六进制：</h3><ul>
 <li><code>#ff0000</code> 红色</li>
@@ -593,18 +640,17 @@
 <li><code>rgba</code>:  <code>rgba(0,0,0,0.5)</code>（css3中涉及）</li>
 </ul>
 <h1 id="九、单位"><a href="#九、单位" class="headerlink" title="九、单位"></a>九、单位</h1><h3 id="1、px：固定单位"><a href="#1、px：固定单位" class="headerlink" title="1、px：固定单位"></a>1、<code>px</code>：固定单位</h3><h3 id="2、em：相对长度单位，相对于当前元素的字体大小。如图："><a href="#2、em：相对长度单位，相对于当前元素的字体大小。如图：" class="headerlink" title="2、em：相对长度单位，相对于当前元素的字体大小。如图："></a>2、<code>em</code>：相对长度单位，相对于当前元素的字体大小。如图：</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2b94491dc?w=600&amp;h=310&amp;f=jpeg&amp;s=20729" alt="image"></p>
-<h3 id="3、rem：相对单位，相对于根元素（html）字体大小，即1rem-html设置的font-size，移动端较常用。"><a href="#3、rem：相对单位，相对于根元素（html）字体大小，即1rem-html设置的font-size，移动端较常用。" class="headerlink" title="3、rem：相对单位，相对于根元素（html）字体大小，即1rem = html设置的font-size，移动端较常用。"></a>3、<code>rem</code>：相对单位，相对于根元素（html）字体大小，即<code>1rem = html</code>设置的<code>font-size</code>，移动端较常用。</h3><p>关于<code>rem</code>的好处我查了资料这个我比较理解，分享出来：<br><a href="https://www.zhihu.com/question/21504656/answer/18438819" target="_blank" rel="noopener">css3的字体大小单位[rem]到底好在哪？</a></p>
+<h3 id="3、rem：相对单位，相对于根元素（html）字体大小，即1rem-html设置的font-size，移动端较常用。"><a href="#3、rem：相对单位，相对于根元素（html）字体大小，即1rem-html设置的font-size，移动端较常用。" class="headerlink" title="3、rem：相对单位，相对于根元素（html）字体大小，即1rem = html设置的font-size，移动端较常用。"></a>3、<code>rem</code>：相对单位，相对于根元素（html）字体大小，即<code>1rem = html</code>设置的<code>font-size</code>，移动端较常用。</h3><p>关于<code>rem</code>的好处我查了资料这个我比较理解，分享出来：<a href="https://www.zhihu.com/question/21504656/answer/18438819" target="_blank" rel="noopener">css3的字体大小单位[rem]到底好在哪？</a></p>
 <h3 id="4、vw-vh：相对单位，1vw为屏幕宽度的1-兼容性较差"><a href="#4、vw-vh：相对单位，1vw为屏幕宽度的1-兼容性较差" class="headerlink" title="4、vw  vh：相对单位，1vw为屏幕宽度的1% 兼容性较差"></a>4、<code>vw  vh</code>：相对单位，<code>1vw</code>为屏幕宽度的1% 兼容性较差</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2bd020af8?w=600&amp;h=337&amp;f=jpeg&amp;s=27638" alt="image"></p>
-<h3 id="5、百分比：（涉及宽高？文字大小？line-height、position）"><a href="#5、百分比：（涉及宽高？文字大小？line-height、position）" class="headerlink" title="5、百分比：（涉及宽高？文字大小？line-height、position）"></a>5、百分比：（涉及宽高？文字大小？<code>line-height</code>、<code>position</code>）</h3><h1 id="十、其他"><a href="#十、其他" class="headerlink" title="十、其他"></a>十、其他</h1><h3 id="1、a链接设置颜色"><a href="#1、a链接设置颜色" class="headerlink" title="1、a链接设置颜色"></a>1、<code>a</code>链接设置颜色</h3><p>注：</p>
+<h3 id="5、百分比：（涉及宽高？文字大小？line-height、position）"><a href="#5、百分比：（涉及宽高？文字大小？line-height、position）" class="headerlink" title="5、百分比：（涉及宽高？文字大小？line-height、position）"></a>5、百分比：（涉及宽高？文字大小？<code>line-height</code>、<code>position</code>）</h3><h1 id="十、其他"><a href="#十、其他" class="headerlink" title="十、其他"></a>十、其他</h1><h3 id="1、a链接设置颜色"><a href="#1、a链接设置颜色" class="headerlink" title="1、a链接设置颜色"></a>1、<code>a</code>链接设置颜色</h3><p><strong>注：</strong></p>
 <ul>
 <li>当鼠标放置<code>a</code>链接，本身就会出现“手”指针的形状效果</li>
 <li><code>a</code>有默认颜色和样式，会覆盖继承的样式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a&#123;</span><br><span class="line">color：red；</span><br><span class="line">text-decoration: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2cc909acc?w=600&amp;h=322&amp;f=jpeg&amp;s=34056" alt="image"></p>
-<h3 id="2、列表去掉点"><a href="#2、列表去掉点" class="headerlink" title="2、列表去掉点"></a>2、列表去掉点</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* 设定列表样式为：无 ,即没有顺序数字、圆点出现*/</span><br><span class="line"></span><br><span class="line">ul&#123;</span><br><span class="line">list-style: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>/<em>也可这样</em>/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li&#123;</span><br><span class="line">list-style: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2cd1490a2?w=600&amp;h=322&amp;f=jpeg&amp;s=28682" alt="image"></p>
+<h3 id="2、列表去掉点"><a href="#2、列表去掉点" class="headerlink" title="2、列表去掉点"></a>2、列表去掉点</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* 设定列表样式为：无 ,即没有顺序数字、圆点出现*/</span><br><span class="line"></span><br><span class="line">ul&#123;</span><br><span class="line">list-style: none;</span><br><span class="line">&#125;</span><br><span class="line">/*也可这样*/</span><br><span class="line">li&#123;</span><br><span class="line">list-style: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如图：<img src="https://user-gold-cdn.xitu.io/2018/8/14/165380c2cd1490a2?w=600&amp;h=322&amp;f=jpeg&amp;s=28682" alt="image"></p>
 
       
     </div>
@@ -749,7 +795,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -771,7 +817,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -902,7 +948,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">40.3k</span>
+    <span title="Site words total count">70.9k</span>
   
 </div>
 
@@ -929,7 +975,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共40.3k字</span>
+  <span class="post-count">博客全站共70.9k字</span>
 </div>
 
         

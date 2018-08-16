@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,DOM元素,DOM操作,Element对象," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、DOM1、定义DOM，即文档对象模型（Document Object Model ）">
+<meta name="keywords" content="JavaScript,DOM元素,DOM操作,Element对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hello，JS：09 DOM元素">
+<meta property="og:url" content="http://yoursite.com/2018/08/17/35-09 DOM元素/index.html">
+<meta property="og:site_name" content="miya&#39;s Blog">
+<meta property="og:description" content="一、DOM1、定义DOM，即文档对象模型（Document Object Model ）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/11/165282eaf18f0f29?w=486&h=266&f=jpeg&s=22604">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/11/165282eeca183fa8?w=600&h=427&f=jpeg&s=70597">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/11/165282fcb60472f1?w=600&h=360&f=jpeg&s=76435">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530ee1e39352fe?w=600&h=583&f=jpeg&s=98240">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530ee1ecdb18dc?w=600&h=392&f=jpeg&s=105639">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530ee1ed0291a7?w=600&h=185&f=jpeg&s=45781">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/16/16541c20e8dc95ed?w=720&h=255&f=jpeg&s=32211">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530ee1ed1312ed?w=600&h=239&f=jpeg&s=86594">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530ee1ed326b7d?w=600&h=182&f=jpeg&s=52390">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530ee1ed3314c7?w=600&h=145&f=jpeg&s=14664">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530ee156afc964?w=600&h=360&f=jpeg&s=50471">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530ee9556d0cf5?w=600&h=186&f=jpeg&s=60588">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530ef4fe597938?w=600&h=287&f=jpeg&s=84499">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530ef86eb33743?w=600&h=358&f=jpeg&s=50780">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530efdfedda277?w=600&h=246&f=jpeg&s=79846">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530f0156774416?w=600&h=352&f=jpeg&s=51657">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530f737f704d9f?w=600&h=329&f=jpeg&s=80648">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530fd2d966f8f1?w=600&h=738&f=jpeg&s=160674">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530fe24523eb59?w=600&h=320&f=jpeg&s=81669">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530ff413b18abc?w=600&h=313&f=jpeg&s=107778">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16530ff6b4059337?w=599&h=161&f=gif&s=4846149">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/16531007d14916f8?w=411&h=247&f=jpeg&s=41419">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/1653100f5f4f6d88?w=411&h=247&f=jpeg&s=41377">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/1653101a47f12dee?w=600&h=315&f=jpeg&s=113276">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/13/165311083544da93?w=600&h=349&f=jpeg&s=80569">
+<meta property="og:updated_time" content="2018-08-16T17:10:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hello，JS：09 DOM元素">
+<meta name="twitter:description" content="一、DOM1、定义DOM，即文档对象模型（Document Object Model ）">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/8/11/165282eaf18f0f29?w=486&h=266&f=jpeg&s=22604">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/17/35-09 DOM元素/"/>
+
+
+
+
+
+  <title>hello，JS：09 DOM元素 | miya's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <!-- Github-start -->
+    <a href="https://github.com/wxq393" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <!-- Github-end -->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">miya's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/35-09 DOM元素/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="miya Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="miya's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">hello，JS：09 DOM元素</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T01:01:18+08:00">
+                2018-08-17
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-17T01:10:47+08:00">
+                2018-08-17
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/17/35-09 DOM元素/" class="leancloud_visitors" data-flag-title="hello，JS：09 DOM元素">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4,520
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  19
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、DOM"><a href="#一、DOM" class="headerlink" title="一、DOM"></a>一、DOM</h1><h3 id="1、定义"><a href="#1、定义" class="headerlink" title="1、定义"></a>1、定义</h3><p>DOM，即文档对象模型（Document Object Model ）<br><a id="more"></a></p>
+<h3 id="2、现象"><a href="#2、现象" class="headerlink" title="2、现象"></a>2、现象</h3><p>通过在页面——打开：检查元素——看见：元素为可折叠。可选中页面对应元素，事实上即选择了对象（即也选择了对象对应的属性或方法），相当于把页面文档对象化。事实上，就是用js手段调用操作该文档（即一个对象）。<br><img src="https://user-gold-cdn.xitu.io/2018/8/11/165282eaf18f0f29?w=486&amp;h=266&amp;f=jpeg&amp;s=22604" alt=""></p>
+<h1 id="二、Document对象，属性（或方法）"><a href="#二、Document对象，属性（或方法）" class="headerlink" title="二、Document对象，属性（或方法）"></a>二、Document对象，属性（或方法）</h1><p>在DOM中最常用的对象就是：document对象（页面——检查，即查看属性）、element对象</p>
+<h3 id="1、常用属性"><a href="#1、常用属性" class="headerlink" title="1、常用属性"></a>1、常用属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">document.doctype</span><br><span class="line">document.title</span><br><span class="line">document.characterSet</span><br><span class="line">document.head</span><br><span class="line">document.body</span><br><span class="line">document.images</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/11/165282eeca183fa8?w=600&amp;h=427&amp;f=jpeg&amp;s=70597" alt=""></p>
+<h3 id="2、document-readyState"><a href="#2、document-readyState" class="headerlink" title="2、document.readyState"></a>2、<code>document.readyState</code></h3><p><strong>readyState属性</strong>   返回当前文档的状态，共有三种可能的值:</p>
+<ul>
+<li>loading：加载HTML代码阶段，尚未完成解析</li>
+<li>interactive：加载外部资源阶段</li>
+<li>complete：全部加载完成</li>
+</ul>
+<p>图：可在代码中加上几张图片元素，再设置网络条件为慢3G，则出现：<br><img src="https://user-gold-cdn.xitu.io/2018/8/11/165282fcb60472f1?w=600&amp;h=360&amp;f=jpeg&amp;s=76435" alt=""></p>
+<h3 id="3、-document-compatMode"><a href="#3、-document-compatMode" class="headerlink" title="3、 document.compatMode"></a>3、 <code>document.compatMode</code></h3><p><strong>compatMode 属性</strong>  返回浏览器处理文档的模式，可能的值为</p>
+<ul>
+<li>BackCompat：向后兼容模式，也就是没有添加DOCTYPE</li>
+<li>CSS1Compat：严格模式，添加了DOCTYPE</li>
+</ul>
+<h3 id="4、document-location"><a href="#4、document-location" class="headerlink" title="4、document.location"></a>4、<code>document.location</code></h3><p>用于获取一个url</p>
+<p>可直接使用<code>location</code>，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.location === location        //true</span><br><span class="line">document.location === window.location  //true</span><br></pre></td></tr></table></figure></p>
+<p><strong>总结：</strong> <code>document.location === location ===  window.location</code><br><code>location</code>属性返回一个只读对象，提供了当前文档的URL信息，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 假定当前网址为http://user:passwd@www.example.com:4097/path/a.html?x=111#part1</span><br><span class="line"></span><br><span class="line">document.location.href // &quot;http://user:passwd@www.example.com:4097/path/a.html?x=111#part1&quot;</span><br><span class="line">document.location.protocol // &quot;http:&quot;</span><br><span class="line">document.location.host // &quot;www.example.com:4097&quot;</span><br><span class="line">document.location.hostname // &quot;www.example.com&quot;</span><br><span class="line">document.location.port // &quot;4097&quot;</span><br><span class="line">document.location.pathname // &quot;/path/a.html&quot;</span><br><span class="line">document.location.search // &quot;?x=111&quot;</span><br><span class="line">document.location.hash // &quot;#part1&quot;</span><br><span class="line">document.location.user // &quot;user&quot;</span><br><span class="line">document.location.password // &quot;passed&quot;</span><br></pre></td></tr></table></figure></p>
+<p>其他location属性调用方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 跳转到另一个网址</span><br><span class="line">document.location.assign(&apos;http://www.google.com&apos;)</span><br><span class="line"></span><br><span class="line">// 优先从服务器重新加载</span><br><span class="line">document.location.reload(true)</span><br><span class="line"></span><br><span class="line">// 优先从本地缓存重新加载（默认值）</span><br><span class="line">document.location.reload(false)</span><br><span class="line"></span><br><span class="line">// 跳转到另一个网址，但当前文档不保留在history对象中，</span><br><span class="line">// 即无法用后退按钮，回到当前文档</span><br><span class="line">document.location.assign(&apos;http://www.google.com&apos;)</span><br><span class="line"></span><br><span class="line">// 将location对象转为字符串，等价于document.location.href</span><br><span class="line">document.location.toString()</span><br></pre></td></tr></table></figure></p>
+<h3 id="5、document-write"><a href="#5、document-write" class="headerlink" title="5、document.write()"></a>5、<code>document.write()</code></h3><p>用<code>document.write()</code>方法时，即向当前文档写入内容，只要当前文档还没有用close方法关闭，它所写入的内容就会追加在已有内容的后面。<br>1<a href="https://pic2.zhimg.com/v2-7987a184f7dee394a535ac3c1920977c_b.jpg" target="_blank" rel="noopener"></a></p>
+<ul>
+<li>如果页面已经渲染完成再调用write方法，它会先调用open方法，擦除当前文档所有内容，然后再写入。</li>
+<li>如果在页面渲染过程中调用write方法，并不会调用open方法。<br>-需要注意的是，虽然调用close方法之后，无法再用write方法写入内容，但这时当前页面的其他DOM节点还是会继续加载。<br>-做测试时，无须使用document.write()方法</li>
+</ul>
+<h1 id="三、Element对象，属性（或方法）"><a href="#三、Element对象，属性（或方法）" class="headerlink" title="三、Element对象，属性（或方法）"></a>三、Element对象，属性（或方法）</h1><p>document对应的具体元素应如何选取（或操作）？<br>element对象表示页面上的元素。使用JS选择页面上的元素（element），然后对其做操作。</p>
+<p>那么，对页面元素的操作有哪些？</p>
+<p>A、选择它：通过一些方法找到其具体元素（如用css的id，class名，选择器、邻居、赋值等）</p>
+<p>B、处理它：对拥有类型为元素节点、文本节点、注释节点的子节点进行删除、增加、查找、修改等操作</p>
+<h3 id="1、几个常用属性"><a href="#1、几个常用属性" class="headerlink" title="1、几个常用属性"></a>1、几个常用属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">nodeName：元素标签名，还有个类似的tagName</span><br><span class="line">nodeType：元素类型</span><br><span class="line">className：类名</span><br><span class="line">id：元素id</span><br><span class="line">children：子元素列表（HTMLCollection）</span><br><span class="line">childNodes：子元素列表（NodeList）</span><br><span class="line">firstChild：第一个子元素</span><br><span class="line">lastChild：最后一个子元素</span><br><span class="line">nextSibling：下一个兄弟元素</span><br><span class="line">previousSibling：上一个兄弟元素</span><br><span class="line">parentNode、parentElement：父元素</span><br></pre></td></tr></table></figure>
+<h3 id="2、查询元素（如何选中一个元素？）"><a href="#2、查询元素（如何选中一个元素？）" class="headerlink" title="2、查询元素（如何选中一个元素？）"></a>2、查询元素（如何选中一个元素？）</h3><p>（1）<code>getElementById()</code><br>结合页面元素使用 <code>+</code><br><code>document.getElementByid()</code></p>
+<p>如图：利用此方法选中该id的页面位置<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530ee1e39352fe?w=600&amp;h=583&amp;f=jpeg&amp;s=98240" alt=""></p>
+<p>（2）<code>getElementsByClassName()</code>     <strong>注：有s</strong><br><code>document.getElementByClassName()</code></p>
+<p>页面元素中不止独一无二的id名，还有类选择器，当我们在页面控制台上通过<code>getElementByClassName()</code>时，可获取（或查询）到一个或多个类选择器，会出现如图现象：<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530ee1ecdb18dc?w=600&amp;h=392&amp;f=jpeg&amp;s=105639" alt=""><br>这看上去有点像数组，呈现形式相似、也可以用下标去进行访问。但通过<code>list.</code>去查看，并没有有关排序<code>push</code>、<code>pop</code>等的调用数组的方法，而是一种类数组的形式。</p>
+<p>通过：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list.constructor</span><br><span class="line">--&gt; ƒ HTMLCollection()&#123; [native code] &#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们可以获知，<code>document.getElementsByClassName()</code> 所调用的是html里类的集合，其类型为<code>HTMLCollection()</code>，是一种页面元素的集合。</p>
+<p>（3）<code>getElementsByName()</code><br><code>document.getElementsByName()</code><br>通过此方法可以获取页面元素中带有name属性的html元素。比如<code>form</code>、<code>img</code>、<code>frame</code>、<code>embed</code>和<code>object</code>，返回一个<code>NodeList</code>格式的对象，不会实时反映元素的变化。如：<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530ee1ed0291a7?w=600&amp;h=185&amp;f=jpeg&amp;s=45781" alt=""></p>
+<p>（4）假设,类选择器有嵌套的话，我们如何获取嵌套于内的元素？如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/16/16541c20e8dc95ed?w=720&amp;h=255&amp;f=jpeg&amp;s=32211" alt=""><br>A、<strong>（较为繁琐的）</strong> ES3写法：<code>getElementsByName().getElementsByName()</code></p>
+<p>语法：<br><code>document.getElementsByName().getElementsByName()</code></p>
+<p>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.getElementsByClassName(&apos;box&apos;)[0].getElementsByClassName(&apos;child&apos;)</span><br><span class="line">--&gt; HTMLCollection [div.child]</span><br></pre></td></tr></table></figure></p>
+<p>事实上，使用<strong>document.getElementsByName()</strong>做一个联集，即无论是document还是任何一个对象，都可以使用：<strong>对象.XXXX</strong>  去做一个联集对象去获取相对应的准确元素。</p>
+<p>B、<strong>（较为简便的）</strong><br>ES5写法：<code>querySelector()</code></p>
+<p><strong>注：</strong>可用于选择id元素使用</p>
+<p>语法：<br><code>document.querySelector()</code></p>
+<p>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector(&apos;.box .child&apos;)</span><br><span class="line">--&gt; &lt;div class=&quot;child&quot;&gt;child&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530ee1ed1312ed?w=600&amp;h=239&amp;f=jpeg&amp;s=86594" alt=""><br>不过，它选择元素的时候，只能获取一个元素，如页面元素中有多个div，只会默认选择html元素中排在第一个的div元素。</p>
+<p>如果需要在选择元素时，多种页面元素希望可以同时选中，则可以使用<br>这样的写法：<code>querySelectorAll()</code></p>
+<p><strong>注：</strong> 可用于选择class元素时使用</p>
+<p>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//比如：</span><br><span class="line">document.querySelectorAll(&apos;div&apos;)</span><br><span class="line">--&gt; NodeList(3) [div.box, div.child, div.box]</span><br><span class="line">document.querySelectorAll(&apos;.box&apos;)</span><br><span class="line">--&gt; NodeList(2) [div.box, div.box]</span><br><span class="line">document.querySelectorAll(&apos;#target&apos;)</span><br><span class="line">--&gt; NodeList [p#target]</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530ee1ed326b7d?w=600&amp;h=182&amp;f=jpeg&amp;s=52390" alt=""></p>
+<p>在控制台测试时，我们可以直接使用<code>$()</code>和<code>$$()</code>直接代<code>document.querySelector()</code>和<code>document.querySelectorAll()</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#target&apos;)</span><br><span class="line">--&gt; &lt;p id=&quot;target&quot;&gt;wangxiaoqin&lt;/p&gt;</span><br><span class="line">$$(&apos;#target&apos;)</span><br><span class="line">--&gt; [p#target]</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530ee1ed3314c7?w=600&amp;h=145&amp;f=jpeg&amp;s=14664" alt=""><br>可以自己写个方法，让<code>$()</code>和<code>$$()</code>可以在代码编辑器中直接使用，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//写个方法：</span><br><span class="line">function $(selector)&#123;</span><br><span class="line">   return document.querySelector(selector)</span><br><span class="line">&#125;</span><br><span class="line">--&gt; undefined</span><br><span class="line">//即下面就可以在编辑器大胆使用$() 和 $$()，举几个例子：</span><br><span class="line">$(&apos;#target&apos;)</span><br><span class="line">--&gt; &lt;p id=&quot;target&quot;&gt;wangxiaoqin&lt;/p&gt;</span><br><span class="line">$(&apos;.box&apos;)</span><br><span class="line">--&gt; &lt;div class=&quot;box&quot;&gt;…&lt;/div&gt;</span><br><span class="line">$(&apos;.box .child&apos;)</span><br><span class="line">--&gt; &lt;div class=&quot;child&quot;&gt;child&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（5）<code>getElementsByTagName()</code><br><code>document.getElementsByTagName()</code></p>
+<p>此方法返回所有指定标签的元素（搜索范围包括本身），返回值是一个<code>HTMLCollection</code>对象，也就是说，搜索结果是一个动态集合，任何元素的变化都会实时反映在返回的集合中。如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530ee156afc964?w=600&amp;h=360&amp;f=jpeg&amp;s=50471" alt=""></p>
+<h3 id="3、创建元素"><a href="#3、创建元素" class="headerlink" title="3、创建元素"></a>3、创建元素</h3><p>（1）<code>createElement()</code> 创建一个新的元素放到页面上</p>
+<p>用此方法创建并传入html的元素标签，创建一个<strong>虚拟的dom</strong>。该dom的节点存在内存里，并没有放在页面上，用户看不见。<br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">document.createElement(&apos;div&apos;)</span><br><span class="line">--&gt; &lt;div&gt;&lt;/div&gt;</span><br><span class="line">//可赋值一个变量，之后可通过该变量轻松获取</span><br><span class="line">var div = document.createElement(&apos;div&apos;)</span><br><span class="line">--&gt; undefined</span><br><span class="line">div</span><br><span class="line">--&gt; &lt;div&gt;&lt;/div&gt;</span><br><span class="line">var div = document.createElement(&apos;img&apos;)</span><br><span class="line">--&gt; undefined</span><br><span class="line">div</span><br><span class="line">--&gt;  &lt;img&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（2）<code>createTextNode()</code><br>光出现元素标签还不够，我们可通过<code>createTextNode()</code>去创建（或生成）一个文本，将文本的内容放入元素中，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var text = document.createTextNode(&apos;wangxiaoqin&apos;)</span><br><span class="line">--&gt; undefined</span><br><span class="line">text</span><br><span class="line">--&gt; &quot;wangxiaoqin&quot;</span><br></pre></td></tr></table></figure></p>
+<p>（3）<code>createDocumentFragment()</code><br>该方法用来生成一个存在于内存的dom片段，但不属于当前文档。即不会生成一个标签，虚拟生成，常用于生成复杂的dom结构，然后插入当前文档。</p>
+<p>正因为它不属于当前文档，所以并不参与页面的渲染加载的过程，它的任何改动都不会引发网页的重新渲染。比直接修改当前文档的DOM有更好的性能表现。</p>
+<h3 id="4、修改元素"><a href="#4、修改元素" class="headerlink" title="4、修改元素"></a>4、修改元素</h3><p>（1）<code>appendChild()</code><br>在元素末尾添加元素。把一个dom对象放入在另外一个对象的内部作为它的孩子</p>
+<p>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var newDiv = document.createElement(&quot;div&quot;)</span><br><span class="line">var newContent = document.createTextNode(&quot;Hello&quot;)</span><br><span class="line">newDiv.appendChild(newContent)//括号内为新添加的“孩子”</span><br><span class="line">--&gt; &quot;hello&quot;</span><br></pre></td></tr></table></figure></p>
+<p>看一个实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;ul class=&quot;navbar&quot;&gt;&lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">//选择该容器ul，获取指定元素</span><br><span class="line">var navbarNode = document.querySelector(&apos;.navbar&apos;)</span><br><span class="line"></span><br><span class="line">for(var i=0;i&lt;5;i++)&#123;//以下循环5此</span><br><span class="line">  //创建一个子元素li</span><br><span class="line">  var child = document.createElement(&apos;li&apos;)</span><br><span class="line">  //创建一个文本，参数为字符串</span><br><span class="line">  var text = document.createTextNode(&apos;hello&apos;+i)</span><br><span class="line">  //修改元素</span><br><span class="line">  child.appendChild(text)</span><br><span class="line">  //然后再把li放在我们的navbarNode里</span><br><span class="line">  navbarNode.append(child)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530ee9556d0cf5?w=600&amp;h=186&amp;f=jpeg&amp;s=60588" alt=""></p>
+<p><strong>另一种方法：</strong> 使用<code>appendChild()</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;ul class=&quot;navbar&quot;&gt;&lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">//选择该容器ul，获取指定元素</span><br><span class="line">var navbarNode = document.querySelector(&apos;.navbar&apos;)</span><br><span class="line"></span><br><span class="line">//创建一个虚拟的片段，可看成是一个虚拟标签，到最后放在navbarNode，该虚拟标签消失</span><br><span class="line">var fragment =document.createDocumentFragment()</span><br><span class="line">for(var i=0;i&lt;5;i++)&#123;//以下循环5此</span><br><span class="line">  //创建一个子元素li</span><br><span class="line">  var child = document.createElement(&apos;li&apos;)</span><br><span class="line">  //创建一个文本，参数为字符串</span><br><span class="line">  var text = document.createTextNode(&apos;helloo&apos;+i)</span><br><span class="line">  //修改元素</span><br><span class="line">  child.appendChild(text)</span><br><span class="line">  //然后再把li放在我们的frgment这个虚拟片段里</span><br><span class="line">  fragment.appendChild(child)</span><br><span class="line">&#125;</span><br><span class="line">//再将这个片段放在navbarNode里</span><br><span class="line">navbarNode.appendChild(fragment)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530ef4fe597938?w=600&amp;h=287&amp;f=jpeg&amp;s=84499" alt=""><br>在控制台我们可以看到：<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530ef86eb33743?w=600&amp;h=358&amp;f=jpeg&amp;s=50780" alt=""><br>再回看JS代码，则可以知道，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fragment =document.createDocumentFragment()</span><br></pre></td></tr></table></figure></p>
+<p>这里创建的这个虚拟片段，我们可看成是一个<strong>虚拟标签</strong>，到最后放在<code>navbarNode</code>，该虚拟标签消失。并不影响实际页面元素的改动。</p>
+<p>假设：我们在<code>createDocumentFragment()</code>里加上一个实际的块元素包裹li，那么则不符合页面的规则，如：<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530efdfedda277?w=600&amp;h=246&amp;f=jpeg&amp;s=79846" alt=""><br>控制台则如：这显然不符合规则<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530f0156774416?w=600&amp;h=352&amp;f=jpeg&amp;s=51657" alt=""></p>
+<p>（2）<code>insertBefore()</code><br>在某个元素之前插入元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var newDiv = document.createElement(&quot;div&quot;)</span><br><span class="line">var newContent = document.createTextNode(&quot;Hello&quot;)</span><br><span class="line">newDiv.insertBefore(newContent, newDiv.firstChild)</span><br></pre></td></tr></table></figure></p>
+<p>（3）<code>replaceChild()</code><br><code>replaceChild()</code>接受两个参数：要插入的元素和要替换的元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newDiv.replaceChild(newElement, oldElement)</span><br></pre></td></tr></table></figure>
+<h3 id="5、删除元素"><a href="#5、删除元素" class="headerlink" title="5、删除元素"></a>5、删除元素</h3><p><code>removeChild()</code>  用于删除元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parentNode.removeChild(childNode)</span><br></pre></td></tr></table></figure></p>
+<p>6、<code>clone</code>元素<br>克隆一个完成的dom节点。<br>方法有一个布尔值参数，传入true的时候会深复制，也就是会复制元素及其子元素（IE还会复制其事件），false的时候只复制元素本身<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node.cloneNode(true)</span><br></pre></td></tr></table></figure></p>
+<h1 id="四、属性的操作（即修改dom元素的属性的操作方法）"><a href="#四、属性的操作（即修改dom元素的属性的操作方法）" class="headerlink" title="四、属性的操作（即修改dom元素的属性的操作方法）"></a>四、属性的操作（即修改dom元素的属性的操作方法）</h1><h3 id="1、getAttribute"><a href="#1、getAttribute" class="headerlink" title="1、getAttribute()"></a>1、<code>getAttribute()</code></h3><p>（现有页面中有一个图片地址，所对应的是一个src的地址，如果更换图片，则需要修改src对应的值。（或获取一个img的src，或a链接的href））用于获取元素的属性值，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node.getAttribute(&apos;id&apos;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="2、createAttribute-【一般用不到，一般不创建】"><a href="#2、createAttribute-【一般用不到，一般不创建】" class="headerlink" title="2、createAttribute()     【一般用不到，一般不创建】"></a>2、<code>createAttribute()</code>     【一般用不到，一般不创建】</h3><p>用于创建（或获取）属性名，如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">attribute = document.createAttribute(name)//参数name，是属性的名称</span><br></pre></td></tr></table></figure></p>
+<h3 id="3、setAttribute"><a href="#3、setAttribute" class="headerlink" title="3、setAttribute()"></a>3、<code>setAttribute()</code></h3><p>用于设置属性和值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var node = document.getElementById(&quot;div1&quot;);</span><br><span class="line">node.setAttribute(&quot;my_attrib&quot;, &quot;newVal&quot;);  //括号中为“属性名+值”</span><br></pre></td></tr></table></figure></p>
+<h3 id="4、removeAttribute"><a href="#4、removeAttribute" class="headerlink" title="4、removeAttribute()"></a>4、<code>removeAttribute()</code></h3><p>用于删除对应属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node.removeAttribute(&apos;id&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>页面范例展示涉及到的点：</p>
+<p>（1）查找、修改、获取、删除a链接的属性（这里为id）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var link = document.querySelector(&apos;a&apos;)</span><br><span class="line">link</span><br><span class="line">   &lt;a href=&quot;#&quot;&gt;wanxgiaoqin&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">//可以创建 a链接的id属性值</span><br><span class="line">link.setAttribute(&apos;id&apos;,&apos;login&apos;)</span><br><span class="line"></span><br><span class="line">//以此类推，可以修改它的id</span><br><span class="line">link.setAttribute(&apos;id&apos;,&apos;logout&apos;)</span><br><span class="line">//可以获取（或添加）它的id</span><br><span class="line">link.getAttribute(&apos;id&apos;)</span><br><span class="line">//可以删除它的id</span><br><span class="line">link.removeAttribute(&apos;id&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530f737f704d9f?w=600&amp;h=329&amp;f=jpeg&amp;s=80648" alt=""></p>
+<p>（2）创建一个样式放在页面上，如何操作？</p>
+<p>如：使用js让我们的页面上引入一个新的js，如jquery。可先在<a href="https://www.bootcdn.cn/" target="_blank" rel="noopener">Bootstrap 中文网开源项目免费CDN加速服务</a>上找一个jquery的地址</p>
+<p>分析：用js引用一个jQuery，那么需要有一个scirpt的标签，用src来指向jQuery地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//创建一个script标签</span><br><span class="line">var script = document.createElement(&apos;script&apos;)</span><br><span class="line">--&gt; undefined</span><br><span class="line">script </span><br><span class="line">&lt;script&gt;&lt;/script &gt; </span><br><span class="line"></span><br><span class="line">//设置元素的属性和值</span><br><span class="line">script .setAttribute(&apos;src&apos;,&apos;https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js&apos;)</span><br><span class="line">--&gt; undefined</span><br><span class="line">//验证一下</span><br><span class="line">script</span><br><span class="line">--&gt; &lt;script  src=&quot;https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js&quot;&gt;&lt;/script &gt; </span><br><span class="line"></span><br><span class="line">//通过.body.appendChild(script)将整个标签属性值放置到页面</span><br><span class="line">document.body.appendChild(script)</span><br><span class="line">--&gt; &lt;script  src=&quot;https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js&quot;&gt;&lt;/script &gt; </span><br><span class="line">//使用jquery</span><br><span class="line">$</span><br><span class="line">--&gt; ƒ (e,t)&#123;return new w.fn.init(e,t)&#125;</span><br><span class="line">jQuery</span><br><span class="line">--&gt; ƒ (e,t)&#123;return new w.fn.init(e,t)&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="5、innerHTML-VS-innerText"><a href="#5、innerHTML-VS-innerText" class="headerlink" title="5、innerHTML VS innerText"></a>5、<code>innerHTML</code> VS <code>innerText</code></h3><p>（1）<code>innerHTML</code><br>假设获取了一个dom元素，想知道页面中的html元素是什么，或者放入很多东西（不通过创建dom节点的方式<code>appendChild</code>进去）页面的一些菜单栏设置，通过后台要数据，后台交还一个数组或json数据（包括菜单的所有信息），如何将菜单渲染到页面上？通过字符串操作遍历对象（或数组）去拼装html字符串，拼接后一次性将html放置在空的节点下，则页面看到了东西</p>
+<p>几个操作：Ajax获取数据——数据到来之后拼接html字符串（遍历、相加）——通过<code>innerHtml</code>方法将包含菜单信息的html字符串放在页面上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//数组的值渲染做成一个菜单</span><br><span class="line">var navbarDate =[1,2,3]</span><br><span class="line">//写一个空字符串，去拼接字符串的html</span><br><span class="line">var html =&apos; &apos;</span><br><span class="line">//遍历这个数组</span><br><span class="line">navbarDate.forEach(function(item)&#123;</span><br><span class="line">     html +=&apos;&lt;li&gt;&apos;+item+&apos;&lt;/li&gt;&apos;   //将数组三个数拼在一起</span><br><span class="line">&#125;)</span><br><span class="line">--&gt; undefined</span><br><span class="line">html</span><br><span class="line">--&gt; &quot;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&quot;  //无需换行，只需要拼接处html字符串即可</span><br><span class="line"></span><br><span class="line">//可将生成的html字符串放在.navbar</span><br><span class="line">document.querySelector(&apos;.navbar&apos;).innnerHTML = html</span><br><span class="line">--&gt; &quot;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&quot; </span><br><span class="line">document.querySelector(&apos;.navbar&apos;)</span><br><span class="line">--&gt; &lt;div class=&quot;navbar&quot;&gt;...&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530fd2d966f8f1?w=600&amp;h=738&amp;f=jpeg&amp;s=160674" alt=""></p>
+<p>（2）<code>innerText</code><br>看看所设置的元素标签下文本是什么（或设置它的文本）</p>
+<p><strong>注：</strong> 没有必要再创建什么元素标签，只需要设置一个空标签，然后设置它的<code>innerText</code></p>
+<p>续上面的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector(&apos;.navbar&apos;).innerText //作html去执行</span><br><span class="line">--&gt;&quot;1</span><br><span class="line">    2</span><br><span class="line">    3</span><br><span class="line">    &quot;</span><br></pre></td></tr></table></figure></p>
+<p>假如代码是这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector(&apos;.navbar&apos;).innerText = html   //呈现给用户</span><br></pre></td></tr></table></figure></p>
+<p>则将展示文本设置在页面上，如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530fe24523eb59?w=600&amp;h=320&amp;f=jpeg&amp;s=81669" alt=""></p>
+<h1 id="五、常见的使用方式"><a href="#五、常见的使用方式" class="headerlink" title="五、常见的使用方式"></a>五、常见的使用方式</h1><h3 id="1、修改样式"><a href="#1、修改样式" class="headerlink" title="1、修改样式"></a>1、修改样式</h3><p>可修改元素的style属性，修改结果直接反映到页面元素（不过，由于CSS权重的关系，虽然控制台修改dom节点上的style属性与页面上的一一对应，但如果权重比不够，修改的结果也不一定生效）<br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//dom元素的style属性上的 XXX与页面上一一对应</span><br><span class="line">document.querySelector(&apos;p&apos;).style.color = &apos;red&apos;  //选中对应元素，和修改对象+属性</span><br><span class="line">document.querySelector(&apos;.box&apos;).style.backgroundColor = &apos;#ccc&apos;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2、获取样式-getComputedStyle"><a href="#2、获取样式-getComputedStyle" class="headerlink" title="2、获取样式   getComputedStyle"></a>2、获取样式   getComputedStyle</h3><p>不是获取元素的style属性，而是元素计算后的样式（包括其他地方做的设置、浏览器默认样式、继承样式等综合后的结果）。即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var node = document.querySelector(&apos;p&apos;)</span><br><span class="line">var color = window.getComputedStyle(node).color  //可直接使用，它是处在win的一个全局变量属性</span><br><span class="line">console.log(color)</span><br></pre></td></tr></table></figure></p>
+<p>如在控制台想要获取页面dom元素的字体大小,如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getComputedStyle(document.querySelector(&apos;#hello&apos;))  //获取的是相对应的对象，通过对象获取对应的style对应的属性</span><br><span class="line">getComputedStyle(document.querySelector(&apos;#hello&apos;))[&apos;font-size&apos;]//即获取字体大小</span><br><span class="line"></span><br><span class="line">//等同于</span><br><span class="line">getComputedStyle(document.querySelector(&apos;#hello&apos;)).fontSize</span><br></pre></td></tr></table></figure></p>
+<h3 id="3、class操作"><a href="#3、class操作" class="headerlink" title="3、class操作"></a>3、class操作</h3><p>当使用样式操作时，涉及到一些样式的切换，可以直接去修改它的style，但这样比较细，且复杂。假设当我们在页面点击一个按钮时，整体发生一个很大的变化（包括字体大小、出现的边框、背景色、背景图片，甚至动画效果），如果都是用style来操作，或导致代码冗长难修改，我们可以将这些样式放在一个css的class里面，如<code>active</code>。正常情况下是没有这些class，当我们点击某个元素的时候，即鼠标放上去时，给这个元素添加一个class<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var nodeBox = document.querySelector(&apos;.box&apos;)</span><br><span class="line">console.log( nodeBox.classList ) //通过选择元素nodeBox去看看classList里拥有哪些class，</span><br><span class="line">     //即得到一个类数组对象.通过下标的方式获取class</span><br><span class="line">nodeBox.classList.add(&apos;active&apos;)      //新增 class</span><br><span class="line">nodeBox.classList.remove(&apos;active&apos;)   //删除 class</span><br><span class="line">nodeBox.classList.toggle(&apos;active&apos;)   //新增/删除切换</span><br><span class="line">node.classList.contains(&apos;active&apos;)    // 判断是否拥有 class</span><br></pre></td></tr></table></figure></p>
+<p>如图：<a href="http://js.jirengu.com/ponaz/1/edit?html,css,js,output" target="_blank" rel="noopener"></a><br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530ff413b18abc?w=600&amp;h=313&amp;f=jpeg&amp;s=107778" alt=""><br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16530ff6b4059337?w=599&amp;h=161&amp;f=gif&amp;s=4846149" alt=""><br>class操作，不用担心class的数量有多少，无需担心同名、正则，只需要采用这种原生JS的API就能操作页面dom元素</p>
+<h3 id="4、页面宽高的计算"><a href="#4、页面宽高的计算" class="headerlink" title="4、页面宽高的计算"></a>4、页面宽高的计算</h3><p>（1）<code>element.clientHeight</code> VS  <code>element.clientWidth</code><br>获取元素窗口的高度、宽度<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/16531007d14916f8?w=411&amp;h=247&amp;f=jpeg&amp;s=41419" alt=""></p>
+<p>（2）<code>element.offsetHeight</code> VS  <code>element.offsetWidth</code><br>获取（包含边框+内边距+窗口整体）的高度、宽度<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/1653100f5f4f6d88?w=411&amp;h=247&amp;f=jpeg&amp;s=41377" alt=""><br>获取两种的宽高，得到的结果看具体情况，有些时候是相同，有些时候是不同，如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/13/1653101a47f12dee?w=600&amp;h=315&amp;f=jpeg&amp;s=113276" alt=""></p>
+<p>（3）<code>element.scrollHeight</code><br>元素滚动内容的总长度，也分实际情况<br>假设页面上有一处包含内容的div块级，页面若为可滚动的，表示内容长度超出它容器的高度，而容器高度已为固定宽高，此时<code>scrollHeight</code>＞<code>clientHeight</code><br>若页面若无滚动条、父容器高度没有固定，则<code>scrollHeight</code>=<code>clientHeight</code>=<code>offsetHeight</code></p>
+<p>（4）<code>element.scrollTop</code><br>获取元素滚动的高度，即滚动时滚动了一定的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.body.scrollTop</span><br></pre></td></tr></table></figure></p>
+<p>（5）<code>window.innerHeight</code><br>窗口的高度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.innerHeigh</span><br></pre></td></tr></table></figure></p>
+<p>实例操作：<a href="http://js.jirengu.com/fuser/1/edit?html,css" target="_blank" rel="noopener">http://js.jirengu.com/fuser/1/edit?html,css</a><br><img src="https://user-gold-cdn.xitu.io/2018/8/13/165311083544da93?w=600&amp;h=349&amp;f=jpeg&amp;s=80569" alt=""></p>
+<p>以下问题跟之后的解决懒加载有密切联系</p>
+<p>问题1：如何去判断一个元素是否出现在窗口的视野中</p>
+<p>问题2：如何判断页面滚动到底部</p>
+<p>元素到顶点的值=滚动的值</p>
+<p>元素滚动的距离+窗口的高度=这个元素到顶点的距离</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+      <div>
+        
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+      </div>
+
+    
+
+    
+
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/DOM元素/" rel="tag"># DOM元素</a>
+          
+            <a href="/tags/DOM操作/" rel="tag"># DOM操作</a>
+          
+            <a href="/tags/Element对象/" rel="tag"># Element对象</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/17/34-08 setTimeout和任务队列/" rel="next" title="hello，JS：08 setTimeout和任务队列">
+                <i class="fa fa-chevron-left"></i> hello，JS：08 setTimeout和任务队列
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="miya Wang" />
+            
+              <p class="site-author-name" itemprop="name">miya Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wxq393" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="wangxiaoqin.0009@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Wangxiaoqinmiya" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/wxq393" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://javascript.ruanyifeng.com/" title="JavaScript 标准参考教程（alpha）" target="_blank">JavaScript 标准参考教程（alpha）</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="web前端导航" target="_blank">web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.mozilla.org/zh-CN/" title="MDN" target="_blank">MDN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、DOM"><span class="nav-number">1.</span> <span class="nav-text">一、DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、定义"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、现象"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、现象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Document对象，属性（或方法）"><span class="nav-number">2.</span> <span class="nav-text">二、Document对象，属性（或方法）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、常用属性"><span class="nav-number">2.0.1.</span> <span class="nav-text">1、常用属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、document-readyState"><span class="nav-number">2.0.2.</span> <span class="nav-text">2、document.readyState</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、-document-compatMode"><span class="nav-number">2.0.3.</span> <span class="nav-text">3、 document.compatMode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、document-location"><span class="nav-number">2.0.4.</span> <span class="nav-text">4、document.location</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、document-write"><span class="nav-number">2.0.5.</span> <span class="nav-text">5、document.write()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Element对象，属性（或方法）"><span class="nav-number">3.</span> <span class="nav-text">三、Element对象，属性（或方法）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、几个常用属性"><span class="nav-number">3.0.1.</span> <span class="nav-text">1、几个常用属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、查询元素（如何选中一个元素？）"><span class="nav-number">3.0.2.</span> <span class="nav-text">2、查询元素（如何选中一个元素？）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、创建元素"><span class="nav-number">3.0.3.</span> <span class="nav-text">3、创建元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、修改元素"><span class="nav-number">3.0.4.</span> <span class="nav-text">4、修改元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、删除元素"><span class="nav-number">3.0.5.</span> <span class="nav-text">5、删除元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、属性的操作（即修改dom元素的属性的操作方法）"><span class="nav-number">4.</span> <span class="nav-text">四、属性的操作（即修改dom元素的属性的操作方法）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、getAttribute"><span class="nav-number">4.0.1.</span> <span class="nav-text">1、getAttribute()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、createAttribute-【一般用不到，一般不创建】"><span class="nav-number">4.0.2.</span> <span class="nav-text">2、createAttribute()     【一般用不到，一般不创建】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、setAttribute"><span class="nav-number">4.0.3.</span> <span class="nav-text">3、setAttribute()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、removeAttribute"><span class="nav-number">4.0.4.</span> <span class="nav-text">4、removeAttribute()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、innerHTML-VS-innerText"><span class="nav-number">4.0.5.</span> <span class="nav-text">5、innerHTML VS innerText</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、常见的使用方式"><span class="nav-number">5.</span> <span class="nav-text">五、常见的使用方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、修改样式"><span class="nav-number">5.0.1.</span> <span class="nav-text">1、修改样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、获取样式-getComputedStyle"><span class="nav-number">5.0.2.</span> <span class="nav-text">2、获取样式   getComputedStyle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、class操作"><span class="nav-number">5.0.3.</span> <span class="nav-text">3、class操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、页面宽高的计算"><span class="nav-number">5.0.4.</span> <span class="nav-text">4、页面宽高的计算</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">miya Wang</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">70.9k</span>
+  
+</div>
+
+<div class="powered-by">
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_pv">
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共70.9k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("iTNrjG6yxMxe6h93ggK9swGG-gzGzoHsz", "Mc6CRfhL7fpUJ2N1tzbzS0CO");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
