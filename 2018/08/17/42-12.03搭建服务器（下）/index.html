@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/1653755bcdd11bbf?w=600&h=404&f=jpeg&s=69961">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/1653755bcdd11bbf?w=600&h=404&f=jpeg&s=69961">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165375c6bd803254?w=599&h=433&f=gif&s=8250417">
-<meta property="og:updated_time" content="2018-08-16T18:20:47.000Z">
+<meta property="og:updated_time" content="2018-08-17T17:54:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hello,JS:12-03搭建服务器（下）">
 <meta name="twitter:description" content="（一）实例一：写一个简单的服务器一、nodejs写服务器1、下载github代码">
@@ -373,8 +373,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-17T02:20:47+08:00">
-                2018-08-17
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-18T01:54:03+08:00">
+                2018-08-18
               </time>
             
           </span>
@@ -489,11 +489,11 @@
 <p>以上函数实质上内部是一个异步过程，内部可以创建一个服务器，以这个函数作为对应的参数去处理请求。</p>
 <blockquote>
 <p>当浏览器去访问这个服务器的时候，该请求底层会被封装成一个对象。</p>
+</blockquote>
 <ul>
 <li>一个对象：参数req（随意取名），即用户请求的信息都存在这个req对象中，通过获取req得到相关的信息数据（如用户IP、域名，以及一些浏览器的域名等等）</li>
 <li>另一个对象：参数res，即需要返回给用户哪些东西</li>
 </ul>
-</blockquote>
 <p>（3）最终在项目文件中创建一个有着基本设置的服务器。代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//index.js</span><br><span class="line"></span><br><span class="line">var http = require(&apos;http&apos;)</span><br><span class="line">var server = http.createServer(function(req, res)&#123;</span><br><span class="line">    console.log(req)         //用户请求所附带的信息</span><br><span class="line">    res.write(&apos;hello world&apos;) //返回浏览器自带的一些信息</span><br><span class="line">    res.end()</span><br><span class="line">&#125;)</span><br><span class="line">server.listen(9000)  //用listen启动这个静态服务器</span><br></pre></td></tr></table></figure></p>
 <p>（4）终端启动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node index.js</span><br></pre></td></tr></table></figure></p>
 <p>此时终端进入一个空白状态（输入无用），即服务器处于一个启动状态，等待用户输入</p>
@@ -834,7 +834,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">89.9k</span>
+    <span title="Site words total count">92.1k</span>
   
 </div>
 
@@ -861,7 +861,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共89.9k字</span>
+  <span class="post-count">博客全站共92.1k字</span>
 </div>
 
         

@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/165373e64fb03b77?w=600&h=329&f=gif&s=78458">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/1653742145507c9f?w=600&h=357&f=jpeg&s=223532">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/14/1653746183cb4e57?w=600&h=375&f=gif&s=89544">
-<meta property="og:updated_time" content="2018-08-16T18:11:05.000Z">
+<meta property="og:updated_time" content="2018-08-17T17:57:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hello，JS：12-02搭建服务器(上)">
 <meta name="twitter:description" content="一、如何获取数据（涉及开发流程）1、获取数据前端部分写了一个ajax，请求需要发送到服务器的接口上，服务器如果是不存在，直接报错，且无法后续测试，对于数据的处理、渲染无从谈起。接口如何运作起来，有数据返回，接口：后端开发">
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-17T02:11:05+08:00">
-                2018-08-17
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-18T01:57:58+08:00">
+                2018-08-18
               </time>
             
           </span>
@@ -482,19 +482,22 @@
 <h3 id="2、网站的开发流程"><a href="#2、网站的开发流程" class="headerlink" title="2、网站的开发流程"></a>2、网站的开发流程</h3><p>（1）需求（前端、后端）<br>（2）前后端工作</p>
 <ul>
 <li>前端：写页面（html、css样式，js交互）</li>
-<li>后端：提供数据<br>（3）如做一个天气预报的页面网站：对前端页面功能的分解，数据需要什么？（前端主导？两者主导？）</li>
-<li>与后端协商：天气预报的数据接口：根据城市获取当天的天气；根据城市、日期获取某天的天气（接口url、传递的参数（城市？经纬度、ip、中英文）、返回数据格式（结构？字段？））</li>
-<li>前端：模拟假数据（与后端协商后）<br>（4）前后端开发完成，进行真实数据的测试、优化</li>
+<li>后端：提供数据</li>
 </ul>
+<p>（3）如做一个天气预报的页面网站：对前端页面功能的分解，数据需要什么？（前端主导？两者主导？）</p>
+<ul>
+<li>与后端协商：天气预报的数据接口：根据城市获取当天的天气；根据城市、日期获取某天的天气（接口url、传递的参数（城市？经纬度、ip、中英文）、返回数据格式（结构？字段？））</li>
+<li>前端：模拟假数据（与后端协商后）</li>
+</ul>
+<p>（4）前后端开发完成，进行真实数据的测试、优化</p>
 <h3 id="3、搭建服务器"><a href="#3、搭建服务器" class="headerlink" title="3、搭建服务器"></a>3、搭建服务器</h3><p>终端，启用静态服务器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http-server</span><br></pre></td></tr></table></figure></p>
 <p>打开相应地址：我的是，<code>http://127.0.0.1:8080</code> （你的端口号不一定和我一样，不要纠结）</p>
 <p>点开文件，简单功能开发时，把对应功能的接口放在html对应目录下，新建一个文件（json数据文件，即对应功能的数据），上传至githubpages或其他静态页面服务器上，其功能存在，继续进行功能的交互，就能获取相应功能数据。</p>
-<h1 id="二、mock数据方法"><a href="#二、mock数据方法" class="headerlink" title="二、mock数据方法"></a>二、mock数据方法</h1><h3 id="1、方法1、线上githubpagesmock数据"><a href="#1、方法1、线上githubpagesmock数据" class="headerlink" title="1、方法1、线上githubpagesmock数据"></a>1、方法1、线上githubpagesmock数据</h3><p>（1）github创建一个项目：wxq393/wangyiyunmusic<br>（2）分别创建文件</p>
-<p><strong>A、html文件——home.html</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">//home.html</span><br><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    .cate .item &#123;</span><br><span class="line">      border: 1px solid #ccc;</span><br><span class="line">      line-height: 20px;</span><br><span class="line">      padding: 0 10px;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;header&gt;&lt;/header&gt;</span><br><span class="line">  &lt;main&gt;</span><br><span class="line">    &lt;div class=&quot;cate&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/main&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var xhr = new XMLHttpRequest()</span><br><span class="line">xhr.open(&apos;GET&apos;, &apos;/wangyiyunmusic/cate.json&apos;, true)</span><br><span class="line">xhr.send()</span><br><span class="line">xhr.onload = function()&#123;</span><br><span class="line">  render(JSON.parse(xhr.responseText))</span><br><span class="line">  console.log(JSON.parse(xhr.responseText))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function render(cateData)&#123;  </span><br><span class="line">  for(var i = 0; i &lt; cateData.length; i++)&#123;</span><br><span class="line">    var node = document.createElement(&apos;div&apos;)</span><br><span class="line">    node.classList.add(&apos;item&apos;)</span><br><span class="line">    node.innerText = cateData[i]</span><br><span class="line">    document.querySelector(&apos;.cate&apos;).appendChild(node)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="二、mock数据方法"><a href="#二、mock数据方法" class="headerlink" title="二、mock数据方法"></a>二、mock数据方法</h1><h3 id="1、方法1、线上githubpagesmock数据"><a href="#1、方法1、线上githubpagesmock数据" class="headerlink" title="1、方法1、线上githubpagesmock数据"></a>1、方法1、线上githubpagesmock数据</h3><p>（1）github创建一个项目：wxq393/wangyiyunmusic<br>（2）分别创建文件<br>A、html文件——home.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">//home.html</span><br><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    .cate .item &#123;</span><br><span class="line">      border: 1px solid #ccc;</span><br><span class="line">      line-height: 20px;</span><br><span class="line">      padding: 0 10px;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;header&gt;&lt;/header&gt;</span><br><span class="line">  &lt;main&gt;</span><br><span class="line">    &lt;div class=&quot;cate&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/main&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var xhr = new XMLHttpRequest()</span><br><span class="line">xhr.open(&apos;GET&apos;, &apos;/wangyiyunmusic/cate.json&apos;, true)</span><br><span class="line">xhr.send()</span><br><span class="line">xhr.onload = function()&#123;</span><br><span class="line">  render(JSON.parse(xhr.responseText))</span><br><span class="line">  console.log(JSON.parse(xhr.responseText))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function render(cateData)&#123;  </span><br><span class="line">  for(var i = 0; i &lt; cateData.length; i++)&#123;</span><br><span class="line">    var node = document.createElement(&apos;div&apos;)</span><br><span class="line">    node.classList.add(&apos;item&apos;)</span><br><span class="line">    node.innerText = cateData[i]</span><br><span class="line">    document.querySelector(&apos;.cate&apos;).appendChild(node)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
 <p>如图：熟悉一下dom的语法<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165373db8e150494?w=600&amp;h=282&amp;f=jpeg&amp;s=57987" alt=""></p>
 <p>B、json文件——cate.json（注意路径）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//cate.json</span><br><span class="line">[&quot;90后&quot;, &quot;80后&quot;, &quot;清晨&quot;, &quot;工作&quot;]</span><br></pre></td></tr></table></figure></p>
 <p>C、直接githubpage去mock数据，如图：<br><img src="https://user-gold-cdn.xitu.io/2018/8/14/165373e64fb03b77?w=600&amp;h=329&amp;f=gif&amp;s=78458" alt=""></p>
-<h3 id="2、方法2-使用-easymock-mock数据"><a href="#2、方法2-使用-easymock-mock数据" class="headerlink" title="2、方法2　使用 easymock mock数据"></a>2、方法2　使用 easymock mock数据</h3><p><strong>A、进入<code>http://easy-mock.com/</code></strong><br>创建url域名——创建接口——编辑json数据——更新、预览：即能看到返回的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*json数据编写：*/</span><br><span class="line">&#123;</span><br><span class="line">  &quot;success&quot;: true,</span><br><span class="line">  &quot;data&quot;: [</span><br><span class="line">    &quot;80后&quot;,</span><br><span class="line">    &quot;90后&quot;,</span><br><span class="line">    &quot;00后&quot;,</span><br><span class="line">    &quot;清晨喝咖啡&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2、方法2-使用-easymock-mock数据"><a href="#2、方法2-使用-easymock-mock数据" class="headerlink" title="2、方法2　使用 easymock mock数据"></a>2、方法2　使用 easymock mock数据</h3><p>A、进入<code>http://easy-mock.com/</code><br>创建url域名——创建接口——编辑json数据——更新、预览：即能看到返回的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*json数据编写：*/</span><br><span class="line">&#123;</span><br><span class="line">  &quot;success&quot;: true,</span><br><span class="line">  &quot;data&quot;: [</span><br><span class="line">    &quot;80后&quot;,</span><br><span class="line">    &quot;90后&quot;,</span><br><span class="line">    &quot;00后&quot;,</span><br><span class="line">    &quot;清晨喝咖啡&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>返回数据另一种方法：点击主页面生成的url，使用终端测试，也能返回相应数据</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl  url地址</span><br></pre></td></tr></table></figure>
 <p>如图：<img src="https://user-gold-cdn.xitu.io/2018/8/14/1653742145507c9f?w=600&amp;h=357&amp;f=jpeg&amp;s=223532" alt=""></p>
@@ -792,7 +795,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">89.9k</span>
+    <span title="Site words total count">92.1k</span>
   
 </div>
 
@@ -819,7 +822,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共89.9k字</span>
+  <span class="post-count">博客全站共92.1k字</span>
 </div>
 
         
