@@ -479,8 +479,8 @@
       </categories>
       <tags>
         <tag>CSS</tag>
-        <tag>行内元素</tag>
         <tag>字体图标</tag>
+        <tag>行内元素</tag>
         <tag>背景</tag>
       </tags>
   </entry>
@@ -494,8 +494,8 @@
       </categories>
       <tags>
         <tag>CSS</tag>
-        <tag>块级元素</tag>
         <tag>行内元素</tag>
+        <tag>块级元素</tag>
         <tag>宽高</tag>
         <tag>边距</tag>
         <tag>文本、颜色、单位</tag>
