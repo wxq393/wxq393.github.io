@@ -1,2 +1,2 @@
-# wxq393.github.io
-miya's blog
+# miya's blog
+wxq393.github.io
